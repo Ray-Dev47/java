@@ -1,21 +1,31 @@
-// Write a Java program to print the sum (addition), multiply, subtract, divide and remainder of two numbers. Go to the editor
-// Test Data:
-// Input first number: 125
-// Input second number: 24
+// Write a Java program that takes a number as input and prints its multiplication table up to 10
+
+// ?Method  one
+// public class index {
+
+//     public static void main(String args[]) {
+//         int num = 8;
+//         for(int i = 1; i <= 10; i++){
+//             System.out.printf( "%d * %d = %d \n", num, i, num * i);  // works 
+//         }
+//     }
+// }
+
+// ***** Method 2
+
+// Using scanner package for custom input
+import java.util.Scanner;
+
 public class index {
-    
     public static void main(String args[]) {
-        int a = 125;
-        int b = 24;
-        int result1 = b + a;
-        int result2 = b - a;
-        int result3 = b * a;
-        int result4 = b / a;
-        int result5 = b % a;
-        System.out.println(result1);
-        System.out.println(result2);
-        System.out.println(result3);
-        System.out.println(result4);
-        System.out.println(result5);
+        try (Scanner num = new Scanner(System.in)) {
+            System.out.println("Enter any number");
+            int ans = num.nextInt();
+            for (int i = 1; i <= 10; i++) {                
+                System.out.println(ans +" x "+i+" = "+ans*i); // works
+            }
+        }
+        ;
+        
     }
 }
