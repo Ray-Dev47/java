@@ -1,6 +1,4 @@
-// import javax.naming.spi.DirStateFactory.Result;
-
-// Write a Java program to print 'Hello' on screen and then print your name on a separate line
+// Write a Java program to print the sum of two numbers
 public class index {
     
     public static void main(String args[]) {
