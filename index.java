@@ -4,9 +4,9 @@
 public class index {
     
     public static void main(String args[]) {
-        int a = 20;
+        int a = 10;
         int b = 30;
-        int result = a + b;
+        int result = b / a;
         System.out.println(result);
     }
 }
