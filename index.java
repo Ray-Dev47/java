@@ -1,12 +1,8 @@
-// Write a Java program to display the following pattern.
-
+// Write a Java program to compute the specified expressions and print the output
+// ((25.5 * 3.5 - 3.5 * 3.5) / (40.5 - 4.5))  // test data
 
 public class index {
     public static void main(String args[]) {
-        System.out.println("   J    a   v     v  a ");
-        System.out.println("   J   a a   v   v  a a");
-        System.out.println("J  J  aaaaa   V V  aaaaa");
-        System.out.println(" JJ  a     a   V  a     a");
-        
+        System.out.println(((25.5 * 3.5 - 3.5 * 3.5) / (40.5 - 4.5)));        
     }
 }
