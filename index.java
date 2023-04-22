@@ -1,12 +1,8 @@
-// Write a Java program to display the following pattern.
-
-
+// Write a Java program to print the area and perimeter of a circle
+// radius 7.5
 public class index {
     public static void main(String args[]) {
-        System.out.println("   J    a   v     v  a ");
-        System.out.println("   J   a a   v   v  a a");
-        System.out.println("J  J  aaaaa   V V  aaaaa");
-        System.out.println(" JJ  a     a   V  a     a");
-        
+        System.out.println(3.142 * (7.5 * 7.5));    // area     
+        System.out.println(2 * 3.142 * 7.5);    // perimeter     
     }
 }
