@@ -1,22 +1,44 @@
-// Write a Java program that takes three numbers as input to calculate and print the average of the numbers.
+// Write a Java program to add two binary numbers.
 
 import java.util.Scanner;
-
 public class index {
-    public static void main(String args[]) {
-          Scanner scan = new Scanner(System.in);
-            System.out.println("Enter first number"); 
-            double num1 = scan.nextDouble();   
-            System.out.println("Enter Second number");
-            double num2 = scan.nextDouble();
-            System.out.println("Enter third number");
-            double num3 = scan.nextDouble();
-            scan.close();           
 
-            System.out.print("The average of the 3 numbers are  " + average(num1,num2,num3));
-          
+    public static void main(String args[]){
+        System.out.println("Welcome to Java Program to add two binary numbers");
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println(" Please Input first Binary Number");
+        String first = scan.nextLine();
+
+        System.out.println("Please input second Binary Number");
+        String second = scan.nextLine();
+
+        String addition = add(first, second);
+        System.out.println("The addition of two binary numbers is " + addition);
+
+        String  sum = sum(first, second);
+        System.out.println("The sum of two binary numbers is " + sum);
+
+        scan.close();
+        
     }
-    public static double average(double a, double b, double c){
-        return  (a + b + c)/3;
+    private static String sum(String first, String second) {
+        return null;
     }
+
+    //  next is method to 
+    /*
+     * Java method to calculate sum of two binary numbers this method calculate * sum by first converting binary String to binary numbers and then adding * them using binary arithmetic. * * @param first * @param second
+     */
+
+     public static String add(String first, String second){
+          int a = Integer.parseInt(first, 2);
+          int b = Integer.parseInt(second, 2);
+
+          int sum = a + b;
+
+          return Integer.toBinaryString(sum);
+
+     }
 }
+
