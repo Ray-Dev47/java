@@ -1,54 +1,29 @@
-// Write a Java program to convert a decimal number to binary number.
+//  Write a Java program to convert a decimal number to hexadecimal number.
 
 import java.util.Scanner;
-
 public class index {
-
-    public static void main(String args[]) {
-        System.out.println("Welcome to Java Program to convert from decimal to binary");
-        Scanner scan = new Scanner(System.in);
-        int number = Integer.MAX_VALUE;
-
-        while (number != 0) {
-            System.out.println(" Please Input deciaml Number");
-            number = scan.nextInt();
-
-            // combined conversion and print part into one method
-            convert(number);
-
+      public static void main(String args[])
+    {
+        int dec_num, rem;
+        String hexdec_num="";
+        
+        /* hexadecimal number digits */
+        
+        char hex[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+        
+        Scanner in = new Scanner(System.in);
+        in.close();
+		
+        System.out.print("Input a decimal number: ");
+        dec_num = in.nextInt();
+		
+        while(dec_num>0)
+        {
+            rem = dec_num%16;
+            hexdec_num = hex[rem] + hexdec_num;
+            dec_num = dec_num/16;
         }
-        scan.close();
-
+        System.out.print("Hexadecimal number is : "+hexdec_num+"\n");         
     }
-
-    public static byte[] toBinary(int number) {
-        byte[] binary = new byte[32];
-        int index = 0;
-        int copyOfInput = number;
-        while (copyOfInput > 0) {
-            binary[index++] = (byte) (copyOfInput % 2);
-            copyOfInput = copyOfInput / 2;
-        }
-        return binary;
-    }
-
-    /* * Print number in binary format */ public static void printBinary(byte[] binary) {
-        for (int i = binary.length - 1; i >= 0; i--) {
-            System.out.print(binary[i]);
-        }
-    }
-
-    /* * Combination of previous two method to convert and print binary numbers */
-    public static void convert(
-            int input) {
-        int copyOfInput = input;
-        StringBuilder sb = new StringBuilder();
-        while (copyOfInput > 0) {
-            byte bit = (byte) (copyOfInput % 2);
-            sb.append(bit);
-            copyOfInput = copyOfInput / 2;
-        }
-        System.out.printf("\nDecimal number %d in Binary format is %s %n", input, sb.toString());
-    }
-
+    
 }
