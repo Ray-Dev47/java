@@ -1,34 +1,41 @@
-//  Write a Java program to convert a binary number to hexadecimal number.
+//  Write a Java program to convert a binary number to a Octal number. 
 
 import java.util.Scanner;
 
+// import java.util.*;
+
 public class index {
     public static void main(String[] args) {
-        int[] hex = new int[1000];
-        int i = 1, j = 0, rem, dec = 0, bin;
-        Scanner in = new Scanner(System.in);
-        in.close();
-        System.out.print("Input a Binary Number: ");
-        bin = in.nextInt();
-        while (bin > 0) {
-            rem = bin % 2;
-            dec = dec + rem * i;
+        int binnum, binnum1, rem, decnum = 0, quot, i = 1, j;
+        int octnum[] = new int[100];
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Input a Binary Number : ");
+        binnum = scan.nextInt();
+        binnum1 = binnum;
+
+        while (binnum > 0) {
+            rem = binnum % 10;
+            decnum = decnum + rem * i;
+            // System.out.println(rem);
             i = i * 2;
-            bin = bin / 10;
+            binnum = binnum / 10;
         }
-        i = 0;
-        while (dec != 0) {
-            hex[i] = dec % 16;
-            dec = dec / 16;
-            i++;
+        scan.close();
+
+        i = 1;
+        quot = decnum;
+
+        while (quot > 0) {
+            octnum[i++] = quot % 8;
+            quot = quot / 8;
         }
-        System.out.print("HexaDecimal value: ");
-        for (j = i - 1; j >= 0; j--) {
-            if (hex[j] > 9) {
-                System.out.print((char) (hex[j] + 55) + "\n");
-            } else {
-                System.out.print(hex[j] + "\n");
-            }
+
+        System.out.print("Equivalent Octal Value of " + binnum1 + " is :");
+        for (j = i - 1; j > 0; j--) {
+            System.out.print(octnum[j]);
         }
+        System.out.print("\n");
+
     }
 }
