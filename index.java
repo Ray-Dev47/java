@@ -1,25 +1,21 @@
-//  Write a Java program to convert a octal number to a binary number.
+//  Write a Java program to convert a octal number to a hexadecimal number
 
 import java.util.Scanner;
 
 public class index {
-    public static void main(String[] args) {
+public static void main(String args[])
+    {
+        String octal_num, hex_num;
+        int decnum;
         Scanner in = new Scanner(System.in);
-        int[] octal_numvalues = { 0, 1, 10, 11, 100, 101, 110, 111 };
-        long octal_num, tempoctal_num, binary_num, place;
-        int rem;
-        System.out.print("Input any octal number: ");
-        octal_num = in.nextLong();
-        tempoctal_num = octal_num;
-        binary_num = 0;
-        place = 1;
-        while (tempoctal_num != 0) {
-            rem = (int) (tempoctal_num % 10);
-            binary_num = octal_numvalues[rem] * place + binary_num;
-            tempoctal_num /= 10;
-            place *= 1000;
-        }
+		
+        System.out.print("Input a octal number : ");
+        octal_num = in.nextLine();
+		
+        decnum = Integer.parseInt(octal_num, 8);
+        hex_num = Integer.toHexString(decnum);
+		
         in.close();
-        System.out.print("Equivalent binary number: " + binary_num + "\n");
-    }
+        System.out.print("Equivalent hexadecimal number: "+ hex_num+"\n");
+     }
 }
