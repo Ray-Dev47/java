@@ -1,29 +1,30 @@
-//  Write a Java program to convert a decimal number to hexadecimal number.
+//  Write a Java program to convert a decimal number to octal number.
 
 import java.util.Scanner;
 public class index {
       public static void main(String args[])
     {
-        int dec_num, rem;
-        String hexdec_num="";
-        
-        /* hexadecimal number digits */
-        
-        char hex[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
-        
-        Scanner in = new Scanner(System.in);
-        in.close();
+            int dec_num, quot, i=1, j;
+        int oct_num[] = new int[100];
+        Scanner scan = new Scanner(System.in);
+        scan.close();
 		
-        System.out.print("Input a decimal number: ");
-        dec_num = in.nextInt();
+        System.out.print("Input a Decimal Number: ");
+        dec_num = scan.nextInt();
 		
-        while(dec_num>0)
+        quot = dec_num;
+		
+        while(quot != 0)
         {
-            rem = dec_num%16;
-            hexdec_num = hex[rem] + hexdec_num;
-            dec_num = dec_num/16;
+            oct_num[i++] = quot%8;
+            quot = quot/8;
         }
-        System.out.print("Hexadecimal number is : "+hexdec_num+"\n");         
+		
+        System.out.print("Octal number is: ");
+        for(j=i-1; j>0; j--)
+        {
+            System.out.print(oct_num[j]);
+        }
+		System.out.print("\n");
     }
-    
 }
