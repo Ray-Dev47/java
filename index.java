@@ -1,44 +1,54 @@
-// Write a Java program to multiply two binary numbers.
+// Write a Java program to convert a decimal number to binary number.
 
 import java.util.Scanner;
+
 public class index {
 
-    public static void main(String args[]){
-        System.out.println("Welcome to Java Program to multiply two binary numbers");
+    public static void main(String args[]) {
+        System.out.println("Welcome to Java Program to convert from decimal to binary");
         Scanner scan = new Scanner(System.in);
+        int number = Integer.MAX_VALUE;
 
-        System.out.println(" Please Input first Binary Number");
-        String first = scan.nextLine();
+        while (number != 0) {
+            System.out.println(" Please Input deciaml Number");
+            number = scan.nextInt();
 
-        System.out.println("Please input second Binary Number");
-        String second = scan.nextLine();
+            // combined conversion and print part into one method
+            convert(number);
 
-        String multiplication = multiply(first, second);
-        System.out.println("The multiplication of two binary numbers is " + multiplication);
-
-        String  quotient = quotient(first, second);
-        System.out.println("The quotient of two binary numbers is " + quotient);
-
+        }
         scan.close();
-        
-    }
-    private static String quotient(String first, String second) {
-        return null;
+
     }
 
-    //  next is method to 
-    /*
-     * Java method to calculate quotient of two binary numbers this method calculate * quotient by first converting binary String to binary numbers and then multiplying * them using binary arithmetic. * * @param first * @param second
-     */
+    public static byte[] toBinary(int number) {
+        byte[] binary = new byte[32];
+        int index = 0;
+        int copyOfInput = number;
+        while (copyOfInput > 0) {
+            binary[index++] = (byte) (copyOfInput % 2);
+            copyOfInput = copyOfInput / 2;
+        }
+        return binary;
+    }
 
-     public static String multiply(String first, String second){
-          int a = Integer.parseInt(first, 2);
-          int b = Integer.parseInt(second, 2);
+    /* * Print number in binary format */ public static void printBinary(byte[] binary) {
+        for (int i = binary.length - 1; i >= 0; i--) {
+            System.out.print(binary[i]);
+        }
+    }
 
-          int quotient = a * b;
+    /* * Combination of previous two method to convert and print binary numbers */
+    public static void convert(
+            int input) {
+        int copyOfInput = input;
+        StringBuilder sb = new StringBuilder();
+        while (copyOfInput > 0) {
+            byte bit = (byte) (copyOfInput % 2);
+            sb.append(bit);
+            copyOfInput = copyOfInput / 2;
+        }
+        System.out.printf("\nDecimal number %d in Binary format is %s %n", input, sb.toString());
+    }
 
-          return Integer.toBinaryString(quotient);
-
-     }
 }
-
