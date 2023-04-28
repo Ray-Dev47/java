@@ -1,30 +1,21 @@
-//  Write a Java program to convert a decimal number to octal number.
+//  Write a Java program to convert a binary number to decimal number.
 
 import java.util.Scanner;
+
 public class index {
-      public static void main(String args[])
-    {
-            int dec_num, quot, i=1, j;
-        int oct_num[] = new int[100];
-        Scanner scan = new Scanner(System.in);
-        scan.close();
-		
-        System.out.print("Input a Decimal Number: ");
-        dec_num = scan.nextInt();
-		
-        quot = dec_num;
-		
-        while(quot != 0)
-        {
-            oct_num[i++] = quot%8;
-            quot = quot/8;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        sc.close();
+        long binaryNumber, decimalNumber = 0, j = 1, remainder;
+        System.out.print("Input a binary number: ");
+        binaryNumber = sc.nextLong();
+
+        while (binaryNumber != 0) {
+            remainder = binaryNumber % 10;
+            decimalNumber = decimalNumber + remainder * j;
+            j = j * 2;
+            binaryNumber = binaryNumber / 10;
         }
-		
-        System.out.print("Octal number is: ");
-        for(j=i-1; j>0; j--)
-        {
-            System.out.print(oct_num[j]);
-        }
-		System.out.print("\n");
+        System.out.println("Decimal Number: " + decimalNumber);
     }
 }
