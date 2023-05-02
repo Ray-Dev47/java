@@ -28,7 +28,6 @@ public class index{
             }
         }
         System.out.println("Total number of the three-digit-number is " + total);
-         
     }
 }
 
