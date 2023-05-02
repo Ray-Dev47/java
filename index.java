@@ -48,11 +48,7 @@ public class index{
         System.out.println("number: " + num);
         System.out.println("Space: " + space);
         System.out.println("Other: " + otherChars);
-
-    }
-    
-
-        
+    }     
 }
 
 
