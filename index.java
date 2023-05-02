@@ -1,34 +1,16 @@
-// Write a Java program to create and display unique three-digit number using 1, 2, 3, 4. Also count how many three-digit numbers are there
-/*
- * Expected Output
-TExpected Output
-
-123                                                      
-124                                                      
-...                                            
-                                                   
-431                                                      
-432                                                      
-Total number of the three-digit-number is 24
- */
+//  Write a Java program to list the available character sets in charset objects. 
 
 
-public class index{
 
-    public static void main(String args[]){
-        int total = 0;
-        for (int i = 1; i < 4; i++){
-            for(int j = 1; j < 4; j++){
-                for(int k = 1; k < 4; k++){
-                    if(k != i && k !=  j && i != j){
-                        total++;
-                        System.out.println(i + "" + j + "" + k );
-                    }
-                }
-            }
-        }
-        System.out.println("Total number of the three-digit-number is " + total);
+import java.nio.charset.Charset;
+public class index {
+  public static void main(String[] args) {
+	System.out.println("List of available character sets: ");  
+    for (String str : Charset.availableCharsets().keySet()) {
+      System.out.println(str);
     }
+  }
 }
+
 
 
