@@ -1,12 +1,15 @@
-//  Write a Java program to list the available character sets in charset objects. 
+//  Write a Java program to print the ascii value of a given character
 
-import java.nio.charset.Charset;
+import java.util.Scanner;
 public class index {
   public static void main(String[] args) {
-	System.out.println("List of available character sets: ");  
-    for (String str : Charset.availableCharsets().keySet()) {
-      System.out.println(str);
-    }
+	System.out.println("Enter any button to reveal the ASCII value: ");  
+    Scanner scan = new Scanner(System.in);
+
+    char input = scan.next().charAt(0);
+    System.out.println("Ascii value of " + input + " is: "  + (int)input);
+
+    scan.close();
   }
 }
 
