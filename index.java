@@ -1,22 +1,34 @@
-//  Write a Java program to accept a number and check whether the number is even or not. Prints 1 if the number is even or 0 if odd
+//  Write a Java program to print numbers between 1 and 100 divisible by 3, 5 and both.
 /*
  */
-import java.util.Scanner;
-
 public class index {
 
 	public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-    System.out.println("Please enter integer to check if odd or even");
-		int num = sc.nextInt();
-        
-            if(num % 2 == 0){
-                System.out.println("1....Even");
-            } else if(num % 2 != 0){
-                System.out.println("0....Odd");
+        System.out.println("\n Divided by 3");
+        for (int i = 0; i < 100; i++){
+             if(i % 3 == 0){
+                //  System.out.print(i + " ");
+                System.out.print(i + ", ");
+             } 
+
             }
-        sc.close();
-	}
+
+            System.out.println("\n\nDivided by 5");
+            for(int i = 0; i < 100; i++){
+                  if(i % 5 == 0){
+                    System.out.print(i + ", ");
+                  }                    
+            }
+
+            System.out.println("\n\nDivided by 5 & 3");
+            for(int i = 0; i < 100; i++){
+                  if(i % 3 == 0  &&  i % 5 == 0){
+                    System.out.print(i + ", ");
+                  }                    
+            }
+        }
+        
+       
 }
 
 
