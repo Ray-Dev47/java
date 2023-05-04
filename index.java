@@ -1,27 +1,17 @@
-//  Write a Java program to print the following string in a specific format (see the output).
+//   Write a Java program to find the size of a specified file. 
 /*
- * Sample Output
- * 
- * Input number: 5                                                        
-5 + 55  + 555
-
-
  */
-import java.util.Scanner;
-
+// import java.util.Scanner;
+import java.io.File;
 public class index{
-    public static void main (String args[]) {
-      int n;
-    //   char str1, str2, str3;
-      Scanner scan = new Scanner(System.in);
-      System.out.println("Input number:  ");
-      n = scan.nextInt();
-      System.out.printf("%d + %d%d + %d%d%d\n", n,n,n,n,n,n);
 
-      scan.close();
-   
+ public static void main(String[] args) {
+//   System.out.println("/home/students/abc.txt  : " + new File("abc.txt").length() + " bytes");
+//   System.out.println("/home/students/test.txt : " + new File("test.txt").length() + " bytes");
+  System.out.println("/Desktop/java-practice/index.java : " + new File("index.java").length() + " bytes");  // 514 bytes
+ }
 }
-}
+
  
 
 
