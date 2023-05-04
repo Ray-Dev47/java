@@ -1,34 +1,26 @@
-//  Write a Java program to print numbers between 1 and 100 divisible by 3, 5 and both.
+//  Write a Java program to convert a string to an integer.
 /*
  */
+import java.util.*;
+// import java.util.Scanner;
 public class index {
 
-	public static void main(String args[]) {
-        System.out.println("\n Divided by 3");
-        for (int i = 0; i < 100; i++){
-             if(i % 3 == 0){
-                //  System.out.print(i + " ");
-                System.out.print(i + ", ");
-             } 
-
-            }
-
-            System.out.println("\n\nDivided by 5");
-            for(int i = 0; i < 100; i++){
-                  if(i % 5 == 0){
-                    System.out.print(i + ", ");
-                  }                    
-            }
-
-            System.out.println("\n\nDivided by 5 & 3");
-            for(int i = 0; i < 100; i++){
-                  if(i % 3 == 0  &&  i % 5 == 0){
-                    System.out.print(i + ", ");
-                  }                    
-            }
+	public static void main(String args[])   {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input a number(string): ");
+        String str1 = in.nextLine();
+		int result;
+        try {
+            result = Integer.parseInt(str1);
+        } catch (NumberFormatException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
+        in.close();
+        System.out.printf("The integer value is: %d",result);
+		System.out.printf("\n");
+    }
         
-       
 }
 
 
