@@ -7,20 +7,14 @@ public class index {
 
 	public static void main(String args[])   {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the first Integer");
-        int int1 = sc.nextInt();
-        System.out.println("Enter the second integer");
-        int int2 = sc.nextInt();
-        System.out.println("Enter the third integer");
-        int int3 = sc.nextInt();
-
+             System.out.println("Input an integer to get the time");
+             int time = sc.nextInt();
+             int hours = time / 3600;
+             int minutes = (time % 3600) / 60;
+             int seconds = time % 60;
         sc.close();
-        
-        System.out.println("The result is: " + res(int1, int2, int3));
+         System.out.println(hours + ":" + minutes + ":" + seconds );
     }
-        public static boolean res(int a,int b,int c){
-             return a < b && b < c && a < c ;
-        }
 }
 
 
