@@ -1,4 +1,4 @@
-//   Write a Java program to calculate the sum of two integers and return true if the sum is equal to a third integer.
+//   Write a Java program that accepts three integers from the user. It returns true if the second number is higher than the first number and the third number is larger than the second number. If "abc" is true, the second number does not need to be larger than the first number.
 /*
  */
 
@@ -15,39 +15,14 @@ public class index {
         int int3 = sc.nextInt();
 
         sc.close();
-        if(int1 + int2 == int3 ){
-             System.out.println("The result is: True");
-        } else{
-            System.out.println("The result is: False");
-        }
         
+        System.out.println("The result is: " + res(int1, int2, int3));
     }
-        
+        public static boolean res(int a,int b,int c){
+             return a < b && b < c && a < c ;
+        }
 }
 
-
-
-// Method 2 -
-// import java.util.*;
-//  public class Exercise52 {
-//  public static void main(String[] args)
-//     {
-//         Scanner in = new Scanner(System.in);
-//         System.out.print("Input the first number : ");
-//         int x = in.nextInt();  
-// 		System.out.print("Input the second number: ");
-// 		int y = in.nextInt(); 
-// 		System.out.print("Input the third number : ");
-//         int z = in.nextInt(); 
-//         System.out.print("The result is: "+sumoftwo(x, y, z));
-// 		System.out.print("\n");
-//     }
-    
-//     public static boolean sumoftwo(int p, int q, int r)
-//       {	
-//          return ((p + q) == r || (q + r) == p || (r + p) == q);	
-// 	   }
-// }
 
 
 
