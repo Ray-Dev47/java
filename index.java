@@ -33,8 +33,7 @@ public class index {
 	            ctr++;
 	        }
 	    }
-	        return ctr;
-          
+	        return ctr;  
           }
       }
 
