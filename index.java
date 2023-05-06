@@ -1,17 +1,15 @@
-//   Write a Java program to display system time.
+//   Write a Java program to print odd numbers from 1 to 99. Prints one number per line
 /*
  */
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.TimeZone;
-
 public class index {
 
 	public static void main(String args[]) {
-		SimpleDateFormat cdt = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
-		cdt.setCalendar(Calendar.getInstance(TimeZone.getTimeZone("GMT")));
-		
-		System.out.println("\nNow: "+cdt.format(System.currentTimeMillis()));
+		int num = 99;
+        for(int i = 0; i <= num; i++){
+            if(i % 2 != 0){
+                System.out.println(i);
+            }
+        }
 	}
 }
 
