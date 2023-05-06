@@ -19,8 +19,4 @@ import java.util.Scanner;
 }
 
 
-// String testString = "This is a sentence";
-// String[] parts = testString.split(" ");
-// String lastWord = parts[parts.length - 1];
-// System.out.println(lastWord); // "sentence"
 
