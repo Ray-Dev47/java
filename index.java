@@ -1,18 +1,19 @@
 //   Write a Java program to display system time.
 /*
  */
-// import java.text.*;
-import java.time.LocalDateTime;
-// import java.util.*;
- 
-public class index {
-    public static void main(String args[])
-    {
-        System.out.println(LocalDateTime.now());
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.TimeZone;
 
-        System.out.format("\nCurrent Date time: %tc%n\n", System.currentTimeMillis());
-    }
+public class index {
+
+	public static void main(String args[]) {
+		SimpleDateFormat cdt = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
+		cdt.setCalendar(Calendar.getInstance(TimeZone.getTimeZone("GMT")));
+		
+		System.out.println("\nNow: "+cdt.format(System.currentTimeMillis()));
+	}
 }
- 
+
 
 
