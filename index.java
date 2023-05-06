@@ -1,35 +1,26 @@
-//  Write a Java program to print numbers between 1 and 100 divisible by 3, 5 and both.
+//  capitalize the first letter of each word in a sentence
 /*
  */
-public class index {
 
-	public static void main(String args[]) {
-        System.out.println("\n Divided by 3");
-        for (int i = 0; i < 100; i++){
-             if(i % 3 == 0){
-                //  System.out.print(i + " ");
-                System.out.print(i + ", ");
-             } 
 
-            }
-
-            System.out.println("\n\nDivided by 5");
-            for(int i = 0; i < 100; i++){
-                  if(i % 5 == 0){
-                    System.out.print(i + ", ");
-                  }                    
-            }
-
-            System.out.println("\n\nDivided by 5 & 3");
-            for(int i = 0; i < 100; i++){
-                  if(i % 3 == 0  &&  i % 5 == 0){
-                    System.out.print(i + ", ");
-                  }                    
-            }
-        }
-        
-       
+import java.util.*;
+ public class index {
+     public static void main(String[] args){
+	 Scanner in = new Scanner(System.in);
+     System.out.print("Input a Sentence: ");
+	 String line = in.nextLine();
+	 String lower_case_line = "";
+      in.close(); 
+       Scanner lineScan = new Scanner(line); 
+         while(lineScan.hasNext()) {
+             String word = lineScan.next(); 
+             lower_case_line += word.toLowerCase(); 
+         }
+         lineScan.close();
+      System.out.println(lower_case_line.trim()); 
+    }
 }
+
 
 
 
