@@ -1,16 +1,34 @@
-//   Write a Java program to print odd numbers from 1 to 99. Prints one number per line
+//  Write a Java program to print numbers between 1 and 100 divisible by 3, 5 and both.
 /*
  */
 public class index {
 
 	public static void main(String args[]) {
-		int num = 99;
-        for(int i = 0; i <= num; i++){
-            if(i % 2 != 0){
-                System.out.println(i);
+        System.out.println("\n Divided by 3");
+        for (int i = 0; i < 100; i++){
+             if(i % 3 == 0){
+                //  System.out.print(i + " ");
+                System.out.print(i + ", ");
+             } 
+
+            }
+
+            System.out.println("\n\nDivided by 5");
+            for(int i = 0; i < 100; i++){
+                  if(i % 5 == 0){
+                    System.out.print(i + ", ");
+                  }                    
+            }
+
+            System.out.println("\n\nDivided by 5 & 3");
+            for(int i = 0; i < 100; i++){
+                  if(i % 3 == 0  &&  i % 5 == 0){
+                    System.out.print(i + ", ");
+                  }                    
             }
         }
-	}
+        
+       
 }
 
 
