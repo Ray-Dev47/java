@@ -14,9 +14,9 @@ import java.util.*;
  public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
-        System.out.print("Input the first number : ");
+        System.out.print("Input the 1st number : ");
         int a = in.nextInt();  
-		System.out.print("Input the second number: ");
+		System.out.print("Input the 2nd number: ");
 		int b = in.nextInt(); 
           in.close();
 		System.out.println("Result: "+result(a, b));
