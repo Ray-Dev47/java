@@ -1,11 +1,10 @@
 /*
-Write a Java program that accepts three integer values and returns true if one is 20 or more less than the others' subtractions. Go to the editor
+Write a Java program that accepts two integer values from the user and returns the largest value. However if the two values are the same, return 0 and find the smallest value if the two values have the same remainder when divided by 6
+
 Sample Output:
 
-Input the first number : 15                                            
-Input the second number: 20                                            
-Input the third number : 25                                            
-false
+Input the first number : 12                                            
+Input the second number: 13   
  */
 
 
@@ -15,16 +14,23 @@ import java.util.*;
  public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
-        System.out.print("Input the first number : ");
-        int x = in.nextInt();  
-		System.out.print("Input the second number: ");
-		int y = in.nextInt(); 
-		System.out.print("Input the third number : ");
-        int z = in.nextInt(); 
-        in.close();
-        System.out.println((Math.abs(x - y) >= 20 || Math.abs(y - z) >= 20 || Math.abs(z - x) >= 20));
+        System.out.print("Input the 1st number : ");
+        int a = in.nextInt();  
+		System.out.print("Input the 2nd number: ");
+		int b = in.nextInt(); 
+          in.close();
+		System.out.println("Result: "+result(a, b));
     }
+	public static int result(int x, int y)
+     {  
+	if(x == y)
+		return 0;
+	    if(x % 6 == y % 6)
+		    return (x < y) ? x : y;
+	    return (x > y) ? x : y;
+     }
 }
+
 
 
 
