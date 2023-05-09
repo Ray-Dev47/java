@@ -1,36 +1,34 @@
 /*
-Write a Java program that accepts two integer values from the user and returns the largest value. However if the two values are the same, return 0 and find the smallest value if the two values have the same remainder when divided by 6
-
+program that accepts two integer values between 25 and 75 and returns true if there is a common digit in both numbers
 Sample Output:
 
 Input the first number : 12                                            
 Input the second number: 13   
+true
  */
-
 
 // import java.util.*;
 import java.util.*;
- public class index {
- public static void main(String[] args)
-    {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Input the 1st number : ");
-        int a = in.nextInt();  
-		System.out.print("Input the 2nd number: ");
-		int b = in.nextInt(); 
+
+public class index {
+     public static void main(String[] args) {
+          Scanner in = new Scanner(System.in);
+          System.out.print("Input the 1st number : ");
+          int a = in.nextInt();
+          System.out.print("Input the 2nd number: ");
+          int b = in.nextInt();
           in.close();
-		System.out.println("Result: "+result(a, b));
-    }
-	public static int result(int x, int y)
-     {  
-	if(x == y)
-		return 0;
-	    if(x % 6 == y % 6)
-		    return (x < y) ? x : y;
-	    return (x > y) ? x : y;
+          System.out.println("Result: " + result(a, b));
+     }
+
+     public static boolean result(int p, int q) {
+         
+          if (p<25 || q>75)
+		   return false;
+	   int x = p % 10;
+	   int y = q % 10;
+	   p /= 10;
+	   q /= 10;
+	   return (p == q || p == y || x == q || x == y);
      }
 }
-
-
-
-
