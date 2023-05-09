@@ -14,6 +14,8 @@ public class index {
 		int b = in.nextInt(); 
 		int divided = a / b;
 		int result = a - (divided * b);
+          in.close();
+          
 		System.out.println(result); 
      }
 
