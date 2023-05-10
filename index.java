@@ -1,9 +1,8 @@
 /*
-Write a Java program to insert a word in the middle of another string. Go to the editor
-Insert "Tutorial" in the middle of "Python 3.0", so the result will be Python Tutorial 3.0.
+Write a Java program to create another string of 4 copies of the last 3 characters of the original string. The original string length must be 3 and above. Go to the editor
 Sample Output:
 
-Python Tutorial 3.0
+3.03.03.03.0 
  */
 //import java.lang.*;
  public class index{
