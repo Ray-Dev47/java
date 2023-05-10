@@ -1,23 +1,15 @@
 /*
-Write a Java program to calculate the modules of two numbers without using any inbuilt modulus operator.
+Write a Java program to extract the first half of a even string. Go to the editor
+Test Data: Python
+Sample Output:
+Pyt
  */
-
-// import java.util.*;
-import java.util.*;
-
+//import java.lang.*;
 public class index {
      public static void main(String[] args) {
-          Scanner in = new Scanner(System.in);
-        System.out.print("Input the first number : ");
-        int a = in.nextInt();  
-		System.out.print("Input the second number: ");
-		int b = in.nextInt(); 
-		int divided = a / b;
-		int result = a - (divided * b);
-          in.close();
-          
-		System.out.println(result); 
-     }
+          String str = "Python";
+               String result = str.substring(0, 3);
+          System.out.println(result);
 
-    
+     }
 }
