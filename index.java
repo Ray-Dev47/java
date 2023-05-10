@@ -1,15 +1,22 @@
 /*
-Write a Java program to extract the first half of a even string. Go to the editor
-Test Data: Python
+Write a Java program to create a string in the form of short_string + long_string + short_string from two strings. The strings must not have the same length. Go to the editor
+Test Data: Str1 = Python
+Str2 = Tutorial
 Sample Output:
-Pyt
+
+PythonTutorialPython
  */
 //import java.lang.*;
 public class index {
      public static void main(String[] args) {
-          String str = "Python";
-               String result = str.substring(0, 3);
-          System.out.println(result);
+          String str1 = "Python";    
+          String str2 = "Tutorial"; 
+          
+          if(str1.length() >= str2.length())
+               System.out.println( str2+str1+str2);
+          else
+          System.out.println(str1+str2+str1);	
+          
 
      }
 }
