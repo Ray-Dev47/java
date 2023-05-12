@@ -1,45 +1,24 @@
 
 /*
-Write a Java program to rotate an array (length 3) of integers in the left direction. Go to the editor
+Write a Java program to get the largest value between the first and last elements of an array (length 3) of integers. Go to the editor
 Sample Output:
 
 Original Array: [20, 30, 40]                                           
-Rotated Array: [30, 40, 20]
+Larger value between first and last element: 40 
  */
 
  class index {    
      public static void main(String[] args) {    
             //Initialize array     
-            int [] arr = new int [] {20, 30, 40};     
-            //n determine the number of times an array should be rotated.    
-            int n = 2;    
-               
-            //Displays original array    
-            System.out.println("Original array: ");    
-            for (int i = 0; i < arr.length; i++) {     
-                System.out.print(arr[i] + " ");     
-            }      
-                
-            //Rotate the given array by n times toward right    
-            for(int i = 0; i < n; i++){    
-                int j, last;    
-                //Stores the last element of array    
-                last = arr[arr.length-1];    
-                
-                for(j = arr.length-1; j > 0; j--){    
-                    //Shift element of array by one    
-                    arr[j] = arr[j-1];    
-                }    
-                //Last element of array will be added to the start of array.    
-                arr[0] = last;    
-            }    
+            int [] arr =  {20, 30, 40};     
             
-            System.out.println();    
-                
-            //Displays resulting array after rotation    
-            System.out.println("Array after right rotation: ");    
-            for(int i = 0; i< arr.length; i++){    
-                System.out.print( arr[i] + " ");    
-            }    
+            int max = arr[0];
+
+            for(int i = 0; i < arr.length; i++){
+               if(arr[i] > max){
+                    max = arr[i];
+               }
+            }
+            System.out.println("Max element in the array is: " + max);
         }    
     }    
