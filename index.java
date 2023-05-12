@@ -1,57 +1,19 @@
 
 /*
- Write a Java program to create a string taking the first and last characters from two given strings. If the length of each string is 0 use "#" for missing characters. Go to the editor
-Test Data: str1 = "Python"
-str2 = " "
+Write a Java program to test if 10 appears as the first or last element of an array of integers. The array length must be broader than or equal to 2. Go to the editor
 Sample Output:
+Test Data: array = 10, -20, 0, 30, 40, 60, 20
 
-P#
+true
  */
 // import java.lang.*;
-import java.util.Scanner;
-
 public class index {
      public static void main(String[] args) {
-          Scanner sc = new Scanner(System.in);
-          System.out.println("Please enter first String");
-          String str1 = sc.nextLine();
-          System.out.println("Please enter second String");
-          String str2 = sc.nextLine();
-          int len1 = str1.length();
-          int len2 = str2.length();
-          
-          if(len1 >= 1 && len2 >= 1){
-                System.out.println(str1.substring(0, 1) + str2.substring(0, 1));
-          }
-          else if(len1 < 1 || len2 > 1){
-               System.out.println( str2.substring(0, 0) + (str2.charAt(0)+"#"));
-          } 
-          else if(len1 > 1 && len2 < 1){
-               System.out.println( str1.substring(0, 0) + (str1.charAt(0)+"#"));
-          } else{
-               System.out.println("##");
-          }
+          int[] nums = { 10, -20, 0, 30, 40, 60, 10 };
 
+          int first = nums[0];
+          int last = nums[nums.length - 1];
+          System.out.println(first == 10 && last == 10);
           
-          sc.close();
      }
 }
-
-
-
-//  thier solution
-// import java.lang.*;
-//  public class Exercise73 {
-//  public static void main(String[] args)
-//  {
-//     String str1 = "Python"; 
-// 	String str2 = ""; 
-	
-// 	int length2 = str2.length();
-// 	String result = "";
-// 	result += (str1.length() >= 1) ? str1.charAt(0) : '#';
-// 	result += (length2 >= 1) ? str2.charAt(length2-1) : '#';
-// 	System.out.println(result);
-//  }
-// }
-
