@@ -1,10 +1,10 @@
 
 /*
-Write a Java program to swap the first and last elements of an array (length must be at least 1) and create another array. Go to the editor
+Write a Java program to find the largest element between the first, last, and middle values in an array of integers (even length). Go to the editor
 Sample Output:
 
-Original Array: [20, 30, 40]                                           
-New array after swaping the first and last elements: [40, 30, 20] 
+Original Array: [20, 30, 40, 50, 67]                                   
+Largest element between first, last, and middle values: 67 
  */
 
 import java.util.Arrays;
@@ -12,12 +12,13 @@ import java.util.Arrays;
 class index {    
      public static void main(String[] args) {    
             //Initialize array     
-            int [] arr =  {20, 30, 40};
-            System.out.println("The original array is: " + Arrays.toString(arr)); 
-
-            int arrTemp = arr[0];
-            arr[0] = arr[arr.length - 1];
-            arr[arr.length - 1] = arrTemp;
-            System.out.println("New array after swaping the first and last elements: " + Arrays.toString(arr));
+            int[] array_nums = {20, 30, 40, 50, 67};
+            System.out.println("Original Array: "+Arrays.toString(array_nums)); 
+            int max_val = array_nums[0];
+            if(max_val <= array_nums[array_nums.length-1])
+                max_val = array_nums[array_nums.length-1];
+            if(max_val <= array_nums[array_nums.length/2])
+                max_val = array_nums[array_nums.length/2];
+            System.out.println("Largest element between first, last, and middle values: "+max_val);
         }    
     }    
