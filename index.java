@@ -1,24 +1,26 @@
 
 /*
-Write a Java program to find the largest element between the first, last, and middle values in an array of integers (even length). Go to the editor
+ Write a Java program to multiply the corresponding elements of two integer arrays. Go to the editor
 Sample Output:
 
-Original Array: [20, 30, 40, 50, 67]                                   
-Largest element between first, last, and middle values: 67 
+Array1: [1, 3, -5, 4]                                                                                                                    
+Array2: [1, 4, -5, -2]                                                                                                                       
+Result: 1 12 25 -8
  */
 
-import java.util.Arrays;
+// import java.util.Arrays;
 
 class index {    
      public static void main(String[] args) {    
             //Initialize array     
-            int[] array_nums = {20, 30, 40, 50, 67};
-            System.out.println("Original Array: "+Arrays.toString(array_nums)); 
-            int max_val = array_nums[0];
-            if(max_val <= array_nums[array_nums.length-1])
-                max_val = array_nums[array_nums.length-1];
-            if(max_val <= array_nums[array_nums.length/2])
-                max_val = array_nums[array_nums.length/2];
-            System.out.println("Largest element between first, last, and middle values: "+max_val);
+           int[] arr1 = {1, 3, -5, 4};
+           int[] arr2 = {1, 4, -5, -2};
+           
+           String result = " ";
+
+           for (int i = 0; i < arr1.length; i++) {
+                result += Integer.toString(arr1[i] * arr2[i]) + " , " ;            
+           }
+           System.out.println(result );
         }    
     }    
