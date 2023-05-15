@@ -1,23 +1,18 @@
 
 /*
-Write a Java program to swap the first and last elements of an array (length must be at least 1) and create another array. Go to the editor
+Write a Java program to take the last three characters from a given string. It will add the three characters at both the front and back of the string. String length must be greater than three and more. Go to the editor
+Test data: "Python" will be "honPythonhon"
 Sample Output:
 
-Original Array: [20, 30, 40]                                           
-New array after swaping the first and last elements: [40, 30, 20] 
- */
-
-import java.util.Arrays;
+honPythonhon
+*/
+// import java.util.Arrays;
 
 class index {    
      public static void main(String[] args) {    
             //Initialize array     
-            int [] arr =  {20, 30, 40};
-            System.out.println("The original array is: " + Arrays.toString(arr)); 
-
-            int arrTemp = arr[0];
-            arr[0] = arr[arr.length - 1];
-            arr[arr.length - 1] = arrTemp;
-            System.out.println("New array after swaping the first and last elements: " + Arrays.toString(arr));
+           String str = "Python";
+          String result = str.substring(3, 6); 
+           System.out.println( result + str + result) ;
         }    
     }    
