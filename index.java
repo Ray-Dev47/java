@@ -1,26 +1,18 @@
 
 /*
- Write a Java program to multiply the corresponding elements of two integer arrays. Go to the editor
+Write a Java program to take the last three characters from a given string. It will add the three characters at both the front and back of the string. String length must be greater than three and more. Go to the editor
+Test data: "Python" will be "honPythonhon"
 Sample Output:
 
-Array1: [1, 3, -5, 4]                                                                                                                    
-Array2: [1, 4, -5, -2]                                                                                                                       
-Result: 1 12 25 -8 // ans 
- */
-
+honPythonhon
+*/
 // import java.util.Arrays;
 
 class index {    
      public static void main(String[] args) {    
             //Initialize array     
-           int[] arr1 = {1, 3, -5, 4};
-           int[] arr2 = {1, 4, -5, -2};
-           
-           String result = " ";
-
-           for (int i = 0; i < arr1.length; i++) {
-                result += Integer.toString(arr1[i] * arr2[i]) + " , " ;            
-           }
-           System.out.println(result );
+           String str = "Python";
+          String result = str.substring(3, 6); 
+           System.out.println( result + str + result) ;
         }    
     }    
