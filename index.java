@@ -1,18 +1,19 @@
 
 /*
-Write a Java program to take the last three characters from a given string. It will add the three characters at both the front and back of the string. String length must be greater than three and more. Go to the editor
-Test data: "Python" will be "honPythonhon"
+Write a Java program to check if a string starts with a specified word. Go to the editor
+Sample Data: string1 = "Hello how are you?"
 Sample Output:
 
-honPythonhon
-*/
-// import java.util.Arrays;
+true
+// */
+// import java.util.*; 
+// import java.io.*; 
 
 class index {    
      public static void main(String[] args) {    
             //Initialize array     
-           String str = "Python";
-          String result = str.substring(3, 6); 
-           System.out.println( result + str + result) ;
+           String str = "How far, how you dey?";
+          
+           System.out.println(str.startsWith("How"));
         }    
     }    
