@@ -1,19 +1,26 @@
 
 /*
-Write a Java program to check if a string starts with a specified word. Go to the editor
-Sample Data: string1 = "Hello how are you?"
-Sample Output:
-
-true
+Write a Java program starting with an integer n, divide it by 2 if it is even, or multiply it by 3 and add 1 if it is odd. Repeat the process until n = 1.
 // */
-// import java.util.*; 
-// import java.io.*; 
+
+import java.util.Scanner;
 
 class index {    
      public static void main(String[] args) {    
             //Initialize array     
-           String str = "How far, how you dey?";
-          
-           System.out.println(str.startsWith("How"));
+          Scanner sc = new Scanner(System.in);
+          System.out.println("Please input integer");
+          int n = sc.nextInt();
+
+          while (n != 1) {
+			if (n % 2 == 0) {
+				n = n / 2;				
+			}
+			else {
+				n = (3 * n + 1) / 2;				
+			}
+		}
+          sc.close();
+          System.out.println(n);
         }    
     }    
