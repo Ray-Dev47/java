@@ -1,17 +1,16 @@
 
 /*
-Write a Java program to get the current system environment and system properties.
+Write a Java program to check whether a security manager has already been established for the current application or not
 */
 
 // import java.io.*;
 
 public class index {
 	public static void main(String[] args) {
-		 System.out.println("Get System Environment");
-          System.out.println(System.getenv());
+		
 
-          System.out.println("Get sys properties");
-          System.out.println(System.getProperties());
+          System.out.println("Get sys security manager");
+          System.out.println(System.getSecurityManager());  // deprecated
 
     }
 }
