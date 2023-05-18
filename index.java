@@ -1,26 +1,47 @@
 
 /*
-Write a Java program starting with an integer n, divide it by 2 if it is even, or multiply it by 3 and add 1 if it is odd. Repeat the process until n = 1.
+Write a Java program that then reads an integer and calculates the sum of its digits and writes the number of each digit of the sum in English.
 // */
 
-import java.util.Scanner;
+import java.io.*;
 
-class index {    
-     public static void main(String[] args) {    
-            //Initialize array     
-          Scanner sc = new Scanner(System.in);
-          System.out.println("Please input integer");
-          int n = sc.nextInt();
-
-          while (n != 1) {
-			if (n % 2 == 0) {
-				n = n / 2;				
+public class index {
+	public static void main(String[] args) {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			int sum = 0;
+			String str = br.readLine();
+			char[] numStr = str.toCharArray();
+			for (int i = 0; i < numStr.length; i ++) {
+				sum += numStr[i] - '0';
 			}
-			else {
-				n = (3 * n + 1) / 2;				
-			}
+			System.out.println("Original Number: "+str);
+			print_number(sum);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-          sc.close();
-          System.out.println(n);
-        }    
-    }    
+	}
+	
+	public static void print_number(int n) {
+		int x; int y; int z;
+		String[] number = {"zero","one","two","three","four","five","six","seven","eight","nine"};
+		System.out.println("Sum of the digits of the said number: "+n);
+		if (n < 10) {
+			System.out.println(number[n]);
+		}
+		else if (n < 100) {
+			x = n / 10;
+			y = n - x *10;
+			System.out.println("In English: "+number[x] + " " + number[y]);
+		}
+		else {
+			x = n / 100;
+			y = (n - x * 100) / 10;
+			z = n - x * 100 - y * 10;
+			System.out.println("In English: "+number[x] + " " + number[y] + " " + number[z]);
+		}
+		
+	}
+}
+ 
