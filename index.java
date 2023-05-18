@@ -1,25 +1,24 @@
 
 /*
-Write a Java program to measure how long code executes in nanoseconds.
+Write a Java program to count the number of even and odd elements in a given array of integers.
 */
-
-// import java.io.*;
 
 public class index {
 	public static void main(String[] args) {
-		 long startTime = System.nanoTime();
-      
-        // action to display first 10 natural numbers and then we will measure the time it takes to execute this 
-        // int i;
-        System.out.println("The first 10 ntural numbers are:\n:");
-        for(int i = 1; i < 10; i++){
-            System.out.println(i);
+		int arr[] = {1,2,4,5,6,7,8,9,11,10,20};
+        int odd = 0;
+        int even = 0;
+        
+        for (int index = 0; index < arr.length; index++) {
+            if(arr[index] % 2 == 0){
+                even++;
+            } 
+            else{
+                odd++;
+            }           
         }
-         
-        long endTime = System.nanoTime();
-        long totalTime = endTime - startTime;
-
-        System.out.println("Total time it takes to execute in nanoSeconds is: " + totalTime);
+        System.out.println("Total even numbers is: " + even);
+        System.out.println("Total odd numbers is: " + odd);
     }
 }
  
