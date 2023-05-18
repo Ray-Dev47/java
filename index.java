@@ -1,24 +1,29 @@
 
 /*
-Write a Java program to count the number of even and odd elements in a given array of integers.
+Write a Java program to test if an array of integers contains an element 10 next to 10 or an element 20 next to 20, but not both.
 */
 
+import java.util.*; 
 public class index {
 	public static void main(String[] args) {
-		int arr[] = {1,2,4,5,6,7,8,9,11,10,20};
-        int odd = 0;
-        int even = 0;
-        
-        for (int index = 0; index < arr.length; index++) {
-            if(arr[index] % 2 == 0){
-                even++;
-            } 
-            else{
-                odd++;
-            }           
-        }
-        System.out.println("Total even numbers is: " + even);
-        System.out.println("Total odd numbers is: " + odd);
+		//int[] nums = {10, 10, 2, 4, 9};
+	int[] nums = {10, 10, 2, 4, 20, 20};  
+	// int ctr_even = 0, ctr_odd = 0;
+	System.out.println("Original Array: "+Arrays.toString(nums)); 
+	    
+    boolean found1010 = false;
+    boolean found2020 = false;
+      
+    for(int i = 0; i < nums.length - 1; i++) {
+        if(nums[i] == 10 && nums[i+1] == 10)
+            found1010 = true;
+                        
+        if(nums[i] == 20 && nums[i+1] == 20)
+            found2020 = true;
+    }
+   
+	System.out.printf( String.valueOf(found1010 != found2020));	
+	System.out.printf("\n");
     }
 }
  
