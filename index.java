@@ -1,29 +1,35 @@
 
 /*
-Write a Java program to check if there is a 10 in an array of integers with a 20 somewhere later on.
+Write a Java program to check if an array of integers contains a specified number next to each other or two same numbers separated by one element.
 */
 
 
+// import java.util.*; 
+// import java.io.*; 
  public class index {
  public static void main(String[] args)
  {
-	  int[] array_nums = {10, 70, 80, 50, 20, 13, 50};
-      boolean testd = false;
+	  int[] array_nums = {10, 20, 10, 50, 20, 13, 50};
+	//int[] array_nums = {10, 10, 50, 50, 20, 13, 50};
+    //   boolean testd = false;
 	  int result=0;
 	  int x = 10;
-	  int y = 20;
-    
-    for(int i = 0; i < array_nums.length; i++) {
-        if(array_nums[i] == x)
-            testd = true;
-                    
-        if(testd && array_nums[i] == y)
-		{
+	      
+	for(int i = 0; i < array_nums.length - 1; i++) {
+        if(array_nums[i] == x && array_nums[i+1] == x)
+            {
          System.out.printf( String.valueOf(true));	
-         result = 1		 ;
+         result = 1 ;
+		}
+                  
+        if(i <= array_nums.length - 3 && array_nums[i] == x && array_nums[i+2] == x)
+           {
+         System.out.printf( String.valueOf(true));	
+         result = 1 ;
 		}
     }
-     if (result==0)                             
+	
+	 if (result==0)                             
 	   {	 
          System.out.printf( String.valueOf(false));
 	    }
