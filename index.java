@@ -1,29 +1,46 @@
 
 /*
-Write a Java program to rearrange all the elements of a given array of integers so that all the odd numbers come before all the even numbers.
+Write a Java program to create an array (length # 0) of string values. The elements will contain "0", "1", "2" … through ... n-1.
 */
 
-import java.util.*; 
+// import java.util.*; 
+import java.util.Scanner;
 
 public class index {
-    public static void main(String[] args){
- 
-    
-	int[] array_nums = {1, 7, 8, 5, 7, 13, 0, 2, 4, 9};
-	  
-	int i = 0;
-    System.out.println("Original Array: "+Arrays.toString(array_nums)); 
-    while(i < array_nums.length && array_nums[i] % 2 == 0)
-        i++;
-              
-    for(int j = i + 1; j < array_nums.length; j++) {
-        if(array_nums[j] % 2 != 0) {
-            int temp = array_nums[i];
-            array_nums[i] = array_nums[j];
-            array_nums[j] = temp;
-            i++;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("First enter the number of strings you want to enter");
+
+        // take an integer input 
+        String[] str = new String[sc.nextInt()];
+        // consuming the entered strigs from above
+        sc.nextLine();
+
+        for (int i = 0; i < str.length; i++) {
+            str[i] = sc.nextLine();
         }
-    }                                                    
-	 System.out.println("New Array: "+Arrays.toString(array_nums));
+        System.out.println("\n You enterd: ");
+        for (String string : str) {
+             System.out.println(string);            
+        }
+
+        sc.close();
+
     }
 }
+
+
+// correction
+// import java.util.*; 
+// import java.io.*; 
+//  public class index {
+//  public static void main(String[] args)
+//  {
+//     int n= 5;
+// 	String[] arr_string = new String[n];
+	
+//     for(int i = 0; i < n; i++)
+//         arr_string[i] = String.valueOf(i);                                  
+// 	 System.out.println("New Array: "+Arrays.toString(arr_string)); 
+// 	 }
+// }
