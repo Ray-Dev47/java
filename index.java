@@ -4,7 +4,6 @@ Write a Java program to rearrange all the elements of a given array of integers 
 */
 
 import java.util.*; 
-// import java.io.*; 
 
 public class index {
     public static void main(String[] args){
@@ -25,8 +24,6 @@ public class index {
             i++;
         }
     }                                                    
-  
 	 System.out.println("New Array: "+Arrays.toString(array_nums));
-
     }
 }
