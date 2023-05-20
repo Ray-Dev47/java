@@ -1,46 +1,33 @@
 
 /*
-Write a Java program to create an array (length # 0) of string values. The elements will contain "0", "1", "2" … through ... n-1.
+Write a Java program to check if there is a 10 in an array of integers with a 20 somewhere later on.
 */
 
-// import java.util.*; 
-import java.util.Scanner;
 
-public class index {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("First enter the number of strings you want to enter");
-
-        // take an integer input 
-        String[] str = new String[sc.nextInt()];
-        // consuming the entered strigs from above
-        sc.nextLine();
-
-        for (int i = 0; i < str.length; i++) {
-            str[i] = sc.nextLine();
-        }
-        System.out.println("\n You enterd: ");
-        for (String string : str) {
-             System.out.println(string);            
-        }
-
-        sc.close();
-
+ public class index {
+ public static void main(String[] args)
+ {
+	  int[] array_nums = {10, 70, 80, 50, 20, 13, 50};
+      boolean testd = false;
+	  int result=0;
+	  int x = 10;
+	  int y = 20;
+    
+    for(int i = 0; i < array_nums.length; i++) {
+        if(array_nums[i] == x)
+            testd = true;
+                    
+        if(testd && array_nums[i] == y)
+		{
+         System.out.printf( String.valueOf(true));	
+         result = 1		 ;
+		}
+    }
+     if (result==0)                             
+	   {	 
+         System.out.printf( String.valueOf(false));
+	    }
+		System.out.printf("\n");
     }
 }
 
-
-// correction
-// import java.util.*; 
-// import java.io.*; 
-//  public class index {
-//  public static void main(String[] args)
-//  {
-//     int n= 5;
-// 	String[] arr_string = new String[n];
-	
-//     for(int i = 0; i < n; i++)
-//         arr_string[i] = String.valueOf(i);                                  
-// 	 System.out.println("New Array: "+Arrays.toString(arr_string)); 
-// 	 }
-// }
