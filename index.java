@@ -1,51 +1,49 @@
 
 /*
-Write a Java program that checks if a specified number appears in every pair of adjacent integers of a given array of integers.
+Write a Java program that rotates a string by an offset (rotate from left to right.
 */
 
-
 public class index {
-    public static int[] mergeSortedArrays(int[] arr1, int[] arr2) {
-        int[] merged = new int[arr1.length + arr2.length];
-        int i = 0, j = 0, k = 0;
+    public static String rotateStrings(String str1, int offset) {
+        char[] arr1 = str1.toCharArray();
 
-        while (i < arr1.length && j < arr2.length) {
-            if (arr1[i] <= arr2[j]) {
-                merged[k] = arr1[i];
-                i++;
-            } else {
-                merged[k] = arr2[j];
-                j++;
-            }
-            k++;
+        // Adjust the offset to be within the array lengths
+        offset %= arr1.length;
+
+        // Rotate the first array
+        rotateArray(arr1, offset);
+
+        // Convert the rotated arrays back to strings
+        String rotatedStr1 = new String(arr1);
+
+        return rotatedStr1 + " ";
+    }
+
+    private static void rotateArray(char[] arr, int offset) {
+        reverse(arr, 0, offset - 1);
+        reverse(arr, offset, arr.length - 1);
+        reverse(arr, 0, arr.length - 1);
+    }
+
+    private static void reverse(char[] arr, int start, int end) {
+        while (start < end) {
+            char temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
         }
-
-        while (i < arr1.length) {
-            merged[k] = arr1[i];
-            i++;
-            k++;
-        }
-
-        while (j < arr2.length) {
-            merged[k] = arr2[j];
-            j++;
-            k++;
-        }
-
-        return merged;
     }
 
     public static void main(String[] args) {
-        int[] arr1 = {1, 3, 5, 7};
-        int[] arr2 = {2, 4, 6, 8};
-        int[] mergedArray = mergeSortedArrays(arr1, arr2);
+        String str1 = "abcde";
+        int offset = 2;
 
-        System.out.println("Merged Array:");
-        for (int num : mergedArray) {
-            System.out.print(num + " ");
-        }
+        String rotatedStrings = rotateStrings(str1, offset);
+        System.out.println("Rotated Strings: " + rotatedStrings);
     }
 }
+
 
 
 
