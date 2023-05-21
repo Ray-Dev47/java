@@ -1,49 +1,50 @@
 
 /*
-Write a Java program that rotates a string by an offset (rotate from left to right.
+Write a Java program to check if a positive number is a palindrome or not.
+Input a positive integer: 151
+Is 151 is a palindrome number?
+true
 */
 
+import java.util.Scanner;
+
 public class index {
-    public static String rotateStrings(String str1, int offset) {
-        char[] arr1 = str1.toCharArray();
 
-        // Adjust the offset to be within the array lengths
-        offset %= arr1.length;
-
-        // Rotate the first array
-        rotateArray(arr1, offset);
-
-        // Convert the rotated arrays back to strings
-        String rotatedStr1 = new String(arr1);
-
-        return rotatedStr1 + " ";
+    public static void main(String args[]){
+       
+        System.out.println("Please Enter a number : ");
+        Scanner sc = new Scanner(System.in);
+        int palindrome = sc.nextInt();
+        sc.close();
+       
+        if(isPalindrome(palindrome)){
+            System.out.println("Number : " + palindrome
+                   + " is a palindrome");
+        }else{
+            System.out.println("Number : " + palindrome
+                   + " is not a palindrome");
+        }      
+       
     }
+ 
+    /*
+     * Java method to check if a number is palindrome or not
+     */
+    public static boolean isPalindrome(int number) {
+        int palindrome = number; // copied number into variable
+        int reverse = 0;
 
-    private static void rotateArray(char[] arr, int offset) {
-        reverse(arr, 0, offset - 1);
-        reverse(arr, offset, arr.length - 1);
-        reverse(arr, 0, arr.length - 1);
-    }
-
-    private static void reverse(char[] arr, int start, int end) {
-        while (start < end) {
-            char temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-            start++;
-            end--;
+        while (palindrome != 0) {
+            int remainder = palindrome % 10;
+            reverse = reverse * 10 + remainder;
+            palindrome = palindrome / 10;
         }
-    }
 
-    public static void main(String[] args) {
-        String str1 = "abcde";
-        int offset = 2;
-
-        String rotatedStrings = rotateStrings(str1, offset);
-        System.out.println("Rotated Strings: " + rotatedStrings);
+        // if original and the reverse of number is equal means
+        // number is palindrome in Java
+        if (number == reverse) {
+            return true;
+        }
+        return false;
     }
 }
-
-
-
-
