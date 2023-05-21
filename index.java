@@ -1,29 +1,29 @@
 
 /*
-Write a Java program to test if an array of integers contains an element 10 next to 10 or an element 20 next to 20, but not both.
+Write a Java program to rearrange all the elements of a given array of integers so that all the odd numbers come before all the even numbers.
 */
 
 import java.util.*; 
+
 public class index {
-	public static void main(String[] args) {
-		//int[] nums = {10, 10, 2, 4, 9};
-	int[] nums = {10, 10, 2, 4, 20, 20};  
-	// int ctr_even = 0, ctr_odd = 0;
-	System.out.println("Original Array: "+Arrays.toString(nums)); 
-	    
-    boolean found1010 = false;
-    boolean found2020 = false;
-      
-    for(int i = 0; i < nums.length - 1; i++) {
-        if(nums[i] == 10 && nums[i+1] == 10)
-            found1010 = true;
-                        
-        if(nums[i] == 20 && nums[i+1] == 20)
-            found2020 = true;
-    }
-   
-	System.out.printf( String.valueOf(found1010 != found2020));	
-	System.out.printf("\n");
+    public static void main(String[] args){
+ 
+    
+	int[] array_nums = {1, 7, 8, 5, 7, 13, 0, 2, 4, 9};
+	  
+	int i = 0;
+    System.out.println("Original Array: "+Arrays.toString(array_nums)); 
+    while(i < array_nums.length && array_nums[i] % 2 == 0)
+        i++;
+              
+    for(int j = i + 1; j < array_nums.length; j++) {
+        if(array_nums[j] % 2 != 0) {
+            int temp = array_nums[i];
+            array_nums[i] = array_nums[j];
+            array_nums[j] = temp;
+            i++;
+        }
+    }                                                    
+	 System.out.println("New Array: "+Arrays.toString(array_nums));
     }
 }
- 
