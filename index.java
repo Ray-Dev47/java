@@ -1,29 +1,33 @@
 
 /*
-Write a Java program to rearrange all the elements of a given array of integers so that all the odd numbers come before all the even numbers.
+Write a Java program to check if there is a 10 in an array of integers with a 20 somewhere later on.
 */
 
-import java.util.*; 
 
-public class index {
-    public static void main(String[] args){
- 
+ public class index {
+ public static void main(String[] args)
+ {
+	  int[] array_nums = {10, 70, 80, 50, 20, 13, 50};
+      boolean testd = false;
+	  int result=0;
+	  int x = 10;
+	  int y = 20;
     
-	int[] array_nums = {1, 7, 8, 5, 7, 13, 0, 2, 4, 9};
-	  
-	int i = 0;
-    System.out.println("Original Array: "+Arrays.toString(array_nums)); 
-    while(i < array_nums.length && array_nums[i] % 2 == 0)
-        i++;
-              
-    for(int j = i + 1; j < array_nums.length; j++) {
-        if(array_nums[j] % 2 != 0) {
-            int temp = array_nums[i];
-            array_nums[i] = array_nums[j];
-            array_nums[j] = temp;
-            i++;
-        }
-    }                                                    
-	 System.out.println("New Array: "+Arrays.toString(array_nums));
+    for(int i = 0; i < array_nums.length; i++) {
+        if(array_nums[i] == x)
+            testd = true;
+                    
+        if(testd && array_nums[i] == y)
+		{
+         System.out.printf( String.valueOf(true));	
+         result = 1		 ;
+		}
+    }
+     if (result==0)                             
+	   {	 
+         System.out.printf( String.valueOf(false));
+	    }
+		System.out.printf("\n");
     }
 }
+
