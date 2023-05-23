@@ -1,32 +1,38 @@
 
 /*
-Write a Java program to reverse a linked list.
-Example: For linked list 20->40->60->80, the reversed linked list is 80->60->40->20
+Write a Java program to find a contiguous subarray with the largest sum from a given array of integers.
+Note: In computer science, the maximum subarray problem is the task of finding the contiguous subarray within a one-dimensional array of numbers which has the largest sum. For example, for the sequence of values −2, 1, −3, 4, −1, 2, 1, −5, 4; the contiguous subarray with the largest sum is 4, −1, 2, 1, with sum 6. The subarray should contain one integer at least
 */
 
 
-import java.util.LinkedList;
 public class index {
     public static void main(String[] args) {
-            LinkedList <Integer> nums = new LinkedList<Integer>();
-            nums.add(20);  
-            nums.add(40);  
-            nums.add(60);  
-            nums.add(80);  
-            System.out.println(nums);
-
-           nums = reversedNums(nums);
-           System.out.println("Reversed nums: " + nums);
-        }
-        public static LinkedList<Integer> reversedNums(LinkedList<Integer>Llist){
-            for (int i = 0; i < Llist.size() / 2; i++) {
-                Integer temp = Llist.get(i);
-                Llist.set(i, Llist.get(Llist.size() - i - 1));
-                Llist.set(Llist.size() - i - 1, temp);
+          int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+          System.out.print(max_SubArray(nums)); 
+    }
+     public static int max_SubArray(int[] nums) {
+            if (nums.length < 1) {
+                return 0;
             }
-     
-            // Return the reversed arraylist
-            return Llist;
+            int max = nums[0];
+            int max_End = 0;
+            int begin = 0;
+            int end = 0;
+            int sum = 0;
+            while (end < nums.length) {
+                sum += nums[end];
+                if (sum < 0) {
+                    sum = 0;
+                    begin = end + 1;
+                } else {
+                    if (sum > max) {
+                        max = sum;
+                        max_End = end;
+                    }
+                }
+                end++;
+            }
+            return max;
         }
     }
     
