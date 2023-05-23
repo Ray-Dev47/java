@@ -1,29 +1,48 @@
 
 /*
-Write a Java program to find the subarray with smallest sum from a given array of integers.
+Write a Java program to find the index of a value in a sorted array. If the value does not find return the index where it would be if it were inserted in order.
+Example:
+[1, 2, 4, 5, 6] 5(target) -> 3(index)
+[1, 2, 4, 5, 6] 0(target) -> 0(index)
+[1, 2, 4, 5, 6] 7(target) -> 5(index)
 */
 
 
-import java.util.*;
+// import java.util.*;
 public class index {
 public static void main(String[] args) {
-     ArrayList<Integer> nums = new ArrayList<Integer>();
-      nums.add(-2);
-      nums.add(1);
-      nums.add(-3);
-      nums.add(4);
-      System.out.print(min_SubArray(nums)); 
+      int[] nums = {1,2,4,5,6};
+      int target;
+       target = 5;
+     // target = 0;
+     // target = 7;
+      System.out.print(searchInsert(nums, target)); 
 }
- public static int min_SubArray(ArrayList<Integer> nums) { 
-   int[] nums1 = new int[nums.size()];
-        nums1[0] = nums.get(0);
-        int min = nums1[0];
-        for (int i = 1; i < nums.size(); ++i) {
-            nums1[i] = Math.min(nums.get(i), nums.get(i) + nums1[i - 1]);
-            min = Math.min(min, nums1[i]);
+  public static int searchInsert(int[] nums1, int target) {
+        if (nums1 == null || nums1.length == 0) {
+            return 0;
         }
-        return min;
- }
-}
+        int start = 0;
+        int end = nums1.length - 1;
+        int mid = start + (end - start)/2;
 
-    
+        while (start + 1 < end) {
+            mid = start + (end - start)/2;
+            if (nums1[mid] == target) {
+                return mid;
+            } else if (nums1[mid] > target) {
+                end = mid;
+            } else {
+                start = mid;
+            }
+        }
+        
+        if (nums1[start] >= target) {
+            return start;
+        } else if (nums1[start] < target && target <= nums1[end]) {
+            return end;
+        } else {
+            return end + 1;
+        }
+    }
+}
