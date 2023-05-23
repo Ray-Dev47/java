@@ -1,6 +1,6 @@
 
 /*
-Write a Java program to check if an array of integers contains a specified number next to each other or two same numbers separated by one element.
+Write a Java program to check if the value 20 appears three times and no 20's are next to each other in the array of integers.
 */
 
 
@@ -9,31 +9,29 @@ Write a Java program to check if an array of integers contains a specified numbe
  public class index {
  public static void main(String[] args)
  {
-	  int[] array_nums = {10, 20, 10, 50, 20, 13, 50};
-	//int[] array_nums = {10, 10, 50, 50, 20, 13, 50};
-    //   boolean testd = false;
-	  int result=0;
-	  int x = 10;
-	      
-	for(int i = 0; i < array_nums.length - 1; i++) {
-        if(array_nums[i] == x && array_nums[i+1] == x)
-            {
-         System.out.printf( String.valueOf(true));	
-         result = 1 ;
-		}
-                  
-        if(i <= array_nums.length - 3 && array_nums[i] == x && array_nums[i+2] == x)
-           {
-         System.out.printf( String.valueOf(true));	
-         result = 1 ;
-		}
+	int[] array_nums = {10, 20, 10, 20, 40, 13, 20};
+		
+	int count = 0, result =0;
+    
+    if(array_nums.length >= 1 && array_nums[0] == 20)
+        count++;
+
+    for(int i = 1; i < array_nums.length; i++) {
+        if(array_nums[i - 1] == 20 && array_nums[i] == 20)
+		{
+         System.out.printf( String.valueOf(false));	
+         result = 1;
+		}                   
+        if(array_nums[i] == 20)
+            count++;
     }
-	
-	 if (result==0)                             
-	   {	 
-         System.out.printf( String.valueOf(false));
-	    }
-		System.out.printf("\n");
+                                          
+    if (result==0)
+ 	  {
+     	 System.out.printf( String.valueOf(count == 3));	         
+	  }	
+	  System.out.printf("\n");	
     }
 }
+
 
