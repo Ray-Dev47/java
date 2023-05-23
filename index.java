@@ -7,42 +7,23 @@ Example:
 [1, 2, 4, 5, 6] 7(target) -> 5(index)
 */
 
-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 // import java.util.*;
 public class index {
+    static int[] arr = {1, 2, 4, 5, 6};
 public static void main(String[] args) {
-      int[] nums = {1,2,4,5,6};
-      int target;
-       target = 5;
-     // target = 0;
-     // target = 7;
-      System.out.print(searchInsert(nums, target)); 
-}
-  public static int searchInsert(int[] nums1, int target) {
-        if (nums1 == null || nums1.length == 0) {
-            return 0;
-        }
-        int start = 0;
-        int end = nums1.length - 1;
-        int mid = start + (end - start)/2;
-
-        while (start + 1 < end) {
-            mid = start + (end - start)/2;
-            if (nums1[mid] == target) {
-                return mid;
-            } else if (nums1[mid] > target) {
-                end = mid;
-            } else {
-                start = mid;
-            }
-        }
+        List <Integer> sortedArr = new ArrayList<Integer>();
         
-        if (nums1[start] >= target) {
-            return start;
-        } else if (nums1[start] < target && target <= nums1[end]) {
-            return end;
-        } else {
-            return end + 1;
+        for(int integer : arr){
+            sortedArr.add(integer);
         }
+
+        Collections.sort(sortedArr);
+        int index = sortedArr.size() / 2;
+        
+        // Print median with its index
+        System.out.println("Median is: " + sortedArr.get(index) + " at index" + index);
     }
 }
