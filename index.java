@@ -1,39 +1,29 @@
 
 /*
-Write a Java program to find a contiguous subarray with the largest sum from a given array of integers.
-Note: In computer science, the maximum subarray problem is the task of finding the contiguous subarray within a one-dimensional array of numbers which has the largest sum. For example, for the sequence of values −2, 1, −3, 4, −1, 2, 1, −5, 4; the contiguous subarray with the largest sum is 4, −1, 2, 1, with sum 6. The subarray should contain one integer at least
+Write a Java program to find the subarray with smallest sum from a given array of integers.
 */
 
 
+import java.util.*;
 public class index {
-    public static void main(String[] args) {
-          int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-          System.out.print(max_SubArray(nums)); 
-    }
-     public static int max_SubArray(int[] nums) {
-            if (nums.length < 1) {
-                return 0;
-            }
-            int max = nums[0];
-            int max_End = 0;
-            int begin = 0;
-            int end = 0;
-            int sum = 0;
-            while (end < nums.length) {
-                sum += nums[end];
-                if (sum < 0) {
-                    sum = 0;
-                    begin = end + 1;
-                } else {
-                    if (sum > max) {
-                        max = sum;
-                        max_End = end;
-                    }
-                }
-                end++;
-            }
-            return max;
+public static void main(String[] args) {
+     ArrayList<Integer> nums = new ArrayList<Integer>();
+      nums.add(-2);
+      nums.add(1);
+      nums.add(-3);
+      nums.add(4);
+      System.out.print(min_SubArray(nums)); 
+}
+ public static int min_SubArray(ArrayList<Integer> nums) { 
+   int[] nums1 = new int[nums.size()];
+        nums1[0] = nums.get(0);
+        int min = nums1[0];
+        for (int i = 1; i < nums.size(); ++i) {
+            nums1[i] = Math.min(nums.get(i), nums.get(i) + nums1[i - 1]);
+            min = Math.min(min, nums1[i]);
         }
-    }
-    
+        return min;
+ }
+}
+
     
