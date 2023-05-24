@@ -4,29 +4,48 @@ Write a Java program that checks if a specified number appears in every pair of 
 */
 
 
-// import java.util.*; 
-// import java.io.*; 
- public class index {
- public static void main(String[] args)
- {
-	int[] array_nums = {10, 20, 10, 20, 40, 20, 50};
-	int result = 0;	
-	int x = 20;
-	for(int i = 0; i < array_nums.length - 1; i++) {
-        if(array_nums[i] != x && array_nums[i + 1] != x)
-		{
-                                result = 1;	
-		}        
-    }                                   
-    if (result==0)
- 	  {
-     	 System.out.printf( String.valueOf(true));	         
-	  }
- else
-	   	  {
-     	 System.out.printf( String.valueOf(false));	         
-	  }		
+public class index {
+    public static int[] mergeSortedArrays(int[] arr1, int[] arr2) {
+        int[] merged = new int[arr1.length + arr2.length];
+        int i = 0, j = 0, k = 0;
+
+        while (i < arr1.length && j < arr2.length) {
+            if (arr1[i] <= arr2[j]) {
+                merged[k] = arr1[i];
+                i++;
+            } else {
+                merged[k] = arr2[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < arr1.length) {
+            merged[k] = arr1[i];
+            i++;
+            k++;
+        }
+
+        while (j < arr2.length) {
+            merged[k] = arr2[j];
+            j++;
+            k++;
+        }
+
+        return merged;
+    }
+
+    public static void main(String[] args) {
+        int[] arr1 = {1, 3, 5, 7};
+        int[] arr2 = {2, 4, 6, 8};
+        int[] mergedArray = mergeSortedArrays(arr1, arr2);
+
+        System.out.println("Merged Array:");
+        for (int num : mergedArray) {
+            System.out.print(num + " ");
+        }
     }
 }
+
 
 
