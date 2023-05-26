@@ -1,49 +1,21 @@
 
 /*
-Write a Java program that rotates a string by an offset (rotate from left to right.
+Write a Java program that iterates integers from 1 to 100. For multiples of three print "Fizz" instead of the number and print "Buzz" for five. When the number is divided by three and five, print "fizz buzz"
 */
+    public class index {
+    
+        public static void main(String args[]) {
 
-public class index {
-    public static String rotateStrings(String str1, int offset) {
-        char[] arr1 = str1.toCharArray();
-
-        // Adjust the offset to be within the array lengths
-        offset %= arr1.length;
-
-        // Rotate the first array
-        rotateArray(arr1, offset);
-
-        // Convert the rotated arrays back to strings
-        String rotatedStr1 = new String(arr1);
-
-        return rotatedStr1 + " ";
-    }
-
-    private static void rotateArray(char[] arr, int offset) {
-        reverse(arr, 0, offset - 1);
-        reverse(arr, offset, arr.length - 1);
-        reverse(arr, 0, arr.length - 1);
-    }
-
-    private static void reverse(char[] arr, int start, int end) {
-        while (start < end) {
-            char temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-            start++;
-            end--;
+                for (int i = 0; i <= 100; i++) {
+                    if(i % 3 == 0){
+                        System.out.println(i +  " Fizz divisible by 3");
+                    } else if(i % 5 == 0){
+                        System.out.println( i + " Buzz divisible by 5");
+                    } else if (i % 3 == 0 &&  i % 5 == 0 ){
+                        System.out.println(i + " Fizz buxx divisible by 3 and 5");
+                    }else{
+                        System.out.println(i + " Other are not divisible");
+                    }
+                }
         }
     }
-
-    public static void main(String[] args) {
-        String str1 = "abcde";
-        int offset = 2;
-
-        String rotatedStrings = rotateStrings(str1, offset);
-        System.out.println("Rotated Strings: " + rotatedStrings);
-    }
-}
-
-
-
-
