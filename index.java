@@ -1,50 +1,29 @@
 
 /*
-Write a Java program to get the first occurrence (Position starts from 0.) of a string within a given string.
+Write a Java program to get the first occurrence (Position starts from 0.) of an element of a given array.
 */
 
-    public class index {
-    
-        public static void main(String args[]) {
-            String name = "pythonpy";
-            System.out.println(name.indexOf("py"));         
-        }
-    }
 
 
-// correction
 // import java.util.Scanner;
-// public class Main {
-// public static void main(String[] args) {
-//    		String s = "Python";
-//    		//String t = "Py";
-//    		  String t = "yt";
-//    		// String t = "ab";   		
-//    System.out.printf(String.valueOf(strStr(s, t)));
-// 		  }     
-// public static int strStr(String source, String target) {
-//         if (source == null || target == null) {
-//             return -1;
-//         }
-//         if ("".equals(target) || source.equals(target)) {
-//             return 0;
-//         }
-//         int i = 0;
-//         int last = source.length() - target.length() + 1;
-//         while (i < last) {
-//             if (source.charAt(i) == target.charAt(0)) {
-//                 boolean equal = true;
-//                 for (int j = 0; j < target.length() && equal; ++j) {
-//                     if (source.charAt(i + j) != target.charAt(j)) {
-//                         equal = false;
-//                     }
-//                 }
-//                 if (equal) {
-//                     return i;
-//                 }
-//             }
-//             ++i;
-//         }
-//         return -1;
-//     }
-// }
+public class index {
+public static void main(String[] args) {
+    int nums[] = {2, 4, 6, 7, 8};
+    int target = 7;
+        int lower = 0;
+        int upper = nums.length - 1;
+        int index = -1;
+        while (lower <= upper) {
+            int mid = (lower + upper) >> 1;
+            if (nums[mid] == target) {
+                index = mid;
+            }
+            if (nums[mid] >= target) {
+                upper = mid - 1;
+            } else {
+                lower = mid + 1;
+            }
+        }
+        System.out.print("Position of "+target +" is "+index);
+    }
+}
