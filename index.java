@@ -1,41 +1,64 @@
 /*
-Write a Java program to check if a given string has all distinct characters.
-Sample Output: Original String : xyyz
-String has all unique characters: false
+Write a Java program to merge the two sorted lists.
+Sample Output:
+Merge Two Sorted ListsT:
+1 2 3 7 9 13 40
 */
 
 // import java.util.Arrays;
-public  class index {
-    /**
-     * @param s: The first string
-     * @param b: The second string
-     * @return true or false
-     */
-   public static boolean anagram_test(String str1, String str2) {
-        if (str1 == null || str2 == null) {
-            return false;
-        } else if (str1.length() != str2.length()) {
-            return false;
-        } else if (str1.length() == 0 && str2.length() == 0) {
-            return true;
+public class index {
+    public static void main(String[] args) {
+        ListNode list1 = new ListNode(1);
+        list1.next = new ListNode(3);
+        list1.next.next = new ListNode(7);
+        list1.next.next.next = new ListNode(9);
+        list1.next.next.next.next = new ListNode(13);
+        ListNode list2 = new ListNode(2);
+        list2.next = new ListNode(40);
+        ListNode head = mergeTwoLists(list1, list2);
+		System.out.print("Merge Two Sorted ListsT:\n");
+        while (head != null) {
+            System.out.print(head.val + " ");
+            head = head.next;
         }
-        int[] count = new int[256];
-        for (int i = 0; i < str1.length(); i++) {
-            count[str1.charAt(i)]++;
-            count[str2.charAt(i)]--;
-        }
-        for (int num : count) {
-            if (num != 0) {
-                return false;
+    }
+
+    public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        ListNode head = new ListNode(0);
+        ListNode mlist = head;
+        while (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
+                mlist.next = new ListNode(list1.val);
+                mlist = mlist.next;
+                list1 = list1.next;
+            } else {
+                mlist.next = new ListNode(list2.val);
+                mlist = mlist.next;
+                list2 = list2.next;
             }
         }
-        return true;
+        while (list1 != null) {
+            mlist.next = new ListNode(list1.val);
+            mlist = mlist.next;
+            list1 = list1.next;
+        }
+        while (list2 != null) {
+            mlist.next = new ListNode(list2.val);
+            mlist = mlist.next;
+            list2 = list2.next;
+        }
+
+        head = head.next;
+        return head;
     }
-    public static void main(String[] args) {
-		String str1 = "wxyz";
-		String str2 = "zyxw";
-		System.out.println("String-1 : "+str1);
-		System.out.println("String-2 : "+str2);
-		System.out.println("Check if two given strings are anagrams or not?: "+anagram_test(str1,str2));
-	}		
+}
+
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int val) {
+        this.val = val;
+        this.next = null;
+    }
 }
