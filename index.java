@@ -1,51 +1,32 @@
 
 /*
-Write a Java program that searches for a value in an m x n matrix.
+Write a Java program to reverse a linked list.
+Example: For linked list 20->40->60->80, the reversed linked list is 80->60->40->20
 */
 
 
-
+import java.util.LinkedList;
 public class index {
     public static void main(String[] args) {
-     // int target = 5;
-      int target = 0;
-      int[][] matrix = new int[3][3];
-            for (int row = 0; row < 3; row ++)
-                for (int col = 0; col < 3; col++)
-                    matrix[row][col] = (1 + row * 3 + col);
-    
-            for (int row = 0; row < 3; row ++)
-            {
-                for (int col = 0; col < 3; col++)
-                  {
-                    System.out.print(matrix[row][col]+" ");
-                    if (col == 2)
-                    System.out.println();
-                  }
-            }
-          System.out.print(Boolean.toString(searchMatrix(matrix, target))); 
+            LinkedList <Integer> nums = new LinkedList<Integer>();
+            nums.add(20);  
+            nums.add(40);  
+            nums.add(60);  
+            nums.add(80);  
+            System.out.println(nums);
+
+           nums = reversedNums(nums);
+           System.out.println("Reversed nums: " + nums);
         }
-      public static boolean searchMatrix(int[][] matrix, int target) {
-            if (matrix.length == 0 || matrix[0].length == 0) {
-                return false;
+        public static LinkedList<Integer> reversedNums(LinkedList<Integer>Llist){
+            for (int i = 0; i < Llist.size() / 2; i++) {
+                Integer temp = Llist.get(i);
+                Llist.set(i, Llist.get(Llist.size() - i - 1));
+                Llist.set(Llist.size() - i - 1, temp);
             }
-            int m = matrix.length;
-            int n = matrix[0].length;
-            int lower = 0;
-            int higher = m * n - 1;
-            while (lower <= higher) {
-                int mid = (lower + higher) >> 1;
-                int val = matrix[mid / n][mid % n];
-                if (val == target) {
-                    return true;
-                }
-                if (val < target) {
-                    lower = mid + 1;
-                } else {
-                    higher = mid - 1;
-                }
-            }
-            return false;
+     
+            // Return the reversed arraylist
+            return Llist;
         }
     }
     
