@@ -1,60 +1,30 @@
 /*
-Write a Java program to find the longest words in a dictionary.
-Example-1:
-{
-"cat",
-"flag",
-"green",
-"country",
-"w3resource"
-}
-Result: "w3resource"
-Example-2:
-{
-"cat",
-"dog",
-"red",
-"is",
-"am"
-}
-Result: "cat", "dog", "red"
+Write a Java program to check if a given string has all distinct characters.
+Sample Output: Original String : xyyz
+String has all unique characters: false
 */
 
 // import java.util.Arrays;
-
-// import java.util.HashSet;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class index {
+    boolean uniqueChar(String str){
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = i + 1; j < str.length(); j++) {
+                 if(str.charAt(i) == str.charAt(j)){
+                    return false;
+                 }
+            }
+            
+        }
+        return true;
+    }
     public static void main(String[] args) {
-        List<String> wordsList = Arrays.asList(
-            "cat",
-            "flag",
-            "green",
-            "country",
-            "w3resource");
+       index obj = new index();
+       String words = "aeioue";
 
-int maxLength = Integer.MIN_VALUE;
-
-List<String> largestStrings = new ArrayList<>();
-for (String s : wordsList) {
-    if (s.length() > maxLength) {
-        maxLength = s.length();
-        largestStrings.clear();
-        largestStrings.add(s);
-    } else if (s.length() == maxLength) {
-        largestStrings.add(s);
-    }
-}
-
-if (largestStrings.size() > 1) {
-    System.out.println("More than one longest word");
-    System.out.println(largestStrings);
-} else {
-    System.out.println(largestStrings.get(0) + " is the longest word");
-}
-    }
+       if(obj.uniqueChar(words)){
+           System.out.println("String: " + words + " has unique characters");
+       }else{
+        System.out.println("String: " + words + " has duplicate characters");
+       }
+   }
 }
