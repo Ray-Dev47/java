@@ -1,27 +1,77 @@
 /*
-Write a Java program to remove all occurrences of a specified value in a given array of integers. Return the updated array length.
+Write a Java program to remove the nth element from the end of a given list.
 Sample Output:
-Original array: [1, 4, 6, 7, 6, 2]
-The length of the new array is: 4, here we are removing 6
+Original node:
+1 2 3 4 5
+After removing 2nd element from end:
+1 2 3 5
 */
 
-import java.util.Arrays;
-public class index {
-     public static int[] removeOccurence(int[] arr, int key){
-        int idx = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if(arr[i] != key){
-                arr[idx++] = arr[i];
-            }        
-        }
-        return Arrays.copyOf(arr, idx);
-     }
-    public static void main(String[] args) {
-        int array[] = {1, 4, 6, 7, 6, 2};
-        int key = 6;
-        array = removeOccurence(array, key);
-        System.out.println(Arrays.toString(array)); // [1, 4, 7, 2]
-        System.out.println("The length of the new array is: " + array.length);
-    }
+// import java.util.Arrays;
+// Java program to remove an element
+// from a specific index from an array
 
+import java.util.Arrays;
+
+class index {
+
+	// Function to remove the element
+	public static int[] removeTheElement(int[] arr, int index)
+	{
+
+		// If the array is empty
+		// or the index is not in array range
+		// return the original array
+		if (arr == null || index < 0
+			|| index >= arr.length) {
+
+			return arr;
+		}
+
+		// Create another array of size one less
+		int[] anotherArray = new int[arr.length - 1];
+
+		// Copy the elements except the index
+		// from original array to the other array
+		for (int i = 0, k = 0; i < arr.length; i++) {
+
+			// if the index is
+			// the removal element index
+			if (i == index) {
+				continue;
+			}
+
+			// if the index is not
+			// the removal element index
+			anotherArray[k++] = arr[i];
+		}
+
+		// return the resultant array
+		return anotherArray;
+	}
+
+	// Driver Code
+	public static void main(String[] args)
+	{
+
+		// Get the array
+		int[] arr = { 1, 2, 3, 4, 5 };
+
+		// Print the resultant array
+		System.out.println("Original Array: "
+						+ Arrays.toString(arr));
+
+		// Get the specific index
+		int index = 2;
+
+		// Print the index
+		System.out.println("Index to be removed: " + index);
+
+		// Remove the element
+		arr = removeTheElement(arr, index);
+
+		// Print the resultant array
+		System.out.println("Resultant Array: "
+						+ Arrays.toString(arr));
+	}
 }
