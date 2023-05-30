@@ -1,64 +1,26 @@
 /*
-Write a Java program to merge the two sorted lists.
+Write a Java program to remove all occurrences of a specified value in a given array of integers. Return the updated array length.
 Sample Output:
-Merge Two Sorted ListsT:
-1 2 3 7 9 13 40
+Original array: [1, 4, 6, 7, 6, 2]
+The length of the new array is: 4
 */
 
-// import java.util.Arrays;
+import java.util.Arrays;
 public class index {
+     public static int[] removeOccurence(int[] arr, int key){
+        int idx = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] != key){
+                arr[idx++] = arr[i];
+            }        
+        }
+        return Arrays.copyOf(arr, idx);
+     }
     public static void main(String[] args) {
-        ListNode list1 = new ListNode(1);
-        list1.next = new ListNode(3);
-        list1.next.next = new ListNode(7);
-        list1.next.next.next = new ListNode(9);
-        list1.next.next.next.next = new ListNode(13);
-        ListNode list2 = new ListNode(2);
-        list2.next = new ListNode(40);
-        ListNode head = mergeTwoLists(list1, list2);
-		System.out.print("Merge Two Sorted ListsT:\n");
-        while (head != null) {
-            System.out.print(head.val + " ");
-            head = head.next;
-        }
+        int array[] = {1, 4, 6, 7, 6, 2};
+        int key = 6;
+        array = removeOccurence(array, key);
+        System.out.println(Arrays.toString(array)); // [1, 4, 7, 2]
     }
 
-    public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        ListNode head = new ListNode(0);
-        ListNode mlist = head;
-        while (list1 != null && list2 != null) {
-            if (list1.val < list2.val) {
-                mlist.next = new ListNode(list1.val);
-                mlist = mlist.next;
-                list1 = list1.next;
-            } else {
-                mlist.next = new ListNode(list2.val);
-                mlist = mlist.next;
-                list2 = list2.next;
-            }
-        }
-        while (list1 != null) {
-            mlist.next = new ListNode(list1.val);
-            mlist = mlist.next;
-            list1 = list1.next;
-        }
-        while (list2 != null) {
-            mlist.next = new ListNode(list2.val);
-            mlist = mlist.next;
-            list2 = list2.next;
-        }
-
-        head = head.next;
-        return head;
-    }
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int val) {
-        this.val = val;
-        this.next = null;
-    }
 }
