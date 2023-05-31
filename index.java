@@ -1,39 +1,29 @@
 
 /*
-Write a Java program to find a contiguous subarray with the largest sum from a given array of integers.
-Note: In computer science, the maximum subarray problem is the task of finding the contiguous subarray within a one-dimensional array of numbers which has the largest sum. For example, for the sequence of values −2, 1, −3, 4, −1, 2, 1, −5, 4; the contiguous subarray with the largest sum is 4, −1, 2, 1, with sum 6. The subarray should contain one integer at least
+Write a Java program to find the index of a value in a sorted array. If the value does not find return the index where it would be if it were inserted in order.
+Example:
+[1, 2, 4, 5, 6] 5(target) -> 3(index)
+[1, 2, 4, 5, 6] 0(target) -> 0(index)
+[1, 2, 4, 5, 6] 7(target) -> 5(index)
 */
 
-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+// import java.util.*;
 public class index {
-    public static void main(String[] args) {
-          int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-          System.out.print(max_SubArray(nums)); 
-    }
-     public static int max_SubArray(int[] nums) {
-            if (nums.length < 1) {
-                return 0;
-            }
-            int max = nums[0];
-            int max_End = 0;
-            int begin = 0;
-            int end = 0;
-            int sum = 0;
-            while (end < nums.length) {
-                sum += nums[end];
-                if (sum < 0) {
-                    sum = 0;
-                    begin = end + 1;
-                } else {
-                    if (sum > max) {
-                        max = sum;
-                        max_End = end;
-                    }
-                }
-                end++;
-            }
-            return max;
+    static int[] arr = {1, 2, 4, 5, 6};
+public static void main(String[] args) {
+        List <Integer> sortedArr = new ArrayList<Integer>();
+        
+        for(int integer : arr){
+            sortedArr.add(integer);
         }
+
+        Collections.sort(sortedArr);
+        int index = sortedArr.size() / 2;
+        
+        // Print median with its index
+        System.out.println("Median is: " + sortedArr.get(index) + " at index" + index);
     }
-    
-    
+}
