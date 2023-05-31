@@ -1,29 +1,31 @@
 
 /*
-Write a Java program to find the index of a value in a sorted array. If the value does not find return the index where it would be if it were inserted in order.
-Example:
-[1, 2, 4, 5, 6] 5(target) -> 3(index)
-[1, 2, 4, 5, 6] 0(target) -> 0(index)
-[1, 2, 4, 5, 6] 7(target) -> 5(index)
+Write a Java program to find a number that appears only once in a given array of integers. All numbers occur twice.
+Source Array : [10, 20, 10, 20, 30, 40, 40, 30, 50] 50 appears only once
 */
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-// import java.util.*;
-public class index {
-    static int[] arr = {1, 2, 4, 5, 6};
-public static void main(String[] args) {
-        List <Integer> sortedArr = new ArrayList<Integer>();
-        
-        for(int integer : arr){
-            sortedArr.add(integer);
-        }
 
-        Collections.sort(sortedArr);
-        int index = sortedArr.size() / 2;
-        
-        // Print median with its index
-        System.out.println("Median is: " + sortedArr.get(index) + " at index" + index);
+// import java.io.*;
+class MaxSum
+{
+    // Return the maximum Sum of difference
+    // between consecutive elements.
+    static int findSingle(int ar[], int ar_size)
+    {
+        // Do XOR of all elements and return
+        int res = ar[0];
+        for (int i = 1; i < ar_size; i++)
+            res = res ^ ar[i];
+      
+        return res;
+    }
+  
+    // Driver code
+    public static void main (String[] args)
+    {
+        int ar[] = {10, 20, 10, 20, 30, 40, 40, 30, 50};
+        int n = ar.length;
+        System.out.println("Element occurring once is " +
+                            findSingle(ar, n) + " ");
     }
 }
