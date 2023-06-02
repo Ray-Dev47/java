@@ -2,7 +2,7 @@
 Write a Java program to remove all occurrences of a specified value in a given array of integers. Return the updated array length.
 Sample Output:
 Original array: [1, 4, 6, 7, 6, 2]
-The length of the new array is: 4
+The length of the new array is: 4, here we are removing 6
 */
 
 import java.util.Arrays;
@@ -21,6 +21,7 @@ public class index {
         int key = 6;
         array = removeOccurence(array, key);
         System.out.println(Arrays.toString(array)); // [1, 4, 7, 2]
+        System.out.println("The length of the new array is: " + array.length);
     }
 
 }
