@@ -1,41 +1,26 @@
 /*
-Write a Java program to check if a given string has all distinct characters.
-Sample Output: Original String : xyyz
-String has all unique characters: false
+Write a Java program to remove all occurrences of a specified value in a given array of integers. Return the updated array length.
+Sample Output:
+Original array: [1, 4, 6, 7, 6, 2]
+The length of the new array is: 4
 */
 
-// import java.util.Arrays;
-public  class index {
-    /**
-     * @param s: The first string
-     * @param b: The second string
-     * @return true or false
-     */
-   public static boolean anagram_test(String str1, String str2) {
-        if (str1 == null || str2 == null) {
-            return false;
-        } else if (str1.length() != str2.length()) {
-            return false;
-        } else if (str1.length() == 0 && str2.length() == 0) {
-            return true;
+import java.util.Arrays;
+public class index {
+     public static int[] removeOccurence(int[] arr, int key){
+        int idx = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] != key){
+                arr[idx++] = arr[i];
+            }        
         }
-        int[] count = new int[256];
-        for (int i = 0; i < str1.length(); i++) {
-            count[str1.charAt(i)]++;
-            count[str2.charAt(i)]--;
-        }
-        for (int num : count) {
-            if (num != 0) {
-                return false;
-            }
-        }
-        return true;
-    }
+        return Arrays.copyOf(arr, idx);
+     }
     public static void main(String[] args) {
-		String str1 = "wxyz";
-		String str2 = "zyxw";
-		System.out.println("String-1 : "+str1);
-		System.out.println("String-2 : "+str2);
-		System.out.println("Check if two given strings are anagrams or not?: "+anagram_test(str1,str2));
-	}		
+        int array[] = {1, 4, 6, 7, 6, 2};
+        int key = 6;
+        array = removeOccurence(array, key);
+        System.out.println(Arrays.toString(array)); // [1, 4, 7, 2]
+    }
+
 }
