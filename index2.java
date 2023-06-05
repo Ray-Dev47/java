@@ -1,12 +1,10 @@
 /*
-Write a Java program to print an array after changing the rows and columns of a two-dimensional array.
-
+Write a Java program to find the k largest elements in a given array. Elements in the array can be in any order.
+Expected Output:
 Original Array:
-10 20 30
-40 50 60
-After changing the rows and columns of the said array:10 40
-20 50
-30 60
+[1, 4, 17, 7, 25, 3, 100]
+3 largest elements of the said array are:
+100 25 17
  */
 
 
@@ -42,7 +40,7 @@ public class index2 {
 
         public static void main(String[] args)
         {
-            int arr[] = { 12, 13, 1, 10, 34, 1 };
+            int arr[] = { 1, 4, 17, 7, 25, 3, 100 };
             int n = arr.length;
             print3largest(arr, n);
         }
