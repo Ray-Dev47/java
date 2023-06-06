@@ -1,20 +1,35 @@
 /*
- * a) 101 + 0) / 3
-b) 3.0e-6 * 10000000.1
-c) true && true
-d) false && true
-e) (false && false) || (true && true)
-f) (false || false) && (true && true)
+Write a Java program that accepts four integers from the user and prints equal if all four are equal, and not equal otherwise.
+
+Sample Output:
+Input first number: 25
+Input second number: 37
+Input third number: 45
+Input fourth number: 23
+Numbers are not equal!
  */
 
+import java.util.Scanner;
 public class index2 {
     public static void main(String[] args){
         System.out.println((101 + 0) / 3); // 33
-        System.out.println(3.0e-6 * 10000000.1); // 30.0000003
-        System.out.println(true && true); // true
-        System.out.println(false && true);  // false
-        System.out.println((false && false) || (true && true)); // true
-        System.out.println((false || false) && (true && true)); // false
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Please enter integer one");
+       int num1 = sc.nextInt();
+       System.out.println("Please enter integer two");
+       int num2 = sc.nextInt();
+       System.out.println("Please enter integer three");
+       int num3 = sc.nextInt();
+       System.out.println("Please enter integer four");
+       int num4 = sc.nextInt();
+       sc.close();
+
+       if(num1 == num2 && num2 == num3 && num3 == num4 ){
+          System.out.println("Numbers are equal");
+       } 
+      else {
+          System.out.println("Numbers are not equal");
+       }
 
     }
 }
