@@ -1,41 +1,52 @@
 /*
-Write a Java program to print the contents of a two-dimensional Boolean array where t represents true and f represents false.
-
-Sample array:
-array = {{true, false, true},
-{false, true, false}};
-Expected Output :
-t f t
-f t f
+Write a Java program to find the k largest elements in a given array. Elements in the array can be in any order.
+Expected Output:
+Original Array:
+[1, 4, 17, 7, 25, 3, 100]
+3 largest elements of the said array are:
+100 25 17
  */
 
 
-// public class index2 {
-//     public static void main(String[] args) {
-        
-//         // boolean boolOne [][] = {{true, false, true},{false, true, false}};
-//         int[][] boolOne = {{ 1, 2, 3 }, { 4, 5, 6 }};
-//          for (int i = 0; i < boolOne.length; i++) {
-//              for (int j = 0; j < boolOne[i].length; j++) {
-//                 System.out.println( boolOne[i][j] + "  ");
-//              }
-//              System.out.println();
-//          }        
-//     }
-// }
-
 public class index2 {
-    public static void main(String[] args) {
-       final Boolean[][] matrix = {{true, false, true},{false, true, false}};
-       for (int i = 0; i < matrix.length; i++) { //this equals to the row in our matrix.
-          for (int j = 0; j < matrix[i].length; j++) { //this equals to the column in each row.
-             if(matrix[i][j]){
-                System.out.print(" t ");
-             }else{
-                System.out.print(" f ");
-             }
-          }
-          System.out.println(); //change line on console as row comes to end in the matrix.
-       }
+
+         static void print3largest(int arr[], int arrSize) {
+       int firstArr, secArr, thirdArr;
+
+        if(arrSize < 3){
+            System.out.println("Not up to 3");  // at least 3
+            return;
+        }
+
+        thirdArr = firstArr = secArr = Integer.MIN_VALUE;
+        for (int j = 0; j < arrSize; j++) {
+              if(arr[j] > firstArr){
+                  thirdArr = secArr;
+                  secArr = firstArr;
+                  firstArr = arr[j];
+              }
+
+              else if (arr[j] > secArr) {
+                thirdArr = secArr;
+                secArr = arr[j];
+            }
+ 
+            else if (arr[j] > thirdArr)
+                thirdArr = arr[j];
+        }
+ 
+        System.out.println("Three largest elements are " + firstArr + " " + secArr + " " + thirdArr);
+        }
+
+        public static void main(String[] args)
+        {
+            int arr[] = { 1, 4, 17, 7, 25, 3, 100 };
+            int n = arr.length;
+            print3largest(arr, n);
+        }
+
+   
     }
- }
+ 
+
+
