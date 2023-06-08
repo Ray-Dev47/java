@@ -1,10 +1,9 @@
 /*
 Write a Java program to divide the two given integers using the subtraction operator.
-
 Expected Output:
 Input the dividend: 625
 Input the divider: 25
-Result: 25.0
+Result 25.0
  */
 
  import java.util.Scanner;
