@@ -1,52 +1,65 @@
 /*
-Write a Java program to find the k largest elements in a given array. Elements in the array can be in any order.
+Write a Java program to find the k smallest elements in a given array. Elements in the array can be in any order.
+
 Expected Output:
 Original Array:
 [1, 4, 17, 7, 25, 3, 100]
 3 largest elements of the said array are:
-100 25 17
+4,3,1
  */
 
 
-public class index2 {
+// Java program to find the first, second
+// and third minimum element in an array
+// import java.util.*;
 
-         static void print3largest(int arr[], int arrSize) {
-       int firstArr, secArr, thirdArr;
+public class index2
+{
+	static void Print3Smallest(int array[], int n)
+	{
+			int firstmin = Integer.MAX_VALUE;
+			int secmin = Integer.MAX_VALUE;
+			int thirdmin = Integer.MAX_VALUE;
+			for (int i = 0; i < n; i++)
+			{
+				/* Check if current element is less than
+				firstmin, then update first, second and
+				third */
+				if (array[i] < firstmin)
+				{
+					thirdmin = secmin;
+					secmin = firstmin;
+					firstmin = array[i];
+				}
+		
+				/* Check if current element is less than
+				secmin then update second and third */
+				else if (array[i] < secmin)
+				{
+					thirdmin = secmin;
+					secmin = array[i];
+				}
+		
+				/* Check if current element is less than
+				then update third */
+				else if (array[i] < thirdmin)
+					thirdmin = array[i];
+			}
+		
+			System.out.println("3 largest elements of the said array are: " + firstmin + " " + secmin + " " + thirdmin );
+			
+	}
+	
+	// Driver code
+	public static void main(String[] args)
+	{
+			int array[] = {4, 9, 1, 32, 12};
+			int n = array.length;
+			Print3Smallest(array, n);
+	}
+	
+}
 
-        if(arrSize < 3){
-            System.out.println("Not up to 3");  // at least 3
-            return;
-        }
 
-        thirdArr = firstArr = secArr = Integer.MIN_VALUE;
-        for (int j = 0; j < arrSize; j++) {
-              if(arr[j] > firstArr){
-                  thirdArr = secArr;
-                  secArr = firstArr;
-                  firstArr = arr[j];
-              }
-
-              else if (arr[j] > secArr) {
-                thirdArr = secArr;
-                secArr = arr[j];
-            }
- 
-            else if (arr[j] > thirdArr)
-                thirdArr = arr[j];
-        }
- 
-        System.out.println("Three largest elements are " + firstArr + " " + secArr + " " + thirdArr);
-        }
-
-        public static void main(String[] args)
-        {
-            int arr[] = { 1, 4, 17, 7, 25, 3, 100 };
-            int n = arr.length;
-            print3largest(arr, n);
-        }
-
-   
-    }
- 
 
 
