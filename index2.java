@@ -1,46 +1,39 @@
 /*
-Write a Java program that finds numbers greater than the average of an array.
-
+Write a Java program to divide the two given integers using the subtraction operator.
 Expected Output:
-Original Array:
-[1, 4, 17, 7, 25, 3, 100]
-The average of the said array is: 22.0
-The numbers in the said array that are greater than the average are:
-25
-100
+Input the dividend: 625
+Input the divider: 25
+Result 25.0
  */
 
-
-
-public class index2{
-    // Driver code
-	public static void main(String[] args)
-	{
-			double[] arr = {1, 4, 17, 7, 25, 3, 100};
-            
-            double sum = 0;
+ import java.util.Scanner;
+ public class index2 {	
+     public static float divide_using_subtraction(int dividend, int divider) {
+     if (divider == 0) {
+        return 0;
+     }	   
+     float result = 0;
+     while (dividend > divider) {
+       dividend -= divider;
+       result++;
+     }
+     float decimalPart = (float) dividend / (float) divider;
+     result += decimalPart;
+     return result;
+   }	
+     
+     public static void main(String[] args) {
+  Scanner in = new Scanner(System.in);
+         System.out.print("Input the dividend: ");
+         int dividend = in.nextInt();
+         System.out.print("Input the divider: ");
+         int divider = in.nextInt();
+         in.close();
+         System.out.println("\nResult: " + divide_using_subtraction(dividend,divider));		
+         }
          
-            //compute sum
-            int i=0;
-            while(i < arr.length) {
-                sum += arr[i];
-                i++;
-            }
-             
-            //compute average
-            double average = (sum / arr.length); 
-            System.out.println( "The average of the said array is: "+  average);
-
-            for (int j = 0; j < arr.length; j++) {
-                if(average < arr[j]){
-                    System.out.println("arrays greater than the average: " +  arr[j]);
-                }
-            }
-	}
-	
-   
-
-}
+ }
+ 
 
 
 
