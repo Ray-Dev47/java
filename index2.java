@@ -1,23 +1,23 @@
 /*
-Write a Java program to move every positive number to the right and every negative number to the left of a given array of integers.
+Write a Java program to transform a given integer into String format.
 
 Expected Output:
-Original array: [-2, 3, 4, -1, -3, 1, 2, -4, 0]
-Result: [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+Input an integer: 35
+String format of the said integer: 35
  */
 
-import java.util.Arrays;
+ import java.util.Scanner;
 
 public class index2 {	
      public static void main(String[] args) {
-             int[] arr = {-2, 3, 4, -1, -3, 1, 2, -4, 0}; 
+             Scanner sc = new Scanner(System.in);
              
-                System.out.println("Original Array: " + Arrays.toString(arr) );
-                // in ascending order        
-                    Arrays.sort(arr);
-                    System.out.println("Result: " + Arrays.toString(arr));
-          
-
+             System.out.println("Input an integer");
+             int num = sc.nextInt();
+             System.out.println(num + 100);  // 500
+             String str = Integer.toString(num);
+             sc.close();
+             System.out.println(str + 100);  // 400100
          }
          
  }
