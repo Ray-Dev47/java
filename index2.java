@@ -1,28 +1,41 @@
 /*
-Write a Java program to transform a given integer into String format.
+Write a Java program to move every zero to the right side of a given array of integers.
 
-Expected Output:
-Input an integer: 35
-String format of the said integer: 35
+Original array: [0, 3, 4, 0, 1, 2, 5, 0]
+Result: [3, 4, 1, 2, 5, 0, 0, 0]
  */
 
- import java.util.Scanner;
-
-public class index2 {	
-     public static void main(String[] args) {
-             Scanner sc = new Scanner(System.in);
-             
-             System.out.println("Input an integer");
-             int num = sc.nextInt();
-             System.out.println(num + 100);  // 500
-             String str = Integer.toString(num);
-             sc.close();
-             System.out.println(str + 100);  // 400100
+ import java.util.*;
+ public class index2 {	
+  public static int[] move_zero(int[] nums) {
+      if (nums == null) {
+       throw new IllegalArgumentException("Null array!");
+     }
+     boolean swap = true;
+     while (swap) {
+       swap = false;
+       for (int i = 0; i < nums.length - 1; i++) {
+         if (nums[i] == 0 && nums[i + 1] != 0) {
+           swap(nums, i, i + 1);
+           swap = true;
          }
-         
+       }
+     }
+      return nums;
+   }
+   private static void swap(int[] nums, int a, int b) {
+     int temp = nums[a];
+     nums[a] = nums[b];
+     nums[b] = temp;
+   }
+     public static void main(String[] args) {
+           int[] nums = {0,3,4,0,1,2,5,0};
+           System.out.println("\nOriginal array: "+Arrays.toString(nums));  
+           int[] result = move_zero(nums);
+            System.out.println("\nResult: " + Arrays.toString(result));		
+           }
  }
  
-
 
 
 
