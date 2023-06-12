@@ -1,37 +1,32 @@
 
 /*
-Write a Java program to convert minutes into years and days.
+Write a Java program to compute the body mass index (BMI).
 
 Test Data
-Input the number of minutes: 3456789
-Expected Output :
-3456789 minutes is approximately 6 years and 210 days
+Input weight in pounds: 452
+Input height in inches: 72
+Expected Output:
+Body Mass Index is 61.30159143458721
 */
 import java.util.Scanner;
 public class dataTypes {
 
     public static void main(String[] Strings) {
 
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Input the time zone offset to GMT: ");
-        long timeZoneChange = input.nextInt();
+        System.out.print("Input weight in pounds: ");
+        double weight = sc.nextDouble();
+        System.out.print("Input height in inches: ");
+        double height = sc.nextDouble();
 
-        long totalMilliseconds = System.currentTimeMillis();
 
-        long totalSeconds = totalMilliseconds / 1000;
+        // weight (lb) / [height (in)]2 x 703
+        System.out.println("Body Mass Index is: " + BMI(weight,height));
+        sc.close();
+    }
+    public static double BMI(double a, double b){
+        return  (a)/(b*b) * 703;
 
-        long currentSecond = totalSeconds % 60;
-
-        long totalMinutes = totalSeconds / 60;
-
-        long currentMinute = totalMinutes % 60;
-
-        long totalHours = totalMinutes / 60;
-
-        long currentHour = ((totalHours + timeZoneChange) % 24);
-
-        System.out.println("Current time is " + currentHour + ":" + currentMinute + ":" + currentSecond);
-        input.close();
     }
 }
