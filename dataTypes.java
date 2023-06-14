@@ -1,29 +1,24 @@
 
 /*
-Write a Java program that reads an integer between 0 and 1000 and adds all the digits in the integer.
+Write a Java program to convert minutes into years and days.
 
 Test Data
-Input an integer between 0 and 1000: 565
+Input the number of minutes: 3456789
 Expected Output :
-The sum of all digits in 565 is 16
-
-**/
+3456789 minutes is approximately 6 years and 210 days
+*/
 import java.util.Scanner;
 
 public class dataTypes {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Input an integer between 0 and 1000:"); 
+        System.out.println("Input the number of minutes: "); 
         int num = scan.nextInt();
-        int sum = 0;
-        while (num > 0) {
-            sum += num % 10;
-            num /= 10;            
-        }
-
+        int years = num / 525600;
+        int day = num / 1440;
+        int remMinutes = day % 525600;
         
-
-        System.out.println("The sum of all digits  is "  + sum);
+        System.out.println( num + " minutes is approximately " +  years + " years and "  + remMinutes +  " days");
         scan.close();
     }
     
