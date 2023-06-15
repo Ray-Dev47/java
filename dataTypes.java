@@ -1,32 +1,33 @@
 
 /*
-Write a Java program to break an integer into a sequence of digits.
+task-312-test-whether-a-given-double-float-value-is-a-finite-floating-point-value-or-not
+Write a Java program to test whether a given double/float value is a finite floating-point value or not.
 
-Input six non-negative digits: 123456
-Expected Output :
-1 2 3 4 5 6
 */
-import java.util.Scanner;
+
 public class dataTypes{
 
     public static void main(String[] args)
     {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Input six non-negative digits: ");
-        int num = in.nextInt();
-
-        int n1 = num / 100000 % 10;
-        int n2 = num / 10000 % 10;
-        int n3 = num / 1000 % 10;
-        int n4 = num / 100 % 10;
-        int n5 = num / 10 % 10;
-        int n6 = num / 1 % 10;
-        
-        in.close();
-
-        
-        
-        
-        System.out.println(n1 + " " + n2 + " " + n3 + " " + n4 + " " + n5 + " " + n6);
+        Double dn1 = 0.000213456321d;
+        boolean d1f = Double.isFinite(dn1);
+        Double dn2 = dn1 / 0;
+        boolean d2f = Double.isFinite(dn2);
+        Double dn3 = Double.POSITIVE_INFINITY * 0;
+        boolean d3f = Double.isFinite(dn3);
+        System.out.println("\nFinite doubles\n--------------");
+        System.out.println("Is "+dn1 + " is finite? " + d1f);
+        System.out.println("Is "+dn2 + " (dn1/0) is finite? " + d2f);
+        System.out.println("Is "+dn3 + " is finite? " + d3f);
+		Float fn1 = 5.3f;
+        boolean f1f = Float.isFinite(fn1);
+        Float fn2 = fn1 / 0;
+        boolean f2f = Float.isFinite(fn2);
+        Float fn3 = 0f / 0f;
+        boolean f3f = Float.isFinite(fn3);
+        System.out.println("\n\nFinite floats\n-------------");
+        System.out.println("Is "+fn1 + " is finite? " + f1f);
+        System.out.println("Is "+fn2 + " (fn1/0) is finite? " + f2f);
+        System.out.println("Is "+fn3 + " is finite? " + f3f);
     }
 }
