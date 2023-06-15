@@ -1,13 +1,12 @@
 
 /*
-Write a Java program that takes three numbers from the user and prints the greatest number.
+Write a Java program that reads a floating-point number and prints "zero" if the number is zero. Otherwise, print "positive" or "negative". Add "small" if the absolute value of the number is less than 1, or "large" if it exceeds 1,000,000.
 
 Test Data
-Input the 1st number: 25
-Input the 2nd number: 78
-Input the 3rd number: 87
+Input a number: 25
 Expected Output :
-The greatest: 87
+Input value: 25
+Positive number
 */
 
 import java.util.Scanner;
@@ -15,19 +14,46 @@ public class dataTypes{
 
     public static void main(String[] args)
     {
-       Scanner sc = new Scanner(System.in);
-       System.out.println("Input the 1st number");
-       int a = sc.nextInt();
-       System.out.println("Input the 2nd number");
-       int b = sc.nextInt();
-       System.out.println("Input the 3rd number");
-       int c = sc.nextInt();
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input value: ");
+        double input = in.nextDouble();
 
+        if (input > 0)
+        {
+            if (input < 1)
+            {
+                System.out.println("Positive small number");
+            }
+            else if (input > 1000000)
+            {
+                System.out.println("Positive large number");
+            }
+            else
+            {
+                System.out.println("Positive number");
+            }
+        }
+        else if (input < 0)
+        {
+            if (Math.abs(input) < 1)
+            {
+                System.out.println("Negative small number");
+            }
+            else if (Math.abs(input) > 1000000)
+            {
+                System.out.println("Negative large number");
+            }
+            else
+            {
+                System.out.println("Negative number");
+            }
+        }
+        else
+        {
+            System.out.println("Zero");
+        }
        
-       int max = Math.max(a, Math.max(b,c ));
-       System.out.println("The greatest is: " + max);
-       
-       sc.close();
+       in.close();
     }
     
     
