@@ -1,12 +1,11 @@
 
 /*
-Write a Java program that reads a floating-point number and prints "zero" if the number is zero. Otherwise, print "positive" or "negative". Add "small" if the absolute value of the number is less than 1, or "large" if it exceeds 1,000,000.
+Write a Java program that takes a number from the user and generates an integer between 1 and 7. It displays the weekday name.
 
 Test Data
-Input a number: 25
+Input number: 3
 Expected Output :
-Input value: 25
-Positive number
+Wednesday
 */
 
 import java.util.Scanner;
@@ -16,42 +15,32 @@ public class dataTypes{
     {
         Scanner in = new Scanner(System.in);
         System.out.print("Input value: ");
-        double input = in.nextDouble();
+        int input = in.nextInt();
 
-        if (input > 0)
-        {
-            if (input < 1)
-            {
-                System.out.println("Positive small number");
-            }
-            else if (input > 1000000)
-            {
-                System.out.println("Positive large number");
-            }
-            else
-            {
-                System.out.println("Positive number");
-            }
-        }
-        else if (input < 0)
-        {
-            if (Math.abs(input) < 1)
-            {
-                System.out.println("Negative small number");
-            }
-            else if (Math.abs(input) > 1000000)
-            {
-                System.out.println("Negative large number");
-            }
-            else
-            {
-                System.out.println("Negative number");
-            }
-        }
-        else
-        {
-            System.out.println("Zero");
-        }
+         if(input == 1 ){
+            System.out.println("Monday");
+         } else if(input == 2){
+            System.out.println("Tuesday");
+         }
+         else if(input == 3){
+            System.out.println("Wednesday");
+         }
+         else if(input == 4){
+            System.out.println("Thursday");
+         }
+         else if(input == 5){
+            System.out.println("Friday");
+         }
+         else if(input == 6){
+            System.out.println("Saturday");
+         }
+         else if(input == 7){
+            System.out.println("Sunday");
+         }
+         else {
+            System.out.println("Invalid input");
+         }
+         
        
        in.close();
     }
