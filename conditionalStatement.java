@@ -1,12 +1,11 @@
 
 /*
-Write a Java program to find the number of days in a month.
+Write a Java program that requires the user to enter a single character from the alphabet. Print Vowel or Consonant, depending on user input. If the user input is not a letter (between a and z or A and Z), or is a string of length > 1, print an error message.
 
 Test Data
-Input a month number: 2
-Input a year: 2016
+Input an alphabet: p
 Expected Output :
-February 2016 has 29 days
+Input letter is Consonant
 */
 
 import java.util.Scanner;
@@ -15,27 +14,57 @@ public class conditionalStatement{
     public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
-        System.out.print("Input a month number:  ");
-        int month = in.nextInt();
-        System.out.print("Input a year  ");
-        int year = in.nextInt();
-
-        // int month, year;
-        // month = 12;
-        // year = 2012;
-        if((month==2) && ((year%4==0) || ((year%100==0)&&(year%400==0))))
-            System.out.println(year + " has 29 days");
-
-        else if(month==2)
-            System.out.println(year + " has 28 days");
-
-        else if(month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12)
-            System.out.println(year + " has 31 days");
-
-        else
-            System.out.println(year  + " has 30 days");
+        System.out.print("Input an alphabet :  ");
+        char ch = in.next().charAt(0);
+        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ){
+            System.out.println(ch + " is vowel");
+        } 
+        else if(ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' ){
+                System.out.println(ch + " is vowel");
+            }
+        // else if(ch > 2){
+        //     System.out.println("error");
+        // }
+        else{
+        System.out.println(ch + " is consonant");
+    }  
        in.close();
     }
-    
-    
 }
+
+// correction
+// import java.util.Scanner;
+// public class Exercise8 {
+
+    
+//   public static void main(String[] args)
+//     {
+//         Scanner in = new Scanner(System.in);
+
+//         System.out.print("Input an alphabet: ");
+//         String input = in.next().toLowerCase();
+
+//         boolean uppercase = input.charAt(0) >= 65 && input.charAt(0) <= 90;
+//         boolean lowercase = input.charAt(0) >= 97 && input.charAt(0) <= 122;
+//         boolean vowels = input.equals("a") || input.equals("e") || input.equals("i")
+//                 || input.equals("o") || input.equals("u");
+
+//         if (input.length() > 1)
+//         {
+//             System.out.println("Error. Not a single character.");
+//         }
+//         else if (!(uppercase || lowercase))
+//         {
+//             System.out.println("Error. Not a letter. Enter uppercase or lowercase letter.");
+//         }
+//         else if (vowels)
+//         {
+//             System.out.println("Input letter is Vowel");
+//         }
+//         else
+//         {
+//             System.out.println("Input letter is Consonant");
+//         }
+//     }
+// }
+
