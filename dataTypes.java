@@ -1,21 +1,27 @@
 
 /*
-task-312-test-whether-a-given-double-float-value-is-a-finite-floating-point-value-or-not
-Write a Java program to test whether a given double/float value is a finite floating-point value or not.
+ task-314-extract-the-primitive-type-value-from-a-given-BigInteger-value
+Write a Java program to extract the primitive type value from a given BigInteger value.
+A primitive type is predefined by the language and is named by a reserved keyword. Primitive values do not share state with other primitive values. The eight primitive data types supported by the Java programming language are byte, short, int, long, float, double, Boolean and char.
+BigInteger() translates the sign-magnitude representation of a BigInteger into a BigInteger. The sign is represented as an integer signum value: -1 for negative, 0 for zero, or 1 for positive. The magnitude is a byte array in big-endian byte-order: the most significant byte is in the zeroth element. A zero-length magnitude array is permissible, and will result in a BigInteger value of 0, whether signum is -1, 0 or 1.
 
 */
-
+import java.math.BigInteger;
 public class dataTypes{
 
     public static void main(String[] args)
     {
-        int in1 = Integer.MIN_VALUE;
-		int in2 = Integer.MAX_VALUE;
-		System.out.println("Signed integers: " + in1 + ", " + in2);
-		System.out.println("-----------------------------------------");
-		int compare_Signed_num = Integer.compare(in1, in2);
-		System.out.println("Result of comparing signed numbers: " + compare_Signed_num);
-		int compare_Unsigned_num = Integer.compareUnsigned(in1, in2);
-        System.out.println("Result of comparing unsigned numbers: " + compare_Unsigned_num);
+        BigInteger bigval = BigInteger.valueOf(Long.MAX_VALUE);
+        System.out.println("\nBigInteger value: "+bigval);
+		long val_Long = bigval.longValue();
+		System.out.println("\nConvert the said BigInteger to an long value: "+val_Long);
+        int val_Int = bigval.intValue();
+		System.out.println("\nConvert the said BigInteger to an int value: "+val_Int);
+        short val_Short = bigval.shortValue();
+        System.out.println("\nConvert the said BigInteger to an short value: "+val_Short);
+        byte val_Byte = bigval.byteValue();
+        System.out.println("\nConvert the said BigInteger to byte: "+val_Byte);
+        long val_ExactLong = bigval.longValueExact();
+		System.out.println("\nConvert the said BigInteger to exact long: "+val_ExactLong);
     }
 }
