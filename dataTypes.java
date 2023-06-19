@@ -1,5 +1,5 @@
-
 /*
+task-405-takes-a-number-from-the-user-and-generates-an-integer-between-1-and-7-It-displays-the-weekday-name
 Write a Java program that takes a number from the user and generates an integer between 1 and 7. It displays the weekday name.
 
 Test Data
