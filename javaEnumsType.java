@@ -4,6 +4,7 @@ The variable must be equal to one of the values that have been predefined for it
 
 Task 502
 Write a Java program to create an enum called "Weekend" with constants representing the days of the weekend.
+conflict fixed
 */ 
 
 
