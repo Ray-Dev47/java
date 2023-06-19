@@ -1,15 +1,17 @@
 
 /*
- Write a Java program to display the cube of the given number up to an integer.
+Write a Java program to display the multiplication table of a given integer.
 
 Test Data
-Input number of terms : 4
+Input the number (Table to be calculated) : Input number of terms : 5
 Expected Output :
 
-Number is : 1 and cube of 1 is : 1                                               
-Number is : 2 and cube of 2 is : 8                                               
-Number is : 3 and cube of 3 is : 27                                              
-Number is : 4 and cube of 4 is : 64
+5 X 0 = 0                                                                        
+5 X 1 = 5                                                                        
+5 X 2 = 10                                                                       
+5 X 3 = 15                                                                       
+5 X 4 = 20                                                                       
+5 X 5 = 25
 */
 
 import java.util.Scanner;
@@ -21,10 +23,9 @@ public class conditionalStatement {
         System.out.println("Input the number");
         int nums = sc.nextInt();
         sc.close();
-        System.out.println("Number is: " + nums +  " and cube of " + nums +  " is " + cube(nums));
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(nums + " X " + i + " = " + nums * i );
+        }
+       
     }
-    public static int cube(int x){
-        return x * x * x;
-    }
-
 }
