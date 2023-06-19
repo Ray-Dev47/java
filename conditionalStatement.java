@@ -1,45 +1,40 @@
 
 /*
-Write a Java program that displays the sum of n odd natural numbers.
+Write a Java program to display the pattern like a right angle triangle with a number.
 
 Test Data
-Input number of terms is: 5
+Input number of rows : 10
 Expected Output :
 
-The odd numbers are :                                                            
 1                                                                                
-3                                                                                
-5                                                                                
-7                                                                                
-9                                                                                
-The Sum of odd Natural Number upto 5 terms is: 25
+12                                                                               
+123                                                                              
+1234                                                                             
+12345                                                                            
+123456                                                                           
+1234567                                                                          
+12345678                                                                         
+123456789                                                                        
+12345678910
 */
 
 import java.util.Scanner;
 
 public class conditionalStatement {
-    static int findOddSum(int n) {
-        int sum = 0;
-        for (int x = 1; x <= 2*n; x++)
-        if(x % 2 != 0){
-            sum = sum + x;
-        }
-        return sum;
-           
-    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Input the number");
+        int i, j;
         int nums = sc.nextInt();
         sc.close();
-        for(int i = 1; i <= 2*nums; i++) {
-            if(i % 2 != 0){
-                System.out.println(i);
-                
+        for(i=1;i<=nums;i++)
+            {
+            for(j=1;j<=i;j++)
+            {
+            System.out.print(j);
+            }
+            System.out.println("");
             }
         }
-                int n = nums;
-                System.out.println("The Sum of odd Natural Number upto 5 terms is: " + findOddSum(n));
     }
-}
