@@ -6,16 +6,15 @@ Write a Java program to implement an enum called "Shape" with constants represen
 */
 
 public class javaEnumsType {
-    public enum Shape {
-        SQUARE,
-        CIRCLE,
-        RECTANGLE,
-        TRIANGLE,
-        HEXAGON
+    public enum Direction {
+        WEST,
+        NORTH,
+        EAST,
+        SOUTH
     }
 
     public static void main(String[] args) {
-        Shape bestShape = Shape.CIRCLE;
-        System.out.println("Best shape is: " + bestShape);
+        Direction location = Direction.WEST;
+        System.out.println("I come from the: " + location);
     }
 }
