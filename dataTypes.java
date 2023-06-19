@@ -1,13 +1,12 @@
-
 /*
-Write a Java program to solve quadratic equations (use if, else if and else).
+task-401-get-a-number-from-the-user-and-print-whether-it-is-positive-or-negative
+Write a Java program to get a number from the user and print whether it is positive or negative.
 
 Test Data
 Input a: 1
 Input b: 5
 Input c: 1
 Expected Output :
-The roots are -0.20871215252208009 and -4.7912878474779195
 */
 
 import java.util.Scanner;
