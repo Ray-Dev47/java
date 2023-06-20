@@ -1,6 +1,8 @@
-
 /*
+task-411-program-to-display-n-terms-of-natural-numbers-and-their-sum
 Write a Java program to find the number of days in a month.
+
+
 
 Test Data
 Input a month number: 2
