@@ -1,29 +1,20 @@
 /*
- *  calculate the average value of array elements
+ *  Write a Java program to test if an array contains a specific value.
  */
 
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class array {
     public static void main(String[] args) {
-        int[] arr1 = { 1, 6, 3, 8, 4, 8, 9, 4 };
+        String[] vowels = {"a","e","i","o","u"};
 
-        System.out.println("Original Array: " + Arrays.toString(arr1));
-        Arrays.sort(arr1);
-
-        // Sum
-        int sum = 0;
-        for (int i : arr1)
-            sum += i;
-            System.out.println("Array sum" + sum);  // 43
-
-        // count the digits
-        int digitCount = 0;
-        for (int i = 0; i < arr1.length; i++) {
-             digitCount++;
-        }
-        System.out.println("count: " + digitCount);
-
-        System.out.println("Average is: " + sum/digitCount );
+        System.out.println();
+       
+                for (String x : vowels) {
+                if ("e".equals(x)) {
+                    System.out.println("e found in the vowels list.");
+                } 
+               
+            }
     }
 }
