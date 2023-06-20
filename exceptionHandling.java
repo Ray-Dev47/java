@@ -1,8 +1,7 @@
 
-    /*
-Write a Java program to create a method that takes an integer as a parameter and throws an exception if the number is odd.
+/*
+Write a Java program that reads a list of numbers from a file and throws an exception if any of the numbers are positive.
 */
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -29,4 +28,3 @@ public class exceptionHandling {
     scanner.close();
   }
 }
-
