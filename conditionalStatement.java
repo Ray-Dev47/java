@@ -1,41 +1,31 @@
 
 /*
-Write a Java program to find the number of days in a month.
+Write a Java program to display the multiplication table of a given integer.
 
 Test Data
-Input a month number: 2
-Input a year: 2016
+Input the number (Table to be calculated) : Input number of terms : 5
 Expected Output :
-February 2016 has 29 days
+
+5 X 0 = 0                                                                        
+5 X 1 = 5                                                                        
+5 X 2 = 10                                                                       
+5 X 3 = 15                                                                       
+5 X 4 = 20                                                                       
+5 X 5 = 25
 */
 
 import java.util.Scanner;
-public class conditionalStatement{
 
-    public static void main(String[] args)
-    {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Input a month number:  ");
-        int month = in.nextInt();
-        System.out.print("Input a year  ");
-        int year = in.nextInt();
+public class conditionalStatement {
 
-        // int month, year;
-        // month = 12;
-        // year = 2012;
-        if((month==2) && ((year%4==0) || ((year%100==0)&&(year%400==0))))
-            System.out.println(year + " has 29 days");
-
-        else if(month==2)
-            System.out.println(year + " has 28 days");
-
-        else if(month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12)
-            System.out.println(year + " has 31 days");
-
-        else
-            System.out.println(year  + " has 30 days");
-       in.close();
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input the number");
+        int nums = sc.nextInt();
+        sc.close();
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(nums + " X " + i + " = " + nums * i );
+        }
+       
     }
-    
-    
 }
