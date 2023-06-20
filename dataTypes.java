@@ -1,11 +1,13 @@
 /*
-task-405-takes-a-number-from-the-user-and-generates-an-integer-between-1-and-7-It-displays-the-weekday-name
-Write a Java program that takes a number from the user and generates an integer between 1 and 7. It displays the weekday name.
+task-406-reads-two-floating-point-numbers-and-tests-whether-they-are-the-same-up-to-three-decimal-places
+Write a Java program that reads two floating-point numbers and tests whether they are the same up to three decimal places.
+
 
 Test Data
-Input number: 3
+Input floating-point number: 25.586
+Input floating-point another number: 25.589
 Expected Output :
-Wednesday
+They are different
 */
 
 import java.util.Scanner;
@@ -14,34 +16,23 @@ public class dataTypes{
     public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
-        System.out.print("Input value: ");
-        int input = in.nextInt();
+        System.out.print("Input floating-point number:  ");
+        double num1 = in.nextDouble();
+        System.out.print("Input doubleing-point number 2:  ");
+        double num2 = in.nextDouble();
 
-         if(input == 1 ){
-            System.out.println("Monday");
-         } else if(input == 2){
-            System.out.println("Tuesday");
-         }
-         else if(input == 3){
-            System.out.println("Wednesday");
-         }
-         else if(input == 4){
-            System.out.println("Thursday");
-         }
-         else if(input == 5){
-            System.out.println("Friday");
-         }
-         else if(input == 6){
-            System.out.println("Saturday");
-         }
-         else if(input == 7){
-            System.out.println("Sunday");
-         }
-         else {
-            System.out.println("Invalid input");
-         }
          
-       
+         
+        num1 = Math.round(num1 * 1000);
+        num1 = num1 / 1000;
+
+        num2 = Math.round(num2 * 1000);
+        num2 = num2 / 1000;
+        if(num1 == 2){
+            System.out.println("They are equal by up to 3 decimal places ");
+        }else{
+            System.out.println("They are not equal");
+        }
        in.close();
     }
     
