@@ -1,13 +1,14 @@
 /*
-task-406-reads-two-floating-point-numbers-and-tests-whether-they-are-the-same-up-to-three-decimal-places
-Write a Java program that reads two floating-point numbers and tests whether they are the same up to three decimal places.
+task-411-program-to-display-n-terms-of-natural-numbers-and-their-sum
+Write a Java program to find the number of days in a month.
+
 
 
 Test Data
-Input floating-point number: 25.586
-Input floating-point another number: 25.589
+Input a month number: 2
+Input a year: 2016
 Expected Output :
-They are different
+February 2016 has 29 days
 */
 
 import java.util.Scanner;
@@ -16,23 +17,25 @@ public class dataTypes{
     public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
-        System.out.print("Input floating-point number:  ");
-        double num1 = in.nextDouble();
-        System.out.print("Input doubleing-point number 2:  ");
-        double num2 = in.nextDouble();
+        System.out.print("Input a month number:  ");
+        int month = in.nextInt();
+        System.out.print("Input a year  ");
+        int year = in.nextInt();
 
-         
-         
-        num1 = Math.round(num1 * 1000);
-        num1 = num1 / 1000;
+        // int month, year;
+        // month = 12;
+        // year = 2012;
+        if((month==2) && ((year%4==0) || ((year%100==0)&&(year%400==0))))
+            System.out.println(year + " has 29 days");
 
-        num2 = Math.round(num2 * 1000);
-        num2 = num2 / 1000;
-        if(num1 == 2){
-            System.out.println("They are equal by up to 3 decimal places ");
-        }else{
-            System.out.println("They are not equal");
-        }
+        else if(month==2)
+            System.out.println(year + " has 28 days");
+
+        else if(month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12)
+            System.out.println(year + " has 31 days");
+
+        else
+            System.out.println(year  + " has 30 days");
        in.close();
     }
     
