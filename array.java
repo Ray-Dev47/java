@@ -1,19 +1,39 @@
 /*
- * Write a Java program to copy an array by iterating the array.
+ * Write a Java program to insert an element (specific position) into an array.
  */
 
 import java.util.Arrays;
 
 public class array {
     public static void main(String[] args) {
-        int [] arr = {7,5,7,8,4,3};
-        int[] newArr = new int[6];
-        
-        for (int i = 0; i < arr.length; i++) {
-             newArr[i] = arr[i];
-        }
-
+        int [] arr = {7,5,7,8,4,3}; 
+        arr[3] = 50;
         System.out.println("Orginal Array" + Arrays.toString(arr));
-        System.out.println("Copied Array" + Arrays.toString(newArr));
     }
 }
+
+
+/*
+ * import java.util.Arrays; 
+public class Exercise9 {
+ 
+public static void main(String[] args) {
+
+   int[] my_array = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+
+    // Insert an element in 3rd position of the array (index->2, value->5)
+   
+   int Index_position = 2;
+   int newValue    = 5;
+
+  System.out.println("Original Array : "+Arrays.toString(my_array));     
+   
+  for(int i=my_array.length-1; i > Index_position; i--){
+    my_array[i] = my_array[i-1];
+   }
+   my_array[Index_position] = newValue;
+   System.out.println("New Array: "+Arrays.toString(my_array));
+ }
+ }
+ 
+ */
