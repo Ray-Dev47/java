@@ -1,31 +1,45 @@
 
 /*
-Write a Java program to display the multiplication table of a given integer.
+Write a Java program that displays the sum of n odd natural numbers.
 
 Test Data
-Input the number (Table to be calculated) : Input number of terms : 5
+Input number of terms is: 5
 Expected Output :
 
-5 X 0 = 0                                                                        
-5 X 1 = 5                                                                        
-5 X 2 = 10                                                                       
-5 X 3 = 15                                                                       
-5 X 4 = 20                                                                       
-5 X 5 = 25
+The odd numbers are :                                                            
+1                                                                                
+3                                                                                
+5                                                                                
+7                                                                                
+9                                                                                
+The Sum of odd Natural Number upto 5 terms is: 25
 */
 
 import java.util.Scanner;
 
 public class conditionalStatement {
+    static int findOddSum(int n) {
+        int sum = 0;
+        for (int x = 1; x <= 2*n; x++)
+        if(x % 2 != 0){
+            sum = sum + x;
+        }
+        return sum;
+           
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Input the number");
         int nums = sc.nextInt();
         sc.close();
-        for (int i = 1; i <= 5; i++) {
-            System.out.println(nums + " X " + i + " = " + nums * i );
+        for(int i = 1; i <= 2*nums; i++) {
+            if(i % 2 != 0){
+                System.out.println(i);
+                
+            }
         }
-       
+                int n = nums;
+                System.out.println("The Sum of odd Natural Number upto 5 terms is: " + findOddSum(n));
     }
 }
