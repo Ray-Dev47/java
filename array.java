@@ -1,14 +1,27 @@
 /*
- * Write a Java program to insert an element (specific position) into an array.
+ * Write a Java program to find the maximum and minimum value of an array.
  */
 
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class array {
     public static void main(String[] args) {
         int [] arr = {7,5,7,8,4,3}; 
-        arr[3] = 50;
-        System.out.println("Orginal Array" + Arrays.toString(arr));
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] < min){
+                min = arr[i];
+            }
+            if(arr[i] > max){
+                max = arr[i];
+            }
+        }
+        
+
+        System.out.println("smallest element of the said array: " + min);
+        System.out.println("largest element of the said array: " + max);
     }
 }
 
