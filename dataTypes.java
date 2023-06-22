@@ -1,12 +1,23 @@
 /*
+<<<<<<< HEAD
 task-401-get-a-number-from-the-user-and-print-whether-it-is-positive-or-negative
 Write a Java program to get a number from the user and print whether it is positive or negative.
+=======
+task-411-program-to-display-n-terms-of-natural-numbers-and-their-sum
+Write a Java program to find the number of days in a month.
+
+
+>>>>>>> 842b75539fba93a50e7e758ad8ce8c4c5f6b49e7
 
 Test Data
 Input a: 1
 Input b: 5
 Input c: 1
 Expected Output :
+<<<<<<< HEAD
+=======
+February 2016 has 29 days
+>>>>>>> 842b75539fba93a50e7e758ad8ce8c4c5f6b49e7
 */
 
 import java.util.Scanner;
