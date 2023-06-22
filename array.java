@@ -1,28 +1,20 @@
 /*
- * Write a Java program to reverse an array of integer values.
+ * Write a Java program to find duplicate values in an array of string values.
  */
 
 
-import java.util.Arrays;
-   
-
 public class array {
-    public static void reversedArray(int[] arr){
-        //  if arrray is less than 2
-        if(arr.length < 2){
-            return;
-        }
-        for (int i=0; i<arr.length/2; i++) {
-            int temp = arr[i];
-            arr[i] = arr[arr.length -1  -i];
-            arr[arr.length -1  -i] = temp;
-        }
-    }
-    public static void main(String[] args) {
-        int [] arr = {7,5,7,8,4,3}; 
 
-        System.out.println("Original array: " + Arrays.toString(arr));
-        reversedArray(arr);
-        System.out.println("Reversed "  + Arrays.toString(arr));
+    public static void main(String[] args) {
+        int[] arr = { 1, 2, 3, 4, 5, 3, 6, 1, 87, 87 };
+        System.out.println("Duplicate elements in given array: ");  
+        //Searches for duplicate element  
+        for(int i = 0; i < arr.length; i++) {  
+            for(int j = i + 1; j < arr.length; j++) {  
+                if(arr[i] == arr[j])  
+                    System.out.println(arr[j]);  
+            }  
+        }  
+
     }
 }
