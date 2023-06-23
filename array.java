@@ -1,5 +1,5 @@
 /*
- * Write a Java program to remove a specific element from an array.
+ * Write a Java program to copy an array by iterating the array.
  */
 
 import java.util.Arrays;
@@ -7,16 +7,13 @@ import java.util.Arrays;
 public class array {
     public static void main(String[] args) {
         int [] arr = {7,5,7,8,4,3};
-        int[] newArr = new int[arr.length -1];
-        // elememt to be removed
-        int j = 4;
-        for (int i = 0, k = 0; i < arr.length; i++) {
-            if(i != j){
-                newArr[k] = arr[i];
-                k++;
-            }            
+        int[] newArr = new int[6];
+        
+        for (int i = 0; i < arr.length; i++) {
+             newArr[i] = arr[i];
         }
-        System.out.println("Array before deletion" + Arrays.toString(arr));
-        System.out.println("Array after deletion" + Arrays.toString(newArr));
+
+        System.out.println("Orginal Array" + Arrays.toString(arr));
+        System.out.println("Copied Array" + Arrays.toString(newArr));
     }
 }
