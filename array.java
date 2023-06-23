@@ -1,5 +1,5 @@
 /*
- * Write a Java program to find the second largest element in an array.
+ * Write a Java program to find the second smallest element in an array.
  */
 
 // import java.util.Arrays;
@@ -12,7 +12,7 @@ public class array {
         int n = arr.length;
         for (int i = 0; i < n-1; i++) {
             for (int j = 0; j < i-1; j++) {
-                if (arr[j] < arr[j+1])  
+                if (arr[j] > arr[j+1])  
                 {
                     int temp=arr[j];
                     arr[j]=arr[j+1];
@@ -20,6 +20,6 @@ public class array {
                 }
             }
         }
-        System.out.println(arr[1]);  // 7
+        System.out.println(arr[1]);  // 1
     }
 }
