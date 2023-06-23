@@ -1,5 +1,5 @@
 /*
- * Write a Java program to find common elements between two integer arrays.
+ * Write a Java program to find the second largest element in an array.
  */
 
 // import java.util.Arrays;
@@ -7,19 +7,19 @@
 public class array {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1, 1, 3, 7, 7, 8, 9, 9, 9, 10};
-        int current = arr[0];
-        boolean found = false;
-
-        for (int i = 0; i < arr.length; i++) {
-            if (current == arr[i] && !found) {
-                found = true;
-            } else if (current != arr[i]) {
-                System.out.print(" " + current);
-                current = arr[i];
-                found = false;
+        int[] arr = {1, 1, 3, 7, 7, 8, 9, 9, 9, 10};
+        // int i, j;
+        int n = arr.length;
+        for (int i = 0; i < n-1; i++) {
+            for (int j = 0; j < i-1; j++) {
+                if (arr[j] < arr[j+1])  
+                {
+                    int temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
             }
         }
-        System.out.print(" " + current);  //  1 3 7 8 9 10
+        System.out.println(arr[1]);  // 7
     }
 }
