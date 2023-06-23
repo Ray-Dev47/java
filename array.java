@@ -7,7 +7,7 @@
 public class array {
 
     public static void main(String[] args) {
-        int[] arr = { 3, 4, 5, 7, 32, 7, 9, 4, 7, 2, 4, 9, 87, 1 };
+        int[] arr = new int[]{1, 1, 3, 7, 7, 8, 9, 9, 9, 10};
         int current = arr[0];
         boolean found = false;
 
@@ -20,6 +20,6 @@ public class array {
                 found = false;
             }
         }
-        System.out.print(" " + current);  // 3 4 5 7 32 7 9 4 7 2 4 9 87 1
+        System.out.print(" " + current);  //  1 3 7 8 9 10
     }
 }
