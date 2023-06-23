@@ -1,15 +1,15 @@
 /*
- * Write a Java program to find duplicate values in an array of string values.
+ * Write a Java program to find common elements between two integer arrays.
  */
 
 public class array {
 
     public static void main(String[] args) {
-        String[] arr = { "Java", "JavaScript", "Python", "C", "Ruby", "Java" };
-        String[] arr2 = { "C", "Xamarin", "Flutter", "Java", "C++", "GO" };
+        int [] arr = { 3,4,5,7,32,7,9 };
+       int [] arr2 = { 4,7,2,4,9,87,1 };
         System.out.println("");
 
-        String common;
+        int common;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr2.length; j++) {
                 if (arr[i] == arr2[j]) {
