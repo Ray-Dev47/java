@@ -1,25 +1,19 @@
 /*
- * Write a Java program to find the second smallest element in an array.
+ * Write a Java program to convert an array to an ArrayList.
  */
 
 // import java.util.Arrays;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class array {
 
     public static void main(String[] args) {
-        int[] arr = {1, 1, 3, 7, 7, 8, 9, 9, 9, 10};
+        String[] arr = {"Raymond", "Faith", "Micheal", "Samuel"};
         // int i, j;
-        int n = arr.length;
-        for (int i = 0; i < n-1; i++) {
-            for (int j = 0; j < i-1; j++) {
-                if (arr[j] > arr[j+1])  
-                {
-                    int temp=arr[j];
-                    arr[j]=arr[j+1];
-                    arr[j+1]=temp;
-                }
-            }
-        }
-        System.out.println(arr[1]);  // 1
+       List<String> allArr = new ArrayList<String>(Arrays.asList(arr));
+       System.out.println(allArr);
     }
 }
