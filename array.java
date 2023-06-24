@@ -1,10 +1,9 @@
 /*
- *Write a Java program to find the number of even and odd integers in a given array of integers
+ * Write a Java program to compute the average value of an array of integers except the largest and smallest values.
  */
 
 // import java.util.Arrays;
 
-// import java.util.Arrays;
 
 public class array {
 
@@ -24,7 +23,18 @@ public class array {
                 max = arr[i];
             }
         }
-        int diference = max - min;
-        System.out.println("Difference is " + diference);
+        int exclusiveCount = 0;
+        int sum = 0;
+         for (int i : arr){
+               
+               if(i != max && i != min){
+                exclusiveCount++;
+                sum += i;
+                // System.out.println("Remaining array " + i);
+            }
+         }
+         System.out.println("Array sum " + sum);  
+         System.out.println("remaining: " + exclusiveCount);
+         System.out.println("Average is " + sum/exclusiveCount);
     }
 }
