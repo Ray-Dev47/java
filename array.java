@@ -6,7 +6,7 @@
 public class array {
 
     public static void main(String[] args) {
-        int[] arr = { 1, 2, 3, 4, 5, 3, 6, 1, 87, 87 };
+        String[] arr = { "Java", "JavaScript", "Python", "C", "Ruby", "Java" };
         System.out.println("Duplicate elements in given array: ");  
         //Searches for duplicate element  
         for(int i = 0; i < arr.length; i++) {  
