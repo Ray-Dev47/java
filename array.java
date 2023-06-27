@@ -1,5 +1,5 @@
 /*
- * Write a Java program to compute the average value of an array of integers except the largest and smallest values.
+ * Write a Java program to check if an array of integers is without 0 and -1
  */
 
 // import java.util.Arrays;
@@ -8,33 +8,20 @@
 public class array {
 
     public static void main(String[] args) {
-        int [] arr = {2,4,6,7,8,9,10,11};
-        if(arr.length < 1){
-            return;
+        int [] arr = {2,4,6,7,8,9,10,11, -1};
+        boolean isContain = true;
+         for (int x : arr) {
+                // System.out.println(x);
+                if(x <= 0 || x < 0){
+                    isContain = false;
+                    break;
+                }
+            }
+        if(isContain == false){
+            System.out.println("Array contains either 0 and -1");
+        } 
+        else{
+            System.out.println("Array does not contains 0 and -1");
         }
-         int min = Integer.MAX_VALUE;
-        int max = Integer.MIN_VALUE;
-
-        for (int i = 0; i < arr.length; i++) {
-            if(arr[i] < min){
-                min = arr[i];
-            }
-            if(arr[i] > max){
-                max = arr[i];
-            }
-        }
-        int exclusiveCount = 0;
-        int sum = 0;
-         for (int i : arr){
-               
-               if(i != max && i != min){
-                exclusiveCount++;
-                sum += i;
-                // System.out.println("Remaining array " + i);
-            }
-         }
-         System.out.println("Array sum " + sum);  
-         System.out.println("remaining: " + exclusiveCount);
-         System.out.println("Average is " + sum/exclusiveCount);
     }
 }
