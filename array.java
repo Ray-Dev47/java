@@ -1,32 +1,57 @@
 /*
- * Write a Java program to remove duplicate elements from a given array and return the updated array length.
-Sample array: [20, 20, 30, 40, 50, 50, 50]
-After removing the duplicate elements the program should return 4 as the new length of the array.
+ * Write a Java program to get the majority element from an array of integers containing duplicates.  
+
+Majority element: A majority element is an element that appears more than n/2 times where n is the array size.
  */
 
-// import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+import java.util.Arrays; 
 
-public class array {
-    public static int removeDuplicates(int array[], int n) {
-        if (n == 0 || n == 1) {
-            return n;
-        }
-        int j = 0;// for next element
-        for (int i = 0; i < n - 1; i++) {
-            if (array[i] != array[i + 1]) {
-                array[j++] = array[i];
-            }
-        }
-        array[j++] = array[n - 1];
-        return j;
-    }
+public class array
+{
+  	public static void main (String[] args)
+	{
+		// Array - test majority element
+		int nums[] = { 1, 6, 6, 5, 7, 4, 1, 7, 7, 7, 7, 7, 7, 7, 2 };
+                                 System.out.println("Original Array : "+Arrays.toString(nums));  
+		int result = MajorityElement(nums);
+		if (result != -1)
+			System.out.println("Majority element is " + result);
+		else
+			System.out.println("Majority element does not exist");
+	}
+  
+  
+	public static int MajorityElement(int arra1[])
+	{
+		int n = arra1.length;
 
-    public static void main(String[] args) {
-        int array[] = { 18, 18, 25, 25, 25, 28, 28, 29 };
-        int length = array.length;
-        length = removeDuplicates(array, length);
-        // printing array elements
-        for (int i = 0; i < length; i++)
-            System.out.print(array[i] + " ");
-    }
+		// Hash Map
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+	 
+		// Element's frequency in a map
+		for (int i = 0; i < n; i++)
+		{
+			if (map.get(arra1[i]) == null)
+				map.put(arra1[i], 0);
+			
+			map.put(arra1[i], map.get(arra1[i]) + 1);
+		}
+
+		// Return the element if its count is more than n/2
+		Iterator it = map.entrySet().iterator();
+		while (it.hasNext()) 
+		{
+			Map.Entry pair = (Map.Entry)it.next();
+			if ((int)pair.getValue() > n/2)
+				return (int)pair.getKey();
+
+			it.remove(); 
+		}
+
+		// no majority element
+		return -1;
+	}
 }
