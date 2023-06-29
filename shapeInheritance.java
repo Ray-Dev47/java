@@ -25,6 +25,17 @@ class Rectangle extends shapeInheritance {
 }
 
 
+
+
+
+
+// Shape.java
+// Parent class Shape
+// public class Shape {
+//     public double getArea() {
+//         return 0.0;
+//     }
+// } 
 // correction
 // Rectangle.java
 // Child class Rectangle
