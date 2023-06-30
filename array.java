@@ -1,28 +1,57 @@
 /*
- * Write a Java program to check if an array of integers contains two specified elements 65 and 77.
+ * Write a Java program to get the majority element from an array of integers containing duplicates.  
+
+Majority element: A majority element is an element that appears more than n/2 times where n is the array size.
  */
 
-// import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+import java.util.Arrays; 
 
+public class array
+{
+  	public static void main (String[] args)
+	{
+		// Array - test majority element
+		int nums[] = { 1, 6, 6, 5, 7, 4, 1, 7, 7, 7, 7, 7, 7, 7, 2 };
+                                 System.out.println("Original Array : "+Arrays.toString(nums));  
+		int result = MajorityElement(nums);
+		if (result != -1)
+			System.out.println("Majority element is " + result);
+		else
+			System.out.println("Majority element does not exist");
+	}
+  
+  
+	public static int MajorityElement(int arra1[])
+	{
+		int n = arra1.length;
 
-public class array {
-    public static void main(String[] args) {
-        int [] arr = {2,4,6,7,8,9,10,11, -1, 77};
-        int num1 = 65;
-        int num2 = 77;
-        boolean isContain = true;
-         for (int x : arr) {
-                // System.out.println(x);
-                if(x == num1 || x == num2){
-                    isContain = false;
-                    break;
-                }
-            }
-        if(isContain == false){
-            System.out.println("Array contains either 66 or 77");
-        } 
-        else{
-            System.out.println("Array does not contains 66 and 77");
-        }
-    }
+		// Hash Map
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+	 
+		// Element's frequency in a map
+		for (int i = 0; i < n; i++)
+		{
+			if (map.get(arra1[i]) == null)
+				map.put(arra1[i], 0);
+			
+			map.put(arra1[i], map.get(arra1[i]) + 1);
+		}
+
+		// Return the element if its count is more than n/2
+		Iterator it = map.entrySet().iterator();
+		while (it.hasNext()) 
+		{
+			Map.Entry pair = (Map.Entry)it.next();
+			if ((int)pair.getValue() > n/2)
+				return (int)pair.getKey();
+
+			it.remove(); 
+		}
+
+		// no majority element
+		return -1;
+	}
 }
