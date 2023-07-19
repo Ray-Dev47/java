@@ -15,12 +15,14 @@ Write a Java program to create a class called "Rectangle" with width and height 
          return length * breadth;
      }
 
-    //  public String getPerimeter(){
-    //       return breed;
-    //  }
+     public int getPerimeter(){
+          return 2*(length * breadth);
+     }
 
   public static void main(String[] args) {
-      Rectangle rec = new Rectangle(2, 5);
-      System.out.println(rec.getArea());
+      Rectangle area = new Rectangle(2, 5);
+      System.out.println(area.getArea());
+      Rectangle perimeter = new Rectangle(2, 4);
+      System.out.println(perimeter.getPerimeter());
   }
 }
