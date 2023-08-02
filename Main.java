@@ -1,15 +1,11 @@
 public class Main {
   public static void main(String[] args) {
-      //  Person person1 = new Person("Raymond", 33, "Nigeria");
-      //  System.out.println("Name: " + person1.getName() + " age: " + person1.getAge() + " Country: " + person1.getCountry());
+     Person person1 = new Person();
 
-      Person person2 = new Person();
+     person1.setAccNum(30.56);
+     person1.setBalance(45.66);
 
-      person2.setName("Emojaska");
-      person2.setAge(26);
-      person2.setCountry("Cuba");
-
-      System.out.println("Name: " + person2.getName() + " age: " + person2.getAge() + " Country: " + person2.getCountry());
+     System.out.println("Account number: " + person1.getAccNum() + " balance: " + person1.getBalance());
 
   }
 }
