@@ -1,7 +1,7 @@
-//Rectangle.java
+//Triangle.java
 import java.awt.*;
 import javax.swing.*;
-class Rectangle implements Drawable {
+class Triangle implements Drawable {
   public void draw() {
     JFrame frame = new JFrame();
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -12,8 +12,18 @@ class Rectangle implements Drawable {
       @Override
       protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.BLUE);
-        g.fillRect(100, 100, 200, 200);
+        g.setColor(Color.GREEN);
+        int[] xPoints = {
+          200,
+          100,
+          300
+        };
+        int[] yPoints = {
+          100,
+          300,
+          300
+        };
+        g.fillPolygon(xPoints, yPoints, 3);
       }
     };
 

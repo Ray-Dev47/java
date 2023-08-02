@@ -1,6 +1,13 @@
-class Main{
+// import java.awt.*;
+// import javax.swing.*;
+public class Main {
   public static void main(String[] args) {
-       Resizable obj1 = new Rectangle(2, 4);
-       ((Rectangle) obj1).printSize();
+    Drawable circle = new Circle();
+    Drawable rectangle = new Rectangle();
+    Drawable triangle = new Triangle();
+
+    circle.draw();
+    rectangle.draw();
+    triangle.draw();
   }
 }

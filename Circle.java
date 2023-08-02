@@ -1,7 +1,6 @@
-//Rectangle.java
 import java.awt.*;
 import javax.swing.*;
-class Rectangle implements Drawable {
+class Circle implements Drawable {
   public void draw() {
     JFrame frame = new JFrame();
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -12,8 +11,8 @@ class Rectangle implements Drawable {
       @Override
       protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.BLUE);
-        g.fillRect(100, 100, 200, 200);
+        g.setColor(Color.RED);
+        g.fillOval(100, 100, 200, 200);
       }
     };
 
