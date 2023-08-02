@@ -1,11 +1,22 @@
 public class Main {
   public static void main(String[] args) {
-      Rectangle rectangle = new Rectangle();
+    // Create an instance of Employee
+    Employee employee = new Employee();
 
-      rectangle.setLength(34);
-      rectangle.setWidth(55);
+    // Set values using setter methods
+    employee.setEmployeeId(15);
+    employee.setEmployeeName("Caelius Dathan");
+    employee.setEmployeeSalary(4900.0);
 
-      System.out.println("Length " + rectangle.getLength() + " width " + rectangle.getWidth());
+    // Get values using getter methods
+    int employeeId = employee.getEmployeeId();
+    String employeeName = employee.getEmployeeName();
+    String formattedSalary = employee.getFormattedSalary();
 
+    // Print the values
+    System.out.println("Employee Details:");
+    System.out.println("ID: " + employeeId);
+    System.out.println("Name: " + employeeName);
+    System.out.println("Salary: " + formattedSalary);
   }
 }
