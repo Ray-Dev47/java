@@ -1,11 +1,11 @@
 public class Main {
   public static void main(String[] args) {
-     Person person1 = new Person();
+      Rectangle rectangle = new Rectangle();
 
-     person1.setAccNum(30.56);
-     person1.setBalance(45.66);
+      rectangle.setLength(34);
+      rectangle.setWidth(55);
 
-     System.out.println("Account number: " + person1.getAccNum() + " balance: " + person1.getBalance());
+      System.out.println("Length " + rectangle.getLength() + " width " + rectangle.getWidth());
 
   }
 }
