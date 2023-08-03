@@ -23,23 +23,4 @@ class Animal{
      }
 
 
-// class Animal {
-// public void animalSound() {
-// System.out.println("Animal makes a sound here");
-// }
-// }
-
-// Example 2
-// class Dog extends Animal {
-// public void animalSound() {
-// System.out.println("Dog barks: Woof Woof!");
-// }
-// }
-
-// class Horse extends Animal {
-// public void animalSound() {
-// System.out.println("Horse neighs!!!");
-// }
-// }
-
 
