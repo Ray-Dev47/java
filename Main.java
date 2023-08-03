@@ -1,11 +1,15 @@
 public class Main {
   public static void main(String[] args) {
-       Animal animal = new Animal();
-       Animal bird = new Bird();
-       Animal cat = new Cat();
+      // Vehicle vehicle = new Vehicle();
+      Vehicle car = new Car();
+      Vehicle bicycle = new Bicycle();
 
-       bird.sound();
-       cat.sound();
-       animal.sound();  
+
+      System.out.println("Car initial speed: " + car.getSpeed());
+        System.out.println("Motorcycle initial speed: " + bicycle.getSpeed());
+        car.speedUp();
+        bicycle.speedUp();
+        System.out.println("\nCar speed after speeding up: " + car.getSpeed());
+        System.out.println("bicycle speed after speeding up: " + bicycle.getSpeed());
   }
 }
