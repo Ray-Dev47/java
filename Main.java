@@ -1,15 +1,14 @@
 public class Main {
   public static void main(String[] args) {
-      // Vehicle vehicle = new Vehicle();
-      Vehicle car = new Car();
-      Vehicle bicycle = new Bicycle();
+      //  Shape shape = new Shape();
+       Shape circle = new Circle(4.0);
+       Shape triangle = new Triangle(4.0,5.0);
+       Shape rectangle = new Rectangle(4.0,5.0);
 
-
-      System.out.println("Car initial speed: " + car.getSpeed());
-        System.out.println("Motorcycle initial speed: " + bicycle.getSpeed());
-        car.speedUp();
-        bicycle.speedUp();
-        System.out.println("\nCar speed after speeding up: " + car.getSpeed());
-        System.out.println("bicycle speed after speeding up: " + bicycle.getSpeed());
+        System.out.println("Area of circle: " + circle.calculateArea());
+        System.out.println("Area of triangle: " + triangle.calculateArea());
+        System.out.println("Area of rectangle: " + rectangle.calculateArea());
+       
+       
   }
 }
