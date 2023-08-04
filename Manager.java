@@ -4,8 +4,8 @@
     private double bonus; 
 
     public Manager(String name, double baseSalary, double bonus){
-        // super(name, "Manager");
-        super();
+        super(name, "Manager");
+        // super();
         this.baseSalary = baseSalary;
         this.bonus = bonus;
     }

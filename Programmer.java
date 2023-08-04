@@ -4,8 +4,8 @@ class Programmer extends Employee{
     private double overtimePay;
 
     public Programmer(String name, double baseSalary, double overtimePay){
-        // super(name, "Programmer");
-        super();
+        super(name, "Programmer");
+        // super();
         this.baseSalary = baseSalary;
         this.overtimePay = overtimePay;
     }

@@ -7,6 +7,9 @@ class Employee{
     private String name;
     private String role;
 
+    public Employee(String name2, String string) {
+    }
+
     public void employee(String name, String role){
         this.name = name;
         this.role = role;
