@@ -1,11 +1,22 @@
 public class Main {
   public static void main(String[] args) {
-     Person person1 = new Person();
+    // Create an instance of Employee
+    Employee employee = new Employee();
 
-     person1.setAccNum(30.56);
-     person1.setBalance(45.66);
+    // Set values using setter methods
+    employee.setEmployeeId(15);
+    employee.setEmployeeName("Caelius Dathan");
+    employee.setEmployeeSalary(4900.0);
 
-     System.out.println("Account number: " + person1.getAccNum() + " balance: " + person1.getBalance());
+    // Get values using getter methods
+    int employeeId = employee.getEmployeeId();
+    String employeeName = employee.getEmployeeName();
+    String formattedSalary = employee.getFormattedSalary();
 
+    // Print the values
+    System.out.println("Employee Details:");
+    System.out.println("ID: " + employeeId);
+    System.out.println("Name: " + employeeName);
+    System.out.println("Salary: " + formattedSalary);
   }
 }
