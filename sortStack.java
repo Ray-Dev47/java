@@ -1,5 +1,5 @@
 /*
- * Write a Java program to sort the elements of a given stack in ascending order.
+ * Write a Java program to sort the elements of a given stack in descending order.
  */
 
 
@@ -22,7 +22,7 @@ class SortStack
 			// while temporary stack is not empty and
 			// top of stack is lesser than temp
 			while(!tmpStack.isEmpty() && tmpStack.peek()
-												< tmp)
+												> tmp)
 			{
 				// pop from temporary stack and
 				// push it to the input stack
