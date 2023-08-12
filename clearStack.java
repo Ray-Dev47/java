@@ -1,5 +1,5 @@
 /*
- * Write a Java program to remove all elements in a stack.
+ * Write a Java program to count elements in a stack.
  */
 
 import java.util.Stack;
@@ -20,10 +20,9 @@ public class clearStack {
         // Displaying the Stack
         System.out.println("Stack: " + stack);
   
-        // Clearing the Stack using clear() method
-        stack.clear();
+
   
         // Displaying the final Stack after clearing;
-        System.out.println("The final Stack: " + stack);
+        System.out.println("The Stack is : " + stack.size());
     }
 }
