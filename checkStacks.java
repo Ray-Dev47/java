@@ -1,10 +1,10 @@
 /*
- * Write a Java program to count elements in a stack.
+ * Write a Java program to implement a stack that checks if a given element is present or not in the stack.
  */
 
 import java.util.Stack;
 
-public class clearStack {
+public class checkStacks {
     public static void main(String args[])
     {
         // Creating an empty Stack
@@ -23,6 +23,6 @@ public class clearStack {
 
   
         // Displaying the final Stack after clearing;
-        System.out.println("The Stack is : " + stack.size());
+        System.out.println("Does stack contains 4? : " + stack.contains("4"));
     }
 }
