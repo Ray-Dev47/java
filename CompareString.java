@@ -1,16 +1,19 @@
 /*
-Write a Java program to create a String object with a character array.
+Write a Java program to check whether a given string ends with another string.
 
 Sample Output:
 
-The book contains 234 pages.
+"Python Exercises" ends with "se"? false                                                                      
+"Python Exercise" ends with "se"? true
  */
 
 public class CompareString {
 public static void main(String[] args)
     {
-      char[] ch = {'R', 'a', 'y', 'm','o','n', 'd'};
-      String str = new String(ch);
-       System.out.println(str);
+       String str1 = "Python Exercises";
+       String str2 = "Python Exercise";
+
+       System.out.println(str1.endsWith("se"));
+       System.out.println(str2.endsWith("se"));
     }
 }
