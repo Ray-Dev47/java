@@ -1,10 +1,10 @@
 public class Main {
   public static void main(String[] args) {
-       Car car = new Car();
-       car.setCompanyName("Toyota");
-       car.setModelName("Camry");
-       car.setYear(2009);
-       
-       System.out.println("Company name : " + car.getCompanyName() + " modelname: " + car.getModelName() + " year: " + car.getMileage());
+      // Employee employee = new Employee();
+      Employee manager = new Manager("Raymond", 45000.0,10000.00);
+      Employee programmer = new Programmer("Sam", 100000, 30000);
+
+      System.out.println("Programmer: " +  programmer.getName() + " Salary " + programmer.calculateSalary());
+      System.out.println("Manager: " +  manager.getName() + " Salary " + manager.calculateSalary());
   }
 }
