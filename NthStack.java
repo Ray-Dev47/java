@@ -1,14 +1,13 @@
 /*
- *  Write a Java program to swap the top two elements of a given stack
+ *  Write a Java program to get the nth element from the top of the stack.
  */
 
-
-public class SwapStack {
+public class NthStack {
   private int[] arr;
   private int top;
 
   // Constructor to initialize the stack
-  public SwapStack(int size) {
+  public NthStack(int size) {
     arr = new int[size];
     top = -1;
   }
@@ -50,13 +49,12 @@ public class SwapStack {
     return top == -1;
   }
 
-  public void swapTopTwo() {
-    if (top < 1) {
-      System.out.println("Stack has less than two elements");
+  public int getNthElementFromTop(int n) {
+    if (top - n + 1 < 0) {
+      System.out.println("Invalid value of n");
+      return -1;
     } else {
-      int temp = arr[top];
-      arr[top] = arr[top - 1];
-      arr[top - 1] = temp;
+      return arr[top - n + 1];
     }
   }
 
@@ -75,7 +73,7 @@ public class SwapStack {
 
   public static void main(String[] args) {
     System.out.println("Initialize a stack:");
-    SwapStack stack = new SwapStack(5);
+    NthStack stack = new NthStack(5);
     System.out.println("Input some elements on the stack:");
     stack.push(1);
     stack.push(2);
@@ -83,11 +81,12 @@ public class SwapStack {
     stack.push(4);
     stack.push(5);
     stack.display();
-    stack.swapTopTwo();
-    System.out.println("\nAfter swapping top two elements:");
-    stack.display();
-    System.out.println("\nAgain swapping top two elements:");
-    stack.swapTopTwo();
-    stack.display();
+    int n = stack.getNthElementFromTop(2);
+    System.out.println("\nThe 2nd element from the top is " + n);
+    n = stack.getNthElementFromTop(3);
+    System.out.println("\nThe 3rd element from the top is " + n);
+    n = stack.getNthElementFromTop(4);
+    System.out.println("\nThe 4th element from the top is " + n);
+
   }
 }
