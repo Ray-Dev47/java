@@ -4,7 +4,6 @@
 
 
 
-// Java code to illustrate lastElement()
 // import java.util.Scanner;
 public class Stack {
   private int[] arr;
