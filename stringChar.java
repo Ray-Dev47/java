@@ -1,19 +1,22 @@
 /*
-Write a Java program to get the contents of a given string as a character array.
+Write a Java program to create a distinct identifier for a given string.
 
 Sample Output:
 
-The char array equals "[C@2a139a55"
+The hash for Python Exercises. is 863132599 
  */
 
-import java.util.Arrays;
+import java.util.UUID;  
 
 public class stringChar {
    public static void main(String args[]){
-      String name = "Raymond";
+    String str = "Raymond Idengeli";
 
-      char[] nameArr = name.toCharArray();
+    // Get the hash code for the above string.
+    int hash_code = str.hashCode();
 
-      System.out.println(Arrays.toString(nameArr));
+    // Display the hash code.
+    System.out.println("The hash for " + str +
+        " is " + hash_code);
+        }
     }
-}
