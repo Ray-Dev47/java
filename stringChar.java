@@ -6,7 +6,6 @@ Sample Output:
 The hash for Python Exercises. is 863132599 
  */
 
-import java.util.UUID;  
 
 public class stringChar {
    public static void main(String args[]){
