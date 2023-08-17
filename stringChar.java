@@ -1,10 +1,9 @@
 /*
-Write a Java program to replace a specified character with another character.
+Write a Java program to create a character array containing a string.
 
 Sample Output:
 
-Original string: The quick brown fox jumps over the lazy dog.                                                 
-New String: The quick brown fox jumps over the lazy fog.
+Java Exercises.
  */
 
 
@@ -12,9 +11,8 @@ public class stringChar {
    public static void main(String args[]){
     String str = "The quick brown fox jumps over the lazy dog";
 
-    System.out.println("Original String: " + str);
+    char[] str2  = str.toCharArray();
+    System.out.println(str2);
 
-      String replaceDog = str.replace("dog", "lion");
-      System.out.println(replaceDog);
   }
 }
