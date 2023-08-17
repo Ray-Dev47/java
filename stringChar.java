@@ -1,18 +1,19 @@
 /*
-Write a Java program to create a character array containing a string.
+Write a Java program to trim leading or trailing whitespace from a given string.
 
 Sample Output:
 
-Java Exercises.
+Original String:  Java Exercises                                                                              
+New String: Java Exercises.
  */
 
 
 public class stringChar {
    public static void main(String args[]){
-    String str = "The quick brown fox jumps over the lazy dog";
+    String str = " Raymond is a boy ";
 
-    char[] str2  = str.toCharArray();
-    System.out.println(str2);
+    
+    System.out.println(str.trim());
 
   }
 }
