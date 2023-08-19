@@ -1,17 +1,19 @@
 /*
-Write a Java program to get the current time in New York.
- */
+Write a Java program to get the current date and time.
+*/
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 // import java.util.Date;
-import java.util.TimeZone;
 
 public class dateClass {
        public static void main(String[] args) {
-          Calendar ny_time =  Calendar.getInstance();
-          ny_time.setTimeZone(TimeZone.getTimeZone("America/New_York"));
-		System.out.println("Current Time in New York: " + ny_time.get(Calendar.HOUR_OF_DAY) + ":"
-		+ ny_time.get(Calendar.MINUTE)+":"+ny_time.get(Calendar.SECOND));
+         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+Calendar cal = Calendar.getInstance();
+System.out.println(dateFormat.format(cal.getTime()));
+
+          
           
     }
 }
