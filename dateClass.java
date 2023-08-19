@@ -1,5 +1,5 @@
 /*
-Write a Java program to get and display information (year, month, day, hour, minute) about a default calendar.
+Write a Java program to get the maximum value of the year, month, week, and date from the current date of a default calendar.
  */
 
 import java.util.Calendar;
@@ -8,11 +8,11 @@ import java.util.Calendar;
 public class dateClass {
        public static void main(String[] args) {
           Calendar calendar =  Calendar.getInstance();
-          System.out.println("The current year is: " + calendar.get(Calendar.YEAR));
-          System.out.println("The current month is: " + calendar.get(Calendar.MONTH));
-          System.out.println("The current day is: " + calendar.get(Calendar.DAY_OF_MONTH));
-          System.out.println("The current hour is: " + calendar.get(Calendar.HOUR_OF_DAY));
-          System.out.println("The current minute is: " + calendar.get(Calendar.MINUTE));
+          System.out.println("The maximum year is: " + calendar.getActualMaximum(Calendar.YEAR));
+          System.out.println("The maximum year is: " + calendar.getActualMaximum(Calendar.MONTH));
+          System.out.println("The maximum year is: " + calendar.getActualMaximum(Calendar.WEEK_OF_YEAR));
+          System.out.println("The maximum year is: " + calendar.getActualMaximum(Calendar.DAY_OF_YEAR));
+          
     }
 }
 
