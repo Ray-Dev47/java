@@ -10,7 +10,8 @@ public class dateClass {
        public static void main(String[] args) {
         
         Calendar calendar = Calendar.getInstance();
-        System.out.println("last day of the current month: " + calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+        System.out.println(calendar.getTime());
     }
 }
 
