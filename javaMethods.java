@@ -3,7 +3,6 @@ Write a Java method to find the smallest number among three numbers.
 */
 
 import java.util.Scanner;
-import java.lang.Math;
 public class javaMethods {
  
     public static void main(String[] args) {
@@ -17,12 +16,11 @@ public class javaMethods {
          int inp3 = sc.nextInt();
 
          sc.close();
-         System.out.println("The minimum input is: " + minInput(inp1, inp2, inp3) +"\n");
-
+         System.out.println("The average is: " + minInput(inp1, inp2, inp3) +"\n");
 
     }
     public static double minInput(double a, double b, double c){
-        return  Math.min(Math.min(a,b),c);
+        return  (a+b+c)/3;
     }
 }
 
