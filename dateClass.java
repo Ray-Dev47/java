@@ -1,25 +1,32 @@
 /*
-Write a Java program to get the last day of the current month.
+Write a Java program to get the number of days in a month.
 */
 
 
-// import java.text.DateFormat;
-// import java.text.SimpleDateFormat;
-import java.time.YearMonth;
+
+// import java.time.YearMonth;
 // import java.util.Calendar;
 // import java.util.Date;
-
+import java.time.YearMonth;
+ 
 public class dateClass {
-       public static void main(String[] args) {
-        
-       YearMonth ym = YearMonth.of(2016, 9);
-
-	 String firstDay = ym.atDay(1).getDayOfWeek().name();
-	 String lastDay = ym.atEndOfMonth().getDayOfWeek().name();
-	 System.out.println();
-	 System.out.println(firstDay);
- 	 System.out.println(lastDay);
-	 System.out.println();
+ 
+    public static void main(String[] args) {
+        // Get number of days in given month of the year
+        int numberOfDaysInMonth1 = getNumberOfDaysInMonth(2023, 7);
+        System.out.println("Number of days in july 2023: "+numberOfDaysInMonth1);
+ 
+        int numberOfDaysInMonth2 = getNumberOfDaysInMonth(2023, 9);
+        System.out.println("Number of days in Sept 2023: "+ numberOfDaysInMonth2);
+ 
+    }
+ 
+    // Method to get number of days in month
+    public static int getNumberOfDaysInMonth(int year,int month)
+    {
+        YearMonth yearMonthObject = YearMonth.of(year, month);
+        int daysInMonth = yearMonthObject.lengthOfMonth();
+        return daysInMonth;
     }
 }
 
