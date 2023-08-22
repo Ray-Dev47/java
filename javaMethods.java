@@ -1,10 +1,10 @@
 /*
-Write a Java method to count all the words in a string.
+Write a Java method to compute the sum of digits in an integer.
 Test Data:
-Input the string: The quick brown fox jumps over the lazy dog.
+Input an integer: 25
 Expected Output:
 
-Number of words in the string: 9
+The sum is 7 
 */
 
 import java.util.Scanner;
@@ -13,22 +13,21 @@ public class javaMethods {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Input the string: ");
-        String str = in.nextLine();
+        int num = in.nextInt();
         in.close();
 
-        System.out.print("Word count: " + count_words(str)+"\n");
+        System.out.print("Digit sum: " + count_digit(num) +"\n");
     }
 
-    public static int count_words(String str){
-        int count = 0;
-        char ch[]= new char[str.length()];     
-            for(int i=0;i<str.length();i++)  
-            {  
-                ch[i]= str.charAt(i);  
-                if( ((i>0)&&(ch[i]!=' ')&&(ch[i-1]==' ')) || ((ch[0]!=' ')&&(i==0)) )  
-                    count++; 
-            }  
-            return count;  
+     static int count_digit(int num){
+         int sum = 0;
+
+         while(num != 0){
+            sum = sum + num % 10;
+            num = num / 10;
+         }
+        //   System.out.println ("Sum of digits : " + sum);
+        return sum;
     }
 
 }
