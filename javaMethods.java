@@ -1,38 +1,31 @@
 /*
-Write a Java method to display the middle character of a string.
-Note: a) If the length of the string is odd there will be two middle characters.
-b) If the length of the string is even there will be one middle character.
+Write a Java method to count all vowels in a string.
 Test Data:
-Input a string: 350
+Input the string: w3resource
 Expected Output:
-                                                                     
-The middle character in the string: 5
+
+Number of  Vowels in the string: 4
 */
 
 import java.util.Scanner;
 public class javaMethods {
  
     public static void main(String[] args) {
+        System.out.println("Please enter any word");
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
-        String s1 = UserMainCode.getMiddleChars(s);
-        System.out.println(s1);
+
+        // char[] c = sc.toCharArray();
+        int vowel = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            if(s.charAt(i)=='a' || s.charAt(i)=='e' || s.charAt(i)=='i' || s.charAt(i)=='o' || s.charAt(i)=='u') 
+                 vowel++; 
+        }
+        
         sc.close();
+        System.out.println("Vowels: " + vowel);
     }
 }
-class UserMainCode {
-    public static String getMiddleChars(String str) {
-       int index, length;
-       if(str.length()%2==0){
-           index = str.length() / 2 -1;
-           length = 2;
-       }
-       else{
-           index = str.length() / 2;
-           length = 1;
-       }
-       return str.substring(index,index+length);
-    }
-       
-}
+
 
