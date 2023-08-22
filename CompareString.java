@@ -1,21 +1,19 @@
 /*
-Write a Java program to concatenate a given string to the end of another string.
+Write a Java program to test if a given string contains the specified sequence of char values.
 
 Sample Output:
 
-String 1: PHP Exercises and                                                                                   
-String 2: Python Exercises                                                                                    
-The concatenated string: PHP Exercises and Python Exercises
+Original String: PHP Exercises and Python Exercises                                                           
+Specified sequence of char values: and                                                                        
+true 
  */
 
 public class CompareString {
 public static void main(String[] args)
     {
-        String str1 = "PHP Exercises and";
-        String str2 = "Python Exercises";
+        String str1 = "PHP Exercises and Python Exercises";
         
-        System.out.println(str1.concat( str2));
-        System.out.println(str1 + " " + str2);
+        System.out.println(str1.contains("and"));
        
        
        
