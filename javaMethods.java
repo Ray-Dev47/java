@@ -1,31 +1,36 @@
 /*
-Write a Java method to count all vowels in a string.
+Write a Java method to count all the words in a string.
 Test Data:
-Input the string: w3resource
+Input the string: The quick brown fox jumps over the lazy dog.
 Expected Output:
 
-Number of  Vowels in the string: 4
+Number of words in the string: 9
 */
 
 import java.util.Scanner;
 public class javaMethods {
  
     public static void main(String[] args) {
-        System.out.println("Please enter any word");
-        Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input the string: ");
+        String str = in.nextLine();
+        in.close();
 
-        // char[] c = sc.toCharArray();
-        int vowel = 0;
-
-        for (int i = 0; i < s.length(); i++) {
-            if(s.charAt(i)=='a' || s.charAt(i)=='e' || s.charAt(i)=='i' || s.charAt(i)=='o' || s.charAt(i)=='u') 
-                 vowel++; 
-        }
-        
-        sc.close();
-        System.out.println("Vowels: " + vowel);
+        System.out.print("Word count: " + count_words(str)+"\n");
     }
+
+    public static int count_words(String str){
+        int count = 0;
+        char ch[]= new char[str.length()];     
+            for(int i=0;i<str.length();i++)  
+            {  
+                ch[i]= str.charAt(i);  
+                if( ((i>0)&&(ch[i]!=' ')&&(ch[i-1]==' ')) || ((ch[0]!=' ')&&(i==0)) )  
+                    count++; 
+            }  
+            return count;  
+    }
+
 }
 
 
