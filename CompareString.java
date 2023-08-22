@@ -1,19 +1,21 @@
 /*
-Write a Java program to test if a given string contains the specified sequence of char values.
+Write a Java program to compare a given string to a specified string buffer.
 
 Sample Output:
 
-Original String: PHP Exercises and Python Exercises                                                           
-Specified sequence of char values: and                                                                        
-true 
+Comparing example.com and example.com: true                                                                   
+Comparing Example.com and example.com: false 
  */
 
 public class CompareString {
 public static void main(String[] args)
     {
-        String str1 = "PHP Exercises and Python Exercises";
-        
-        System.out.println(str1.contains("and"));
+      String str1 = "example.com", str2 = "Example.com";
+      StringBuffer strbuf = new StringBuffer(str1);
+      
+      System.out.println("Comparing "+str1+" and "+strbuf+": " + str1.contentEquals(strbuf));
+      
+      System.out.println("Comparing "+str2+" and "+strbuf+": " + str2.contentEquals(strbuf));
        
        
        
