@@ -1,72 +1,42 @@
 /*
-Write a Java method to check whether a string is a valid password.
-Password rules:
-A password must have at least ten characters.
-A password consists of only letters and digits.
-A password must contain at least two digits.
+Write Java methods to calculate triangle area.
 
 Expected Output:
 
-1. A password must have at least eight characters.                                             
-2. A password consists of only letters and digits.                                         
-3. A password must contain at least two digits                                        
-Input a password (You are agreeing to the above Terms and Conditions.): abcd1234           
-Password is valid: abcd1234 
+Input Side-1: 10                                                                               
+Input Side-2: 15                                                                               
+Input Side-3: 20                                                                              
+The area of the triangle is 72.6184377413890
 */
 
 import java.util.Scanner;
 
+
 public class javaMethods {
-    
-public static final int PASSWORD_LENGTH = 8;
-
-public static void main(String[] args) {
-
-        Scanner input = new Scanner(System.in);
-        System.out.print(
-                "1. A password must have at least eight characters.\n" +
-                "2. A password consists of only letters and digits.\n" +
-                "3. A password must contain at least two digits \n" +
-                "Input a password (You are agreeing to the above Terms and Conditions.): ");
-        String s = input.nextLine();
-        input.close();
-
-        if (is_Valid_Password(s)) {
-            System.out.println("Password is valid: " + s);
-        } else {
-            System.out.println("Not a valid password: " + s);
-        }
-
+  public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+         System.out.print("Input Side-1: ");
+         double side1 = in.nextDouble();
+         System.out.print("Input Side-2: ");
+         double side2 = in.nextDouble();
+         System.out.print("Input Side-3: ");
+         double side3 = in.nextDouble();
+         in.close();
+         System.out.println( is_Valid(side1, side2,side3) ?
+                "The area of the triangle is " + area_triangle(side1, side2, side3) : "Invalid triangle" );
     }
 
-    public static boolean is_Valid_Password(String password) {
-
-        if (password.length() < PASSWORD_LENGTH) return false;
-
-        int charCount = 0;
-        int numCount = 0;
-        for (int i = 0; i < password.length(); i++) {
-
-            char ch = password.charAt(i);
-
-            if (is_Numeric(ch)) numCount++;
-            else if (is_Letter(ch)) charCount++;
-            else return false;
-        }
-
-
-        return (charCount >= 2 && numCount >= 2);
+  public static boolean is_Valid(double side1, double side2, double side3) {
+        if( side1 + side2 > side3 &&
+                side2 + side3 > side1 &&
+                side1 + side3 > side2) return true;
+        else return false;
     }
-
-    public static boolean is_Letter(char ch) {
-        ch = Character.toUpperCase(ch);
-        return (ch >= 'A' && ch <= 'Z');
+   public static double area_triangle(double side1, double side2, double side3) {
+        double area = 0;
+        double s = (side1 + side2 + side3)/2;
+        area = Math.sqrt(s*(s - side1)*(s - side2)*(s - side3));
+        return area;
     }
-
-
-    public static boolean is_Numeric(char ch) {
-
-        return (ch >= '0' && ch <= '9');
-    }
-
 }
