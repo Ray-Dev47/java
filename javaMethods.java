@@ -1,10 +1,10 @@
 /*
-Write a Java method to compute the sum of digits in an integer.
-Test Data:
-Input an integer: 25
+Write a Java method to check whether a year (integer) entered by the user is a leap year or not.
+
 Expected Output:
 
-The sum is 7 
+Input a year: 2017                                                                        
+false
 */
 
 import java.util.Scanner;
@@ -12,22 +12,42 @@ public class javaMethods {
  
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.print("Input the string: ");
-        int num = in.nextInt();
+        System.out.print("Input the year: ");
+        int year = in.nextInt();
         in.close();
 
-        System.out.print("Digit sum: " + count_digit(num) +"\n");
+        System.out.print("Inputed year: " + leap_year(year) +"\n");
     }
 
-     static int count_digit(int num){
-         int sum = 0;
+     static int leap_year(int num){
+         boolean leap = false;
 
-         while(num != 0){
-            sum = sum + num % 10;
-            num = num / 10;
-         }
-        //   System.out.println ("Sum of digits : " + sum);
-        return sum;
+        // if the year is divided by 4
+    if (num % 4 == 0) {
+
+        // if the year is century
+        if (num % 100 == 0) {
+  
+          // if year is divided by 400
+          // then it is a leap year
+          if (num % 400 == 0)
+            leap = true;
+          else
+            leap = false;
+        }
+        
+        // if the year is not century
+        else
+          leap = true;
+      }
+      else
+      leap = false;
+
+    if (leap)
+      System.out.println(num + " is a leap year.");
+    else
+      System.out.println(num + " is not a leap year.");
+    return num;
     }
 
 }
