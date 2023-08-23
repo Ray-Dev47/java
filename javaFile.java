@@ -1,9 +1,5 @@
 /*
-Write a Java method to display the current date and time.
-
-Expected Output:
-
-Current date and time: Wednesday January 25, 2017 7:47:43
+Write a Java program to get a list of all file/directory names in the given directory.
 */
 
 
