@@ -1,16 +1,20 @@
 /*
-Write a Java program to get the length of a given string.
+Write a Java program to replace a specified character with another character.
 
 Sample Output:
 
-The string length of 'example.com' is: 11
+Original string: The quick brown fox jumps over the lazy dog.                                                 
+New String: The quick brown fox jumps over the lazy fog.
  */
 
 
 public class stringChar {
    public static void main(String args[]){
-    String str = "Raymond Idengeli";
+    String str = "The quick brown fox jumps over the lazy dog";
 
-    System.out.println("String lenght: " + str.length());
-        }
-    }
+    System.out.println("Original String: " + str);
+
+      String replaceDog = str.replace("dog", "lion");
+      System.out.println(replaceDog);
+  }
+}
