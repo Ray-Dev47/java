@@ -1,5 +1,5 @@
 /*
-Write a Java program to check if a file or directory specified by pathname exists or not.
+Write a Java program to check if a file or directory has read and write permissions.
 */
 
 
@@ -9,10 +9,10 @@ public class javaFile {
        public static void main(String[] args) {   
         //   File file = new File("C:\\Users\\User\\Desktop");
           File myFile = new File("C:\\Users\\User\\Desktop\\DOM Terminologies.txt");
-          if(myFile.exists()){
-             System.out.println("Yes, file exist\n");
+          if(myFile.canRead() && myFile.canWrite()){
+             System.out.println(myFile.getAbsolutePath() +  " Yes, the file is writable and readable\n");
           } else{
-             System.out.println("Does not exist");
+             System.out.println("No read and write permissions");
           }
          
     }
