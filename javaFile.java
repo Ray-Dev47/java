@@ -14,7 +14,6 @@ public class javaFile {
           } else{
              System.out.println("No read and write permissions");
           }
-         
     }
 }
 
