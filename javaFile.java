@@ -16,10 +16,10 @@ public class javaFile {
         colors.add("Black");
 
         // to insert at the first position
-        colors.set(0,"Indigo");
+        colors.set(2,"white");
         // Using enhanced for loop to print all for the Collection ArrayList
         for(String n: colors){
-           System.out.println(n);  // works red gets replaced with indigo
+           System.out.println(n);  // works Orange gets replaced with white
         }
     }
  }
