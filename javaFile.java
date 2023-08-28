@@ -1,20 +1,15 @@
 /*
-Write a Java program to sort a given array list.
+Write a Java program to copy one array list into another.
 */
 
-// import java.util.List;
-// import java.util.ArrayList;
-// import java.util.HashSet;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class javaFile {
   public static void main(String[] args)
   {
-                 Set<String> colorSet = new TreeSet<String>();
+                 List<String> colorSet = new ArrayList<String>();
         colorSet.add("Red");
         colorSet.add("Blue");
         colorSet.add("Orange");
@@ -22,21 +17,42 @@ public class javaFile {
         colorSet.add("Indigo");
         colorSet.add("Black");
         
-        for(String n: colorSet){
-           System.out.println(n);  //
+
+        // for(String n: colorSet){
+        //    System.out.println(n);  //
+        // }
+       
+        //copy array list content into another array list
+        ArrayList<String> secondArrayList=new ArrayList<>();
+        secondArrayList.addAll(colorSet);
+        //print all the content of array list
+        Iterator<String> colorSet2 = secondArrayList.iterator();
+        while (colorSet2.hasNext()) {
+            System.out.println(colorSet2.next());
         }
 
 
-//         // method 2, we use sort
-//          List<String> list_Strings = new ArrayList<String>();
-//   list_Strings.add("Red");
-//   list_Strings.add("Green");
-//   list_Strings.add("Orange");
-//   list_Strings.add("White");
-//   list_Strings.add("Black");
-//   System.out.println("List before sort: "+list_Strings);
-//   Collections.sort(list_Strings);
-//   System.out.println("List after sort: "+list_Strings);    
+
+        //method 2 
+        /*
+         *  List<String> List1 = new ArrayList<String>();
+  List1.add("1");
+  List1.add("2");
+  List1.add("3");
+  List1.add("4");
+  System.out.println("List1: " + List1);
+  List<String> List2 = new ArrayList<String>();
+  List2.add("A");
+  List2.add("B");
+  List2.add("C");
+  List2.add("D");
+  System.out.println("List2: " + List2);
+  // Copy List2 to List1
+  Collections.copy(List1, List2);
+  System.out.println("Copy List to List2,\nAfter copy:");
+  System.out.println("List1: " + List1);
+  System.out.println("List2: " + List2);
+         */
     }
  }
 
