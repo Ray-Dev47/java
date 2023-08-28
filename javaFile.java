@@ -1,29 +1,42 @@
 /*
-Write a Java program to search for an element in an array list.
+Write a Java program to sort a given array list.
 */
 
-import java.util.List;
+// import java.util.List;
+// import java.util.ArrayList;
+// import java.util.HashSet;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class javaFile {
   public static void main(String[] args)
   {
-                 List <String> colors = new ArrayList<String>();
-        colors.add("Red");
-        colors.add("Blue");
-        colors.add("Orange");
-        colors.add("Black");
-        colors.add("Indigo");
-        colors.add("Black");
+                 Set<String> colorSet = new TreeSet<String>();
+        colorSet.add("Red");
+        colorSet.add("Blue");
+        colorSet.add("Orange");
+        colorSet.add("Black");
+        colorSet.add("Indigo");
+        colorSet.add("Black");
         
+        for(String n: colorSet){
+           System.out.println(n);  //
+        }
 
-        colors.indexOf("Black");  
-        System.out.println(colors.indexOf("Black"));// 3
-        System.out.println(colors.lastIndexOf("Black"));// 5
-        // Using enhanced for loop to print all for the Collection ArrayList
-        // for(String n: colors){
-        //    System.out.println(n);  //
-        // }
+
+//         // method 2, we use sort
+//          List<String> list_Strings = new ArrayList<String>();
+//   list_Strings.add("Red");
+//   list_Strings.add("Green");
+//   list_Strings.add("Orange");
+//   list_Strings.add("White");
+//   list_Strings.add("Black");
+//   System.out.println("List before sort: "+list_Strings);
+//   Collections.sort(list_Strings);
+//   System.out.println("List after sort: "+list_Strings);    
     }
  }
 
