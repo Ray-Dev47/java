@@ -1,5 +1,5 @@
 /*
-Write a Java program to shuffle elements in an array list.
+Write a Java program to reverse elements in an array list.
 */
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class javaFile {
         //    System.out.println(n);  //
         // }
        
-        Collections.shuffle(colorSet);
+        Collections.reverse(colorSet);
         System.out.println(colorSet);
 
     }
