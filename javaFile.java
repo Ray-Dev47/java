@@ -1,5 +1,5 @@
 /*
-Write a Java program to extract a portion of an array list.
+Write a Java program to compare two array lists.
 */
 
 import java.util.List;
@@ -25,6 +25,9 @@ public class javaFile {
 
         List<String> arrlist2 = colorSet.subList(2, 4);
         System.out.println(arrlist2);   // [Orange, Black]
+
+        boolean boolval =  colorSet.equals(arrlist2); //returns false  
+System.out.println(boolval);  
 
     }
  }
