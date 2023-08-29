@@ -1,9 +1,10 @@
 /*
-Write a Java program to compare two array lists.
+ Write a Java program that swaps two elements in an array list.
 */
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class javaFile {
@@ -21,13 +22,8 @@ public class javaFile {
         // for(String n: colorSet){
         //    System.out.println(n);  //
         // }
+        Collections.swap(colorSet, 2, 4); 
         System.out.println(colorSet);
-
-        List<String> arrlist2 = colorSet.subList(2, 4);
-        System.out.println(arrlist2);   // [Orange, Black]
-
-        boolean boolval =  colorSet.equals(arrlist2); //returns false  
-System.out.println(boolval);  
 
     }
  }
