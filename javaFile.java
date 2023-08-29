@@ -1,10 +1,9 @@
 /*
-Write a Java program to reverse elements in an array list.
+Write a Java program to extract a portion of an array list.
 */
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Collections;
 
 
 public class javaFile {
@@ -22,9 +21,10 @@ public class javaFile {
         // for(String n: colorSet){
         //    System.out.println(n);  //
         // }
-       
-        Collections.reverse(colorSet);
         System.out.println(colorSet);
+
+        List<String> arrlist2 = colorSet.subList(2, 4);
+        System.out.println(arrlist2);   // [Orange, Black]
 
     }
  }
