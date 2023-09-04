@@ -1,5 +1,5 @@
 /*
-Write a Java program to insert an element into the array list at the first position.
+Write a Java program to update an array element by the given element.
 */
 
 import java.util.List;
@@ -16,10 +16,10 @@ public class javaFile {
         colors.add("Black");
 
         // to insert at the first position
-        colors.set(0,"Indigo");
+        colors.set(3,"white");
         // Using enhanced for loop to print all for the Collection ArrayList
         for(String n: colors){
-           System.out.println(n);  // works red gets replaced with indigo
+           System.out.println(n);  //
         }
     }
  }
