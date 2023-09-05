@@ -1,5 +1,5 @@
 /*
-Write a Java program to update an array element by the given element.
+Write a Java program to remove the third element from an array list.
 */
 
 import java.util.List;
@@ -14,9 +14,10 @@ public class javaFile {
         colors.add("Blue");
         colors.add("Orange");
         colors.add("Black");
+        colors.add("Indigo");
+        
 
-        // to insert at the first position
-        colors.set(3,"white");
+        colors.remove(3);  //black removed
         // Using enhanced for loop to print all for the Collection ArrayList
         for(String n: colors){
            System.out.println(n);  //
