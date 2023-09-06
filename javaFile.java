@@ -4,7 +4,7 @@
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Collections;
+// import java.util.Collections;
 
 
 public class javaFile {
@@ -14,15 +14,16 @@ public class javaFile {
         colorSet.add("Red");
         colorSet.add("Blue");
         colorSet.add("Orange");
-        colorSet.add("Black");
-        colorSet.add("Indigo");
-        colorSet.add("Black");
         
+        List<String> colorSet2 = new ArrayList<String>();
+       colorSet2.add("Black");
+        colorSet2.add("Indigo");
+        colorSet2.add("Black");
 
         // for(String n: colorSet){
         //    System.out.println(n);  //
         // }
-        Collections.swap(colorSet, 2, 4); 
+        colorSet.addAll(colorSet2); 
         System.out.println(colorSet);
 
     }
