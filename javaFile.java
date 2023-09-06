@@ -1,5 +1,5 @@
 /*
- Write a Java program to test whether an array list is empty or not.
+ Write a Java program for trimming the capacity of an array list.
 */
 
 // import java.util.List;
@@ -18,19 +18,19 @@ public class javaFile {
         colorSet.add("Indigo");
         colorSet.add("Black");
         
-       
 
         // for(String n: colorSet){
         //    System.out.println(n);  //
         // }
-        if(colorSet.isEmpty()){
-            System.out.println("List is empty");
-        }else{
-            System.out.println("List is not empty");
-        }
-        System.out.println(colorSet);  // []
-       
+
+      System.out.println("Before trim to size" + colorSet);
+        colorSet.trimToSize();
+        System.out.println("after trim to size" + colorSet);
+        
         // System.out.println(colorSet2);
+        for (String number : colorSet) {
+            System.out.println("Number  " + number);
+         }
 
     }
  }
