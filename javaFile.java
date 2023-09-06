@@ -1,5 +1,6 @@
 /*
- Write a Java program to clone an array list to another array list.
+ Write a Java program to empty an array list.
+
 */
 
 // import java.util.List;
@@ -18,15 +19,20 @@ public class javaFile {
         colorSet.add("Indigo");
         colorSet.add("Black");
         
-        // ArrayList<String> colorSet2 = new ArrayList<String>();
        
 
         // for(String n: colorSet){
         //    System.out.println(n);  //
         // }
-        ArrayList<String>  colorSet2 = (ArrayList<String>) colorSet.clone();
+        int colorSize = colorSet.size();
+        System.out.println("init number size " + colorSize); // 6
+        colorSet.removeAll(colorSet);
+
+        int colorSizeAfter = colorSet.size();
+        System.out.println("final number size " + colorSizeAfter); // 0
+        System.out.println(colorSet);  // []
        
-        System.out.println(colorSet2);
+        // System.out.println(colorSet2);
 
     }
  }
