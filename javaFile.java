@@ -1,6 +1,5 @@
 /*
- Write a Java program to empty an array list.
-
+ Write a Java program to test whether an array list is empty or not.
 */
 
 // import java.util.List;
@@ -24,12 +23,11 @@ public class javaFile {
         // for(String n: colorSet){
         //    System.out.println(n);  //
         // }
-        int colorSize = colorSet.size();
-        System.out.println("init number size " + colorSize); // 6
-        colorSet.removeAll(colorSet);
-
-        int colorSizeAfter = colorSet.size();
-        System.out.println("final number size " + colorSizeAfter); // 0
+        if(colorSet.isEmpty()){
+            System.out.println("List is empty");
+        }else{
+            System.out.println("List is not empty");
+        }
         System.out.println(colorSet);  // []
        
         // System.out.println(colorSet2);
