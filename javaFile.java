@@ -1,27 +1,37 @@
 /*
-Write a Java program to remove the third element from an array list.
+ Write a Java program for trimming the capacity of an array list.
 */
 
-import java.util.List;
-import java.util.ArrayList;
 // import java.util.List;
+import java.util.ArrayList;
+// import java.util.Collections;
+
 
 public class javaFile {
   public static void main(String[] args)
   {
-                 List <String> colors = new ArrayList<String>();
-        colors.add("Red");
-        colors.add("Blue");
-        colors.add("Orange");
-        colors.add("Black");
-        colors.add("Indigo");
+        ArrayList<String> colorSet = new ArrayList<String>();
+        colorSet.add("Red");
+        colorSet.add("Blue");
+        colorSet.add("Orange");
+        colorSet.add("Black");
+        colorSet.add("Indigo");
+        colorSet.add("Black");
         
 
-        colors.remove(3);  //black removed
-        // Using enhanced for loop to print all for the Collection ArrayList
-        for(String n: colors){
-           System.out.println(n);  //
-        }
+        // for(String n: colorSet){
+        //    System.out.println(n);  //
+        // }
+
+      System.out.println("Before trim to size" + colorSet);
+        colorSet.trimToSize();
+        System.out.println("after trim to size" + colorSet);
+        
+        // System.out.println(colorSet2);
+        for (String number : colorSet) {
+            System.out.println("Number  " + number);
+         }
+
     }
  }
 
