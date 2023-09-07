@@ -1,5 +1,5 @@
 /*
-Write a Java program to append the specified element to the end of a hash set.
+Write a Java program to get the number of elements in a hash set.
 */
 
 import java.util.HashSet;
@@ -16,10 +16,10 @@ public class javaFile {
         colorSet.add("Indigo");
         colorSet.add("Black");
         
-        // System.out.println("original Array " + colorSet);
-        for(String n: colorSet){
-           System.out.println(n);  //
-        }
+        System.out.println("hashset size or number of element " + colorSet.size());
+        // for(String n: colorSet){
+        //    System.out.println(n);  //
+        // }
     }
  }
 
