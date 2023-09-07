@@ -1,16 +1,14 @@
 /*
-Write a Java program to increase an array list size.
+Write a Java program to append the specified element to the end of a hash set.
 */
-
-// import java.util.List;
 import java.util.ArrayList;
-// import java.util.Collections;
+import java.util.HashSet;
 
 
 public class javaFile {
   public static void main(String[] args)
   {
-        ArrayList<String> colorSet = new ArrayList<String>();
+        HashSet<String> colorSet = new HashSet<String>();
         colorSet.add("Red");
         colorSet.add("Blue");
         colorSet.add("Orange");
@@ -22,10 +20,6 @@ public class javaFile {
         // for(String n: colorSet){
         //    System.out.println(n);  //
         // }
-      colorSet.ensureCapacity(15);
-      colorSet.add("Gray");
-      colorSet.add("White");
-      System.out.println("Array after " + colorSet);
     }
  }
 
