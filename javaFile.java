@@ -1,7 +1,7 @@
 /*
 Write a Java program to append the specified element to the end of a hash set.
 */
-import java.util.ArrayList;
+
 import java.util.HashSet;
 
 
@@ -16,10 +16,10 @@ public class javaFile {
         colorSet.add("Indigo");
         colorSet.add("Black");
         
-        System.out.println("original Array " + colorSet);
-        // for(String n: colorSet){
-        //    System.out.println(n);  //
-        // }
+        // System.out.println("original Array " + colorSet);
+        for(String n: colorSet){
+           System.out.println(n);  //
+        }
     }
  }
 
