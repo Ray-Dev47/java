@@ -1,5 +1,5 @@
 /*
- Write a Java program for trimming the capacity of an array list.
+Write a Java program to increase an array list size.
 */
 
 // import java.util.List;
@@ -18,20 +18,14 @@ public class javaFile {
         colorSet.add("Indigo");
         colorSet.add("Black");
         
-
+        System.out.println("original Array " + colorSet);
         // for(String n: colorSet){
         //    System.out.println(n);  //
         // }
-
-      System.out.println("Before trim to size" + colorSet);
-        colorSet.trimToSize();
-        System.out.println("after trim to size" + colorSet);
-        
-        // System.out.println(colorSet2);
-        for (String number : colorSet) {
-            System.out.println("Number  " + number);
-         }
-
+      colorSet.ensureCapacity(15);
+      colorSet.add("Gray");
+      colorSet.add("White");
+      System.out.println("Array after " + colorSet);
     }
  }
 
