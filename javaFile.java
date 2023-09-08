@@ -1,5 +1,5 @@
 /*
-Write a Java program to clone a hash set to another hash set.
+Write a Java program to convert a hash set to an array.
 */
 
 import java.util.HashSet;
@@ -14,14 +14,15 @@ public class javaFile {
         colorSet.add("Black");
         colorSet.add("Indigo");
         colorSet.add("Black");
-
-
-        HashSet<String>  colorSet2 = (HashSet<String>) colorSet.clone();
        
-        System.out.println(colorSet2);
-        // for(String n: colorSet){
-        //    System.out.println(n);  //
-        // }
+        System.out.println(colorSet);
+        String arr[] = new String[colorSet.size()];
+        
+        // toArray() method converts the set to array
+        colorSet.toArray(arr);
+        for(String n: colorSet){
+           System.out.println(n);  //
+        }
     }
  }
 
