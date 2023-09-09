@@ -1,5 +1,5 @@
 /*
-Write a Java program to remove all elements from a hash set.
+Write a Java program to add all the elements of a specified tree set to another tree set..
 */
 
 import java.util.Set;
