@@ -1,15 +1,16 @@
 /*
-Write a Java program to add all the elements of a specified tree set to another tree set..
+Write a Java program to add all the elements of a specified tree set to another tree set.
 */
 
-import java.util.Set;
+// import java.util.Set;
+import java.util.Iterator;
 import java.util.TreeSet;
 
 public class javaFile {
   public static void main(String[] args)
   {
     
-        Set<String> colorSet = new TreeSet<String>();
+       TreeSet<String> colorSet = new TreeSet<String>();
         colorSet.add("Red");
         colorSet.add("Blue");
         colorSet.add("Orange");
@@ -18,6 +19,18 @@ public class javaFile {
         colorSet.add("Black");
         
         System.out.println(colorSet);
+
+         Iterator<String> iterator
+            = colorSet.descendingIterator();
+  
+        // Iterating TreeSet
+        System.out.print("TreeSet in reverse order : ");
+  
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + " ");
+        }
+
+        
 
         // for(String n: colorSet){
         //    System.out.println(n);  //
