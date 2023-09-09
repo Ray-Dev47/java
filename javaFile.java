@@ -1,5 +1,5 @@
 /*
-Write a Java program to remove all elements from a hash set.
+Write a Java program to compare two hash set.
 */
 import java.util.HashSet;
 // import java.util.TreeSet;
