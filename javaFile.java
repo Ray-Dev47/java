@@ -1,9 +1,8 @@
 /*
-Write a Java program to add all the elements of a specified tree set to another tree set.
+Write a Java program to get the first and last elements in a tree set.
 */
 
 // import java.util.Set;
-import java.util.Iterator;
 import java.util.TreeSet;
 
 public class javaFile {
@@ -17,19 +16,12 @@ public class javaFile {
         colorSet.add("Black");
         colorSet.add("Indigo");
         colorSet.add("Black");
-        
-        System.out.println(colorSet);
+                
 
-         Iterator<String> iterator
-            = colorSet.descendingIterator();
+        System.out.println("TreeSet first and last: " + colorSet.first());
+        System.out.println("TreeSet first and last: " + colorSet.last());
   
-        // Iterating TreeSet
-        System.out.print("TreeSet in reverse order : ");
-  
-        while (iterator.hasNext()) {
-            System.out.print(iterator.next() + " ");
-        }
-
+       
         
 
         // for(String n: colorSet){
