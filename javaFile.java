@@ -17,13 +17,9 @@ public class javaFile {
         colorSet.add("Indigo");
         colorSet.add("Black");
                 
-        //  ArrayList<String> colorSet2 = new ArrayList<String>();
-          TreeSet<String>  colorSet2 = (TreeSet<String>) colorSet.clone();
-        System.out.println(colorSet2);
-  
-       
-        
 
+        System.out.println(colorSet.size());
+  
         // for(String n: colorSet){
         //    System.out.println(n);  //
         // }
