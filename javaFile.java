@@ -1,5 +1,5 @@
 /*
-Write a Java program to get the first and last elements in a tree set.
+Write a Java program to clone a tree set list to another tree set.
 */
 
 // import java.util.Set;
@@ -17,9 +17,9 @@ public class javaFile {
         colorSet.add("Indigo");
         colorSet.add("Black");
                 
-
-        System.out.println("TreeSet first and last: " + colorSet.first());
-        System.out.println("TreeSet first and last: " + colorSet.last());
+        //  ArrayList<String> colorSet2 = new ArrayList<String>();
+          TreeSet<String>  colorSet2 = (TreeSet<String>) colorSet.clone();
+        System.out.println(colorSet2);
   
        
         
