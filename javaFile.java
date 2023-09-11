@@ -1,5 +1,5 @@
 /*
-Write a Java program to get the number of elements in a hash set.
+Write a Java program to empty an hash set.
 */
 
 import java.util.HashSet;
@@ -15,8 +15,10 @@ public class javaFile {
         colorSet.add("Black");
         colorSet.add("Indigo");
         colorSet.add("Black");
-        
-        System.out.println("hashset size or number of element " + colorSet.size());
+
+
+        colorSet.clear();
+        System.out.println("hashset size or number of element " + colorSet);
         // for(String n: colorSet){
         //    System.out.println(n);  //
         // }
