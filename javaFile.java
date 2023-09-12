@@ -1,30 +1,22 @@
 /*
-Write a Java program to clone a tree set list to another tree set.
+ Write a Java program to find a specified element in a given array of elements using Binary Search.
 */
-
-// import java.util.Set;
-import java.util.TreeSet;
-
+import java.util.Arrays;
 public class javaFile {
-  public static void main(String[] args)
-  {
-    
-       TreeSet<String> colorSet = new TreeSet<String>();
-        colorSet.add("Red");
-        colorSet.add("Blue");
-        colorSet.add("Orange");
-        colorSet.add("Black");
-        colorSet.add("Indigo");
-        colorSet.add("Black");
-                
 
-        System.out.println(colorSet.size());
-  
-        // for(String n: colorSet){
-        //    System.out.println(n);  //
-        // }
+	public static void main(String[] args) {
+		int numbers[] = {5, 6, 7, 8, 9, 10};
+    int key = 8;
+
+    int searchNum = Arrays.binarySearch(numbers, key);
+    if(searchNum == -1){
+       System.out.println("Not found");
+    }else{
+       System.out.println(searchNum); // 3
     }
- }
+
+	}
+}
 
 
 
