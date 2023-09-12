@@ -1,5 +1,5 @@
 /*
- Write a Java program to test if a hash set is empty or not.
+Write a Java program to clone a hash set to another hash set.
 */
 
 import java.util.HashSet;
@@ -16,13 +16,9 @@ public class javaFile {
         colorSet.add("Black");
 
 
-        if(colorSet.isEmpty()){
-          System.out.println("List is empty");
-      }else{
-          System.out.println("List is not empty");
-      }
-      // System.out.println(colorSet);  // []
-        // System.out.println("hashset size or number of element " + colorSet);
+        HashSet<String>  colorSet2 = (HashSet<String>) colorSet.clone();
+       
+        System.out.println(colorSet2);
         // for(String n: colorSet){
         //    System.out.println(n);  //
         // }
