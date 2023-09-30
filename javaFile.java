@@ -1,30 +1,51 @@
 /*
-Write a Java program to find a specified element in a given sorted array of elements using Exponential search.
+Write a Java program to find a specified element in a given array of elements using Ternary search.
 
-From Wikipedia, in computer science, an exponential search (also called doubling search or galloping search or Struzik search) is an algorithm, created by Jon Bentley and Andrew Chi-Chih Yao in 1976, for searching sorted, unbounded/infinite lists. There are numerous ways to implement this with the most common being to determine a range that the search key resides in and performing a binary search within that range. This takes O(log i) where i is the position of the search key in the list, if the search key is in the list, or the position where the search key should be, if the search key is not in the list.
+From Wikipedia, a ternary search algorithm is a technique in computer science for finding the minimum or maximum of a unimodal function. A ternary search determines either that the minimum or maximum cannot be in the first third of the domain or that it cannot be in the last third of the domain, then repeats on the remaining two thirds. A ternary search is an example of a divide and conquer algorithm.
 */
-import java.util.Arrays;
+import java.util.*;
 public class javaFile {
-	public static void main(String[] args) {
-		int nums[] = {1, 2, 3, 4, 5, 6, 7, 8, 21, 34, 45, 91, 120, 130, 456, 564};
-        int search_num = 120;
-		
-		// Find the index of searched item
-       int index_result = exponentialSearch(nums, search_num);
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int[] nums = new int[]{0,1,2,3,5,7,9,12,15,17,18,21,25,32,52,54,75,89,90,93,97,104,120};
+		System.out.println("Original array:");
+		System.out.println(Arrays.toString(nums));
+    scan.close();
+        System.out.println("Input an element to search:");
+        int val = scan.nextInt();
+        int position = ternary_search(nums, val, 0, nums.length-1);
+        if(position == -1)
+            System.out.println("\n" +val+ " Element not found");
+        else
+            System.out.println("\n"+ val +" element found at position "+ position);
 
-       System.out.println(search_num + " is found at index " + index_result);		
-		
-	}
+    }
+    
 
-	private static int exponentialSearch(int[] arr, int i) {
-		int start_num = 0;
-		
-		if(arr[start_num] == i)
-			return start_num;
-		start_num =1;
-		while(start_num < arr.length && arr[start_num] <= i) {
-			start_num*=2;
-		}
-		return Arrays.binarySearch(arr, start_num/2, Math.min(start_num, arr.length), i);
-	}
+ static int ternary_search(int[] nums, int val, int first_element, int last_element)
+    {
+        if(first_element > last_element)
+        {
+            return -1;
+        }
+        int mid1_element = first_element + (last_element - first_element) / 3;
+        int mid2_element = first_element + 2*(last_element - first_element) / 3;
+        if(val == nums[mid1_element])
+        {
+            return mid1_element;
+        }
+        else if(val == nums[mid2_element])
+        {
+            return mid2_element;
+        }
+        else if(val > nums[mid1_element])
+        {
+            first_element = mid1_element+1;
+        }
+        else if(val < nums[mid2_element])
+        {
+            last_element = mid2_element-1;
+        }
+        return ternary_search(nums, val, first_element, last_element);
+    }
 }
